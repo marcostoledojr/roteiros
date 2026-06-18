@@ -6,260 +6,233 @@
 <title>Aniversário Momo — Espanha 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --primary-dark: #1a0f0a;
-  --primary: #8b1a1a;
-  --accent: #c9a554;
-  --accent-light: #e8d5a0;
-  --bg: #f8f4ef;
-  --bg-card: #ffffff;
-  --text: #1a1207;
-  --text-muted: #7a6a58;
-  --border: #e0d5c8;
-  --section-dark: #1c1410;
-  --green: #2d6a4f;
-  --yellow: #b5850a;
-  --orange: #c0430a;
-  --shadow: 0 4px 24px rgba(26,15,10,0.10);
-  --shadow-lg: 0 8px 40px rgba(26,15,10,0.16);
+  --navy: #1a3050;
+  --navy-dark: #0d1b2a;
+  --accent: #c9a96e;
+  --bg: #f8f5f0;
+  --card: #ffffff;
+  --text: #1a2a3a;
+  --muted: #6b7a8a;
+  --border: #e0d8cc;
+  --shadow: 0 2px 16px rgba(26,48,80,.07);
+  --shadow-md: 0 4px 32px rgba(26,48,80,.12);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
-img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.15}
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;font-family:'Inter',sans-serif}
+img{display:block;max-width:100%}
 
-/* ===== NAVBAR ===== */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(26,15,10,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,165,84,0.2);transition:all .3s}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--accent);font-style:italic;letter-spacing:.02em}
-.nav-back{display:flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.06em;text-transform:uppercase;transition:color .2s;text-decoration:none}
-.nav-back:hover{color:var(--accent)}
+/* ── NAVBAR ── */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:900;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(248,245,240,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.nav-logo span{color:var(--accent);margin-left:.4rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-back{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-back:hover{color:var(--navy)}
 .nav-back svg{transition:transform .2s}
 .nav-back:hover svg{transform:translateX(-3px)}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{font-size:.82rem;font-weight:500;color:rgba(255,255,255,0.75);letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--accent)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
-.nav-toggle span{width:24px;height:2px;background:var(--accent);border-radius:2px;display:block;transition:.3s}
-.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(26,15,10,0.97);padding:1.5rem 2rem;border-bottom:1px solid rgba(201,165,84,0.2);z-index:999}
+.nav-toggle span{width:22px;height:1.5px;background:var(--navy);border-radius:2px;display:block}
+.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(248,245,240,.98);padding:1.5rem 2.5rem;border-bottom:1px solid var(--border);z-index:899}
 .nav-mobile.open{display:block}
-.nav-mobile a{display:block;padding:.75rem 0;font-size:.9rem;font-weight:500;color:rgba(255,255,255,0.8);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(201,165,84,0.1)}
-.nav-mobile a:hover{color:var(--accent)}
+.nav-mobile a{display:block;padding:.7rem 0;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
 
-/* ===== HERO ===== */
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1543785734-4b6e564642f8?w=1600&auto=format&fit=crop&q=80');background-size:cover;background-position:center;filter:brightness(.45)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,15,10,.3) 0%,rgba(26,15,10,.5) 60%,rgba(26,15,10,.85) 100%)}
-.hero-content{position:relative;z-index:2;padding:2rem 1.5rem;max-width:860px;margin:0 auto}
-.hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.45rem 1.2rem;border-radius:2px;margin-bottom:1.8rem;background:rgba(201,165,84,.08)}
-.hero-title{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;color:#fff;line-height:1.05;margin-bottom:.8rem;letter-spacing:-.01em}
-.hero-title em{color:var(--accent);font-style:italic}
-.hero-subtitle{font-size:clamp(1rem,2.5vw,1.3rem);color:rgba(255,255,255,.75);font-weight:300;letter-spacing:.25em;text-transform:uppercase;margin-bottom:3rem}
-.hero-subtitle span{color:var(--accent);font-weight:500}
-.countdown{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
-.countdown-block{display:flex;flex-direction:column;align-items:center;min-width:72px}
-.countdown-num{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:#fff;line-height:1;background:rgba(255,255,255,.07);border:1px solid rgba(201,165,84,.3);border-radius:8px;width:72px;height:72px;display:flex;align-items:center;justify-content:center}
-.countdown-label{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.4rem}
-.hero-date{font-size:.85rem;color:rgba(255,255,255,.5);letter-spacing:.1em}
-.hero-date strong{color:var(--accent)}
-.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:bounce 2s infinite}
-.hero-scroll span{width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--accent));display:block}
-.hero-scroll-label{font-size:.65rem;letter-spacing:.2em;color:rgba(255,255,255,.4);text-transform:uppercase}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 1.5rem;background:var(--navy-dark) url('https://images.unsplash.com/photo-1543785734-4b6e564642f8?w=1600&auto=format&fit=crop&q=80') center 40% / cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(8,16,28,.60)}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(8,16,28,.75) 100%)}
+.hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto}
+.hero-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:1.8rem}
+.hero-title{font-size:clamp(3.5rem,9vw,7rem);font-weight:300;color:#fff;letter-spacing:.06em;text-transform:uppercase;line-height:1;margin-bottom:.5rem}
+.hero-title strong{font-weight:600}
+.hero-sub{font-size:clamp(.9rem,2vw,1.1rem);font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:.7rem}
+.hero-tag{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:3rem}
+.hero-countdown-label{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.countdown{display:flex;gap:1.2rem;justify-content:center;margin-bottom:3rem}
+.cd-block{text-align:center}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:300;color:#fff;line-height:1;min-width:60px;display:block}
+.cd-label{font-size:.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-top:.2rem}
+.hero-dates{font-size:.78rem;color:rgba(255,255,255,.45);letter-spacing:.1em;margin-bottom:2.5rem}
+.hero-dates strong{color:var(--accent)}
+.btn-explore{display:inline-flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.5);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;background:none;border:none;transition:color .2s}
+.btn-explore:hover{color:var(--accent)}
+.btn-explore svg{animation:float 2s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
-/* ===== SECTIONS COMMON ===== */
+/* ── SECTION BASE ── */
 .section{padding:6rem 1.5rem}
 .section-inner{max-width:1100px;margin:0 auto}
-.section-label{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
-.section-title{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
-.section-divider{width:48px;height:2px;background:linear-gradient(to right,var(--accent),transparent);margin-bottom:2rem}
-.section-intro{font-size:1.05rem;color:var(--text-muted);max-width:620px;line-height:1.75}
-.reveal{opacity:1;transform:none}
-.js-loaded .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-.js-loaded .reveal.visible{opacity:1;transform:none}
-.reveal.visible{opacity:1;transform:none}
+.section-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--navy);margin-bottom:.6rem}
+.section-title em{font-style:italic;font-weight:300}
+.section-lead{font-size:1rem;color:var(--muted);max-width:620px;line-height:1.75;margin-bottom:3rem}
+.divider{width:40px;height:1px;background:var(--accent);margin-bottom:2rem;opacity:.6}
 
-/* ===== PILARES ===== */
-.pilares-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
-.pilar-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
-.pilar-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--accent),transparent);opacity:0;transition:.3s}
-.pilar-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
-.pilar-card:hover::before{opacity:1}
-.pilar-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(201,165,84,.15),rgba(201,165,84,.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;color:var(--accent)}
-.pilar-num{position:absolute;top:1.5rem;right:1.5rem;font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:rgba(201,165,84,.08);line-height:1;pointer-events:none}
-.pilar-card h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
-.pilar-card p{font-size:.88rem;color:var(--text-muted);line-height:1.65}
+/* ── PILARES ── */
+.pilares-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.pilar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:2rem;position:relative;overflow:hidden}
+.pilar-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(26,48,80,.06);position:absolute;top:.5rem;right:1rem;line-height:1;pointer-events:none}
+.pilar-icon{width:36px;height:36px;border-radius:8px;background:rgba(201,169,110,.12);display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:1rem}
+.pilar h3{font-size:1.3rem;font-weight:600;color:var(--navy);margin-bottom:.6rem}
+.pilar p{font-size:.88rem;color:var(--muted);line-height:1.7}
 
-/* ===== ROTA ===== */
-.rota-stats{display:flex;gap:2rem;flex-wrap:wrap;margin:2.5rem 0 3rem}
-.stat-item{text-align:center}
-.stat-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--accent);line-height:1}
-.stat-label{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-top:.3rem}
-.map-container{position:relative;background:linear-gradient(135deg,#0d2b45 0%,#1a3a5c 50%,#0d2035 100%);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(201,165,84,.2)}
-.map-container svg{width:100%;height:auto;display:block}
-.map-btn{position:absolute;bottom:1rem;right:1rem;background:var(--accent);color:#1a0f0a;font-size:.78rem;font-weight:600;padding:.55rem 1.1rem;border-radius:6px;border:none;display:flex;align-items:center;gap:.4rem;letter-spacing:.04em;transition:all .2s}
-.map-btn:hover{background:#e8c870;transform:translateY(-1px)}
-.route-intro{font-size:.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:2rem;max-width:680px}
-.maps-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;background:var(--primary-dark);color:var(--accent);border:1px solid rgba(201,165,84,.3);padding:.65rem 1.4rem;border-radius:8px;font-size:.85rem;font-weight:500;letter-spacing:.04em;transition:all .2s}
-.maps-link:hover{background:rgba(201,165,84,.1);border-color:var(--accent)}
+/* ── PERCURSO ── */
+.percurso-stats{display:flex;gap:0;flex-wrap:wrap;margin-bottom:3rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--card)}
+.pstat{flex:1;min-width:140px;padding:1.2rem 1.5rem;text-align:center;border-right:1px solid var(--border)}
+.pstat:last-child{border-right:none}
+.pstat-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--navy);line-height:1;display:block}
+.pstat-label{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;display:block}
+.map-wrap{background:linear-gradient(135deg,#0d1f35 0%,#1a3a5c 60%,#0a1828 100%);border-radius:14px;overflow:hidden;border:1px solid rgba(201,169,110,.15);position:relative}
+.map-wrap svg{width:100%;height:auto;display:block}
+.btn-maps{position:absolute;bottom:1rem;right:1rem;background:var(--accent);color:var(--navy-dark);font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.5rem 1rem;border-radius:6px;border:none;display:flex;align-items:center;gap:.4rem;transition:all .2s}
+.btn-maps:hover{background:#d9ba80;transform:translateY(-1px)}
 
-/* ===== ITINERÁRIO ===== */
-.itinerario-intro{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text-muted);font-style:italic;margin-bottom:3rem}
-.dest-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:2.5rem;background:var(--bg-card);border:1px solid var(--border)}
-.dest-card.reverse{direction:rtl}
-.dest-card.reverse > *{direction:ltr}
-.dest-img-wrap{position:relative;min-height:320px;overflow:hidden}
-.dest-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
-.dest-card:hover .dest-img-wrap img{transform:scale(1.04)}
-.dest-img-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.dest-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,15,10,.4) 0%,transparent 60%)}
-.dest-body{padding:2.5rem;display:flex;flex-direction:column;justify-content:center}
-.dest-badge{display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,rgba(201,165,84,.12),rgba(201,165,84,.06));border:1px solid rgba(201,165,84,.25);color:var(--accent);font-size:.75rem;font-weight:600;padding:.35rem .9rem;border-radius:20px;margin-bottom:1.2rem;letter-spacing:.05em}
-.dest-day{font-size:2rem;font-weight:700;color:var(--text);margin-bottom:.25rem;font-family:'Playfair Display',serif}
-.dest-region{font-size:.8rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem}
-.dest-desc{font-size:.92rem;color:var(--text-muted);line-height:1.75;margin-bottom:1.5rem}
-.dest-highlights{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem}
-.dest-highlight{display:flex;align-items:flex-start;gap:.7rem;font-size:.85rem}
-.dest-highlight-icon{color:var(--accent);margin-top:2px;flex-shrink:0}
-.dest-highlight strong{font-weight:600;color:var(--text)}
-.dest-highlight p{color:var(--text-muted);line-height:1.5}
-.dest-actions{display:flex;gap:.75rem;flex-wrap:wrap}
-.btn-map{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary-dark);color:var(--accent);border:1px solid rgba(201,165,84,.3);padding:.5rem 1rem;border-radius:6px;font-size:.78rem;font-weight:500;letter-spacing:.04em;transition:all .2s}
-.btn-map:hover{background:rgba(201,165,84,.1);border-color:var(--accent)}
-.dest-card-daytrip{background:linear-gradient(135deg,rgba(201,165,84,.06),rgba(201,165,84,.02));border:1px dashed rgba(201,165,84,.4)}
+/* ── ITINERÁRIO ── */
+.section-alt{background:#fff}
+.dest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr));gap:1.5rem}
+.dest-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.8rem;transition:box-shadow .25s}
+.dest-card:hover{box-shadow:var(--shadow-md)}
+.dest-card.daytrip{border-style:dashed;background:rgba(201,169,110,.03)}
+.dest-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.dest-badge{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .8rem;border-radius:4px}
+.badge-madrid{background:var(--navy);color:#fff}
+.badge-castilla{background:#5c2a1a;color:var(--accent)}
+.badge-aragon{background:#2d4a6b;color:var(--accent)}
+.badge-cataluna{background:#8b1a1a;color:#fff}
+.badge-daytrip{background:rgba(201,169,110,.15);color:#8a6a10;border:1px solid rgba(201,169,110,.3)}
+.dest-dates{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.dest-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--navy);margin-bottom:.2rem}
+.dest-dist{font-size:.75rem;color:var(--muted);margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
+.dest-desc{font-size:.88rem;color:var(--text);line-height:1.7;margin-bottom:1rem}
+.dest-detail{display:flex;align-items:flex-start;gap:.7rem;font-size:.83rem;margin-bottom:.5rem}
+.dest-detail-icon{color:var(--accent);flex-shrink:0;margin-top:2px}
+.dest-detail strong{color:var(--navy);font-weight:600}
+.dest-detail span{color:var(--muted)}
+.dest-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:.8rem}
+.clima-pills{display:flex;gap:.4rem;flex-wrap:wrap}
+.clima-pill{font-size:.65rem;font-weight:500;padding:.2rem .55rem;border-radius:20px;border:1px solid var(--border);color:var(--muted);background:var(--card)}
+.btn-mapa{font-size:.72rem;font-weight:600;color:var(--navy);letter-spacing:.04em;display:flex;align-items:center;gap:.3rem;transition:color .2s;background:none;border:none}
+.btn-mapa:hover{color:var(--accent)}
+.daytrip-sep{display:flex;align-items:center;gap:1.2rem;margin:1.5rem 0;grid-column:1/-1}
+.daytrip-line{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--accent) 0,var(--accent) 6px,transparent 6px,transparent 14px);opacity:.4}
+.daytrip-pill{background:rgba(201,169,110,.12);color:#8a6a10;border:1px solid rgba(201,169,110,.3);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:20px;white-space:nowrap;display:flex;align-items:center;gap:.5rem}
 
-/* ===== CLIMA ===== */
-.clima-section{background:var(--primary-dark)}
-.clima-section .section-title{color:#fff}
-.clima-section .section-label{color:var(--accent)}
-.clima-section .section-divider{background:linear-gradient(to right,var(--accent),transparent)}
-.clima-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:3rem}
-.clima-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.8rem;transition:all .3s}
-.clima-card:hover{background:rgba(255,255,255,.08);border-color:rgba(201,165,84,.25)}
-.clima-city{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.25rem;font-family:'Playfair Display',serif}
-.clima-period{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.5rem}
-.clima-row{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem}
-.clima-icon{color:var(--accent);flex-shrink:0}
-.clima-info{flex:1}
-.clima-info-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.2rem}
-.clima-info-value{font-size:.92rem;font-weight:500;color:#fff}
-.temp-bar{height:6px;border-radius:3px;background:rgba(255,255,255,.1);position:relative;margin-top:.4rem;overflow:hidden}
-.temp-bar-fill{height:100%;border-radius:3px;background:linear-gradient(to right,#4fc3f7,#ff7043)}
-.rain-pill{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .6rem;border-radius:12px;font-size:.75rem;font-weight:600}
-.rain-green{background:rgba(45,106,79,.25);color:#4caf82}
-.rain-yellow{background:rgba(181,133,10,.25);color:#f0c040}
-.rain-orange{background:rgba(192,67,10,.25);color:#ff7043}
-.clima-note{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.55;margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.07);font-style:italic}
-.clima-sea{display:inline-flex;align-items:center;gap:.4rem;background:rgba(77,182,218,.1);border:1px solid rgba(77,182,218,.2);border-radius:12px;padding:.2rem .65rem;font-size:.78rem;color:#4dc6e0;font-weight:500;margin-bottom:.5rem}
-.clima-footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07);font-size:.75rem;color:rgba(255,255,255,.35);letter-spacing:.03em}
+/* ── CLIMA ── */
+.clima-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+.clima-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.clima-card-head{background:var(--navy);padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between}
+.clima-card-head h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:#fff}
+.clima-card-head small{font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.clima-card-body{padding:1.2rem}
+.clima-temp{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--navy);line-height:1;margin-bottom:1rem}
+.clima-temp small{font-size:1rem;font-weight:300;color:var(--muted);margin-left:.3rem}
+.clima-stats{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.cstat{background:var(--bg);border-radius:8px;padding:.6rem .8rem}
+.cstat-val{font-size:.9rem;font-weight:600;color:var(--navy);display:block}
+.cstat-key{font-size:.62rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.1rem;display:block}
+.clima-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--border)}
+.clima-footer{margin-top:3rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.csum{background:var(--navy);border-radius:10px;padding:1.2rem;text-align:center;color:#fff}
+.csum-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--accent);display:block;line-height:1}
+.csum-key{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.3rem;display:block}
 
-/* ===== RESERVAS ===== */
-.reservas-section{background:var(--section-dark)}
-.reservas-section .section-title{color:#fff}
-.reservas-section .section-label{color:var(--accent)}
-.reservas-section .section-divider{background:linear-gradient(to right,var(--accent),transparent)}
-.reservas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
-.reserva-col h3{font-size:.8rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
-.reserva-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.4rem;margin-bottom:1rem;transition:all .2s}
-.reserva-card:hover{background:rgba(255,255,255,.07)}
-.reserva-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:.8rem}
-.reserva-title{font-size:1rem;font-weight:600;color:#fff;font-family:'Playfair Display',serif}
-.reserva-sub{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:.15rem}
-.badge{display:inline-flex;align-items:center;gap:.3rem;padding:.22rem .65rem;border-radius:20px;font-size:.7rem;font-weight:600;letter-spacing:.04em;flex-shrink:0}
-.badge-ok{background:rgba(45,106,79,.25);color:#4caf82;border:1px solid rgba(45,106,79,.3)}
-.badge-pending{background:rgba(181,133,10,.25);color:#f0c040;border:1px solid rgba(181,133,10,.3)}
-.badge-open{background:rgba(255,255,255,.07);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.12)}
-.reserva-details{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.7}
-.reserva-details strong{color:rgba(255,255,255,.8);font-weight:500}
-.reserva-link{display:inline-flex;align-items:center;gap:.3rem;margin-top:.8rem;font-size:.75rem;color:var(--accent);letter-spacing:.03em;transition:.2s}
-.reserva-link:hover{opacity:.75}
+/* ── RESERVAS ── */
+.reservas-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.reservas-col h3{font-size:1.4rem;font-weight:600;color:var(--navy);margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
+.reservas-col h3 small{font-size:.75rem;font-weight:400;color:var(--muted);letter-spacing:.06em}
+.reserva-list{display:flex;flex-direction:column;gap:.7rem}
+.reserva-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.reserva-info h4{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:.15rem}
+.reserva-info p{font-size:.75rem;color:var(--muted)}
+.reserva-info .price{font-size:.72rem;font-weight:500;margin-top:.1rem}
+.price-ok{color:#2d6a4f}
+.price-pending{color:#8a6a10}
+.price-open{color:var(--muted)}
+.badge-ok{background:rgba(45,106,79,.12);color:#2d6a4f;font-size:.65rem;font-weight:600;padding:.2rem .6rem;border-radius:12px;white-space:nowrap}
+.badge-pending{background:rgba(181,133,10,.12);color:#8a6a10;font-size:.65rem;font-weight:600;padding:.2rem .6rem;border-radius:12px;white-space:nowrap}
+.badge-open{background:rgba(107,122,138,.1);color:var(--muted);font-size:.65rem;font-weight:600;padding:.2rem .6rem;border-radius:12px;white-space:nowrap}
+.btn-reserva{font-size:.7rem;font-weight:600;letter-spacing:.04em;padding:.4rem .9rem;border-radius:6px;border:1px solid var(--navy);color:var(--navy);background:none;white-space:nowrap;transition:all .2s}
+.btn-reserva:hover{background:var(--navy);color:#fff}
 
-/* ===== PAINEL OPERACIONAL ===== */
-.operacional-section{background:var(--bg)}
-.op-header{margin-bottom:2rem}
-.op-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem;border-bottom:1px solid var(--border);padding-bottom:0}
-.op-tab{background:none;border:none;padding:.65rem 1.2rem;font-size:.82rem;font-weight:500;color:var(--text-muted);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s;letter-spacing:.03em}
-.op-tab.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
-.op-tab:hover:not(.active){color:var(--text)}
-.op-panel{display:none}
-.op-panel.active{display:block}
-.op-actions{display:flex;gap:.75rem;margin-top:2rem;flex-wrap:wrap}
-.btn-op{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;border-radius:6px;font-size:.8rem;font-weight:500;border:1px solid var(--border);background:var(--bg-card);color:var(--text-muted);transition:all .2s}
-.btn-op:hover{border-color:var(--accent);color:var(--accent)}
-.btn-op-primary{background:var(--primary-dark);color:var(--accent);border-color:transparent}
-.btn-op-primary:hover{background:#2c1a0e}
+/* ── PAINEL ── */
+.section-dark{background:var(--navy-dark);color:#fff}
+.section-dark .section-eyebrow{color:var(--accent)}
+.section-dark .section-title{color:#fff}
+.section-dark .section-lead{color:rgba(255,255,255,.55)}
+.panel-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden}
+.panel-tabs{display:flex;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(255,255,255,.08)}
+.panel-tabs::-webkit-scrollbar{display:none}
+.ptab{flex:1;min-width:90px;padding:.85rem 1rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);background:none;border:none;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s}
+.ptab.active{color:var(--accent);border-bottom-color:var(--accent);background:rgba(201,169,110,.05)}
+.ptab:hover:not(.active){color:rgba(255,255,255,.7)}
+.panel-content{padding:2rem}
+.ppane{display:none}
+.ppane.active{display:block}
+.traveler-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.traveler-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.2rem}
+.traveler-num{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.traveler-card h4{font-size:1rem;font-weight:600;color:#fff;margin-bottom:.6rem}
+.traveler-field{font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:.3rem}
+.traveler-field strong{color:rgba(255,255,255,.75);font-weight:500}
+.panel-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.panel-table th{text-align:left;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:600;padding:.6rem .5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.panel-table td{padding:.8rem .5rem;border-bottom:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.75)}
+.panel-table tr:last-child td{border-bottom:none}
+.panel-table .total td{color:var(--accent);font-weight:600;font-size:.9rem}
+.td-ok{color:#4caf82 !important;font-weight:500}
+.td-pending{color:#f0c040 !important;font-weight:500}
+.td-open{color:rgba(255,255,255,.4) !important}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.info-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1rem}
+.info-item .key{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;display:block}
+.info-item .val{font-size:.88rem;color:#fff;font-weight:500}
+.info-item .sub{font-size:.75rem;color:rgba(255,255,255,.45);margin-top:.2rem;display:block}
+.checklist-group h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;margin-top:1.5rem;padding-bottom:.4rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.checklist-group h4:first-child{margin-top:0}
+.clist-item{display:flex;align-items:center;gap:.8rem;padding:.55rem .4rem;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;transition:background .15s;border-radius:4px}
+.clist-item:hover{background:rgba(255,255,255,.03)}
+.clist-box{width:18px;height:18px;border:1.5px solid rgba(255,255,255,.2);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.2s}
+.clist-item.checked .clist-box{background:var(--accent);border-color:var(--accent)}
+.clist-item.checked .clist-box::after{content:'✓';font-size:.7rem;color:var(--navy-dark);font-weight:700}
+.clist-item.checked .clist-label{text-decoration:line-through;color:rgba(255,255,255,.3)}
+.clist-label{font-size:.82rem;color:rgba(255,255,255,.7)}
+.packing-grid-inner{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem}
+.pcat h4{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+.pitem{display:flex;align-items:center;gap:.7rem;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
+.pitem.checked .clist-label{text-decoration:line-through;color:rgba(255,255,255,.3)}
+.pitem.checked .clist-box{background:#2d6a4f;border-color:#2d6a4f}
+.panel-actions{padding:1rem 2rem;border-top:1px solid rgba(255,255,255,.06);display:flex;gap:.8rem;flex-wrap:wrap}
+.btn-panel{font-size:.72rem;font-weight:600;padding:.45rem 1rem;border-radius:6px;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.55);background:none;display:flex;align-items:center;gap:.4rem;transition:all .2s}
+.btn-panel:hover{border-color:var(--accent);color:var(--accent)}
 
-/* Cost table */
-.cost-table{width:100%;border-collapse:collapse;background:var(--bg-card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-.cost-table th{background:var(--primary-dark);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.2rem;text-align:left}
-.cost-table td{padding:.85rem 1.2rem;font-size:.88rem;border-bottom:1px solid var(--border)}
-.cost-table tr:last-child td{border-bottom:none}
-.cost-table tr:hover td{background:rgba(201,165,84,.04)}
-.cost-total{background:rgba(26,15,10,.04)!important}
-.cost-total td{font-weight:600;font-size:.9rem}
-.cost-total td:first-child{font-family:'Playfair Display',serif}
+/* ── FOOTER ── */
+footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-top:1px solid rgba(201,169,110,.15)}
+.footer-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.3rem);font-style:italic;font-weight:300;color:rgba(255,255,255,.45);max-width:600px;margin:0 auto 2rem;line-height:1.7}
+.footer-end{font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.6rem}
+.footer-stats{display:flex;justify-content:center;gap:1.5rem;font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2)}
+.footer-stats span::before{content:'·';color:var(--accent);opacity:.5;margin-right:1.5rem}
+.footer-stats span:first-child::before{display:none}
 
-/* Hotel table */
-.hotel-table{width:100%;border-collapse:collapse;background:var(--bg-card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-.hotel-table th{background:var(--primary-dark);color:var(--accent);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.8rem 1rem;text-align:left}
-.hotel-table td{padding:.8rem 1rem;font-size:.84rem;border-bottom:1px solid var(--border);vertical-align:middle}
-.hotel-table tr:last-child td{border-bottom:none}
-.hotel-table tr:hover td{background:rgba(201,165,84,.03)}
-
-/* Checklist */
-.checklist-group{margin-bottom:2rem}
-.checklist-group h4{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
-.checklist-item{display:flex;align-items:center;gap:.9rem;padding:.7rem 0;border-bottom:1px solid rgba(224,213,200,.5);cursor:pointer;transition:.15s}
-.checklist-item:last-child{border-bottom:none}
-.checklist-item:hover{background:rgba(201,165,84,.03)}
-.check-box{width:20px;height:20px;border:2px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.2s;background:var(--bg-card)}
-.checklist-item.checked .check-box{background:var(--accent);border-color:var(--accent)}
-.checklist-item.checked .check-box::after{content:'✓';font-size:.75rem;color:#1a0f0a;font-weight:700}
-.checklist-item.checked .check-label{text-decoration:line-through;color:var(--text-muted)}
-.check-label{font-size:.88rem;color:var(--text)}
-
-/* Packing */
-.packing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.packing-cat h4{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
-.packing-item{display:flex;align-items:center;gap:.75rem;padding:.55rem 0;cursor:pointer;border-bottom:1px solid rgba(224,213,200,.4)}
-.packing-item:last-child{border-bottom:none}
-.packing-item.checked .check-label{text-decoration:line-through;color:var(--text-muted)}
-.packing-item.checked .check-box{background:var(--green);border-color:var(--green)}
-.packing-item.checked .check-box::after{content:'✓';font-size:.75rem;color:#fff;font-weight:700}
-
-/* ===== FOOTER ===== */
-.footer{background:var(--primary-dark);color:rgba(255,255,255,.4);text-align:center;padding:2.5rem 1.5rem;font-size:.8rem;letter-spacing:.05em}
-.footer strong{color:var(--accent)}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
+@media(max-width:900px){
+  .dest-grid{grid-template-columns:1fr}
+  .reservas-cols{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:640px){
+  .navbar{padding:0 1.2rem}
   .nav-links{display:none}
   .nav-toggle{display:flex}
-  .dest-card,.dest-card.reverse{grid-template-columns:1fr;direction:ltr}
-  .dest-img-wrap{min-height:220px}
-  .rota-stats{gap:1.2rem}
-  .stat-num{font-size:1.8rem}
-  .reservas-grid{grid-template-columns:1fr}
-  .cost-table{font-size:.8rem}
-  .hotel-table{font-size:.78rem}
+  .percurso-stats{flex-direction:column}
+  .pstat{border-right:none;border-bottom:1px solid var(--border)}
+  .pstat:last-child{border-bottom:none}
 }
-@media(max-width:480px){
-  .section{padding:4rem 1rem}
-  .hero-content{padding:1.5rem 1rem}
-  .countdown{gap:.75rem}
-  .countdown-num{width:62px;height:62px;font-size:1.7rem}
-}
-
-/* ===== MAP SVG ===== */
-.map-city-label{font-family:'Inter',sans-serif;font-size:11px;fill:rgba(255,255,255,.85);font-weight:500}
-.map-day-label{font-family:'Inter',sans-serif;font-size:9px;fill:rgba(201,165,84,.8);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
-@keyframes dash{to{stroke-dashoffset:0}}
-.route-animated{stroke-dasharray:8 5;stroke-dashoffset:800;animation:dash 3s linear forwards .5s}
-.route-daytrip{stroke-dasharray:4 4;stroke-dashoffset:200;animation:dash 1.5s linear forwards 1s}
 </style>
 </head>
 <body>
@@ -267,110 +240,107 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
 <!-- NAVBAR -->
 <nav class="navbar">
   <a href="../" class="nav-back">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
     Roteiros
   </a>
-  <div class="nav-logo">Aniversário Momo</div>
+  <div class="nav-logo">Espanha<span>2026</span></div>
   <ul class="nav-links">
-    <li><a href="#inicio">Início</a></li>
     <li><a href="#pilares">Pilares</a></li>
     <li><a href="#rota">Rota</a></li>
     <li><a href="#itinerario">Itinerário</a></li>
     <li><a href="#clima">Clima</a></li>
     <li><a href="#reservas">Reservas</a></li>
-    <li><a href="#operacional">Painel</a></li>
+    <li><a href="#painel">Painel</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+  <button class="nav-toggle" onclick="document.querySelector('.nav-mobile').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class="nav-mobile" id="navMobile">
-  <a href="#inicio" onclick="closeMobileMenu()">Início</a>
-  <a href="#pilares" onclick="closeMobileMenu()">Pilares</a>
-  <a href="#rota" onclick="closeMobileMenu()">Rota</a>
-  <a href="#itinerario" onclick="closeMobileMenu()">Itinerário</a>
-  <a href="#clima" onclick="closeMobileMenu()">Clima</a>
-  <a href="#reservas" onclick="closeMobileMenu()">Reservas</a>
-  <a href="#operacional" onclick="closeMobileMenu()">Painel</a>
+<div class="nav-mobile">
+  <a href="../" onclick="this.closest('.nav-mobile').classList.remove('open')">← Roteiros</a>
+  <a href="#pilares" onclick="this.closest('.nav-mobile').classList.remove('open')">Pilares</a>
+  <a href="#rota" onclick="this.closest('.nav-mobile').classList.remove('open')">Rota</a>
+  <a href="#itinerario" onclick="this.closest('.nav-mobile').classList.remove('open')">Itinerário</a>
+  <a href="#clima" onclick="this.closest('.nav-mobile').classList.remove('open')">Clima</a>
+  <a href="#reservas" onclick="this.closest('.nav-mobile').classList.remove('open')">Reservas</a>
+  <a href="#painel" onclick="this.closest('.nav-mobile').classList.remove('open')">Painel</a>
 </div>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="inicio">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-overlay"></div>
+<!-- HERO -->
+<section class="hero">
   <div class="hero-content">
-    <div class="hero-badge">✦ Roteiro Oficial Executivo ✦</div>
-    <h1 class="hero-title">Aniversário<br><em>Momo</em></h1>
-    <p class="hero-subtitle"><span>Madri</span> · Toledo · <span>Zaragoza</span> · Barcelona</p>
+    <p class="hero-eyebrow">Roteiro · 2 Viajantes · Madri · Toledo · Zaragoza · Barcelona</p>
+    <h1 class="hero-title"><strong>Aniversário</strong> Momo</h1>
+    <p class="hero-sub">Espanha · Novembro 2026</p>
+    <p class="hero-tag">Roteiro Oficial Executivo</p>
+    <p class="hero-countdown-label">Dias para a viagem</p>
     <div class="countdown">
-      <div class="countdown-block">
-        <div class="countdown-num" id="cd-days">—</div>
-        <div class="countdown-label">Dias</div>
-      </div>
-      <div class="countdown-block">
-        <div class="countdown-num" id="cd-hours">—</div>
-        <div class="countdown-label">Horas</div>
-      </div>
-      <div class="countdown-block">
-        <div class="countdown-num" id="cd-mins">—</div>
-        <div class="countdown-label">Minutos</div>
-      </div>
-      <div class="countdown-block">
-        <div class="countdown-num" id="cd-secs">—</div>
-        <div class="countdown-label">Segundos</div>
-      </div>
+      <div class="cd-block"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Dias</span></div>
+      <div class="cd-block"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Horas</span></div>
+      <div class="cd-block"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Min</span></div>
+      <div class="cd-block"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seg</span></div>
     </div>
-    <p class="hero-date">Embarque <strong>14 Nov 2026</strong> · GRU → MAD · Air Europa UX58</p>
-  </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-label">Explorar</div>
-    <span></span>
+    <p class="hero-dates">Embarque: <strong>14 Nov 2026</strong> · Air Europa UX58 · GRU → MAD &nbsp;·&nbsp; Retorno: <strong>22 Nov 2026</strong></p>
+    <button class="btn-explore" onclick="document.getElementById('pilares').scrollIntoView({behavior:'smooth'})">
+      Explorar
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
   </div>
 </section>
 
-<!-- ===== PILARES ===== -->
+<!-- PILARES -->
 <section class="section" id="pilares">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">A filosofia da viagem</div>
-      <h2 class="section-title">Os 6 Pilares da Jornada</h2>
-      <div class="section-divider"></div>
-      <p class="section-intro">Cada viagem tem uma alma. Esta tem seis princípios que guiam cada decisão — do itinerário ao jantar especial.</p>
-    </div>
+    <p class="section-eyebrow">A filosofia da viagem</p>
+    <h2 class="section-title">Os 6 Pilares da <em>Jornada</em></h2>
+    <div class="divider"></div>
+    <p class="section-lead">Cada viagem tem uma alma. Esta tem seis princípios que guiam cada decisão — do itinerário ao jantar especial de aniversário.</p>
     <div class="pilares-grid">
-      <div class="pilar-card reveal">
-        <div class="pilar-num">01</div>
-        <div class="pilar-icon"><i data-lucide="coffee" width="22" height="22"></i></div>
+      <div class="pilar">
+        <span class="pilar-num">01</span>
+        <div class="pilar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 8h1a4 4 0 010 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+        </div>
         <h3>Ritmo Europeu</h3>
         <p>Café da manhã longo, cada destino curtido sem pressa. Uma coisa de manhã, uma à tarde, jantar tardio — e muitas fotos no caminho.</p>
       </div>
-      <div class="pilar-card reveal">
-        <div class="pilar-num">02</div>
-        <div class="pilar-icon"><i data-lucide="wine" width="22" height="22"></i></div>
+      <div class="pilar">
+        <span class="pilar-num">02</span>
+        <div class="pilar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3M3 16v3a2 2 0 002 2h3m8 0h3a2 2 0 002-2v-3"/></svg>
+        </div>
         <h3>Gastronomia Autêntica</h3>
         <p>Tapas, vinho Rioja e paella. Comer onde os locais comem, longe das armadilhas turísticas — incluindo um jantar especial em Barcelona.</p>
       </div>
-      <div class="pilar-card reveal">
-        <div class="pilar-num">03</div>
-        <div class="pilar-icon"><i data-lucide="heart" width="22" height="22"></i></div>
-        <h3>Aniversário Momo</h3>
-        <p>Uma celebração especial para a Andreza em uma das cidades mais bonitas da Europa. Cada momento, uma memória que fica.</p>
+      <div class="pilar">
+        <span class="pilar-num">03</span>
+        <div class="pilar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Aniversário Momo 🎂</h3>
+        <p>Uma celebração especial para a Andreza em Barcelona — uma das cidades mais bonitas da Europa. Cada momento, uma memória que fica.</p>
       </div>
-      <div class="pilar-card reveal">
-        <div class="pilar-num">04</div>
-        <div class="pilar-icon"><i data-lucide="train" width="22" height="22"></i></div>
+      <div class="pilar">
+        <span class="pilar-num">04</span>
+        <div class="pilar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M6 7V5a2 2 0 00-4 0v2M2 12h20"/></svg>
+        </div>
         <h3>O Trem é o Caminho</h3>
         <p>AVE, metrô e a pé. Sem carro, sem estacionamento, sem estresse. Liberdade total para curtir a paisagem pelo janelão do trem bala.</p>
       </div>
-      <div class="pilar-card reveal">
-        <div class="pilar-num">05</div>
-        <div class="pilar-icon"><i data-lucide="landmark" width="22" height="22"></i></div>
+      <div class="pilar">
+        <span class="pilar-num">05</span>
+        <div class="pilar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
         <h3>Arte &amp; Arquitetura</h3>
         <p>Do Prado ao Gaudí, de El Greco à Aljafería. A Espanha como museu a céu aberto — séculos de história em cada pedra.</p>
       </div>
-      <div class="pilar-card reveal">
-        <div class="pilar-num">06</div>
-        <div class="pilar-icon"><i data-lucide="camera" width="22" height="22"></i></div>
+      <div class="pilar">
+        <span class="pilar-num">06</span>
+        <div class="pilar-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </div>
         <h3>Dois na Europa</h3>
         <p>Cada pôr do sol, monumento e jantar: um momento para registrar juntos. A câmera sempre pronta para capturar o que não tem preço.</p>
       </div>
@@ -378,790 +348,674 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
   </div>
 </section>
 
-<!-- ===== ROTA ===== -->
-<section class="section" id="rota" style="background:#f2ede7">
+<!-- ROTA -->
+<section class="section section-alt" id="rota">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">A rota completa</div>
-      <h2 class="section-title">Espanha de Ponta a Ponta</h2>
-      <div class="section-divider"></div>
-      <p class="route-intro">Uma rota ponto a ponto de Madri a Barcelona, cruzando o coração da Espanha de trem bala. Madri como porto de entrada, Toledo como excursão medieval, Zaragoza como pausa surpresa e Barcelona como grande finale — 7 dias que atravessam três regiões e séculos de história.</p>
+    <p class="section-eyebrow">Rota ponto a ponto · MAD → BCN</p>
+    <h2 class="section-title">Espanha de <em>Ponta a Ponta</em></h2>
+    <div class="divider"></div>
+    <p class="section-lead">De Madri a Barcelona cruzando o coração da Espanha de trem bala. Quatro destinos, três regiões e séculos de história em 7 dias inesquecíveis.</p>
+    <div class="percurso-stats">
+      <div class="pstat"><span class="pstat-num">4</span><span class="pstat-label">Destinos</span></div>
+      <div class="pstat"><span class="pstat-num">7</span><span class="pstat-label">Dias</span></div>
+      <div class="pstat"><span class="pstat-num">~765 km</span><span class="pstat-label">De trem AVE</span></div>
+      <div class="pstat"><span class="pstat-num">2</span><span class="pstat-label">Viajantes</span></div>
+      <div class="pstat"><span class="pstat-num">6</span><span class="pstat-label">Noites</span></div>
     </div>
-    <div class="rota-stats reveal">
-      <div class="stat-item">
-        <div class="stat-num">4</div>
-        <div class="stat-label">Destinos</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">7</div>
-        <div class="stat-label">Dias</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">~765</div>
-        <div class="stat-label">Km de trem</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">2</div>
-        <div class="stat-label">Viajantes</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">6</div>
-        <div class="stat-label">Noites</div>
-      </div>
-    </div>
-    <div class="map-container reveal">
-      <svg viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" style="max-height:500px">
+    <div class="map-wrap">
+      <svg viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="oceanGrad" cx="50%" cy="50%" r="70%">
-            <stop offset="0%" stop-color="#1a3a5c"/>
-            <stop offset="100%" stop-color="#0d2035"/>
-          </radialGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
+          <filter id="glow2"><feGaussianBlur stdDeviation="2.5" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           <marker id="arrowGold" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-            <path d="M0,0 L0,6 L6,3 Z" fill="#c9a554" opacity=".8"/>
+            <path d="M0,0 L0,6 L6,3 Z" fill="#c9a96e" opacity=".8"/>
           </marker>
         </defs>
-        <!-- Ocean background -->
-        <rect width="800" height="560" fill="url(#oceanGrad)"/>
-        <!-- Decorative grid -->
+        <!-- Background -->
+        <rect width="800" height="560" fill="#0d1f35"/>
+        <!-- Grid -->
         <g stroke="rgba(255,255,255,.04)" stroke-width=".5">
-          <line x1="0" y1="140" x2="800" y2="140"/>
-          <line x1="0" y1="280" x2="800" y2="280"/>
-          <line x1="0" y1="420" x2="800" y2="420"/>
-          <line x1="200" y1="0" x2="200" y2="560"/>
-          <line x1="400" y1="0" x2="400" y2="560"/>
-          <line x1="600" y1="0" x2="600" y2="560"/>
+          <line x1="0" y1="140" x2="800" y2="140"/><line x1="0" y1="280" x2="800" y2="280"/>
+          <line x1="0" y1="420" x2="800" y2="420"/><line x1="200" y1="0" x2="200" y2="560"/>
+          <line x1="400" y1="0" x2="400" y2="560"/><line x1="600" y1="0" x2="600" y2="560"/>
         </g>
-        <!-- Spain mainland outline -->
-        <path d="M 66,27 L 134,40 L 237,40 L 346,40 L 397,53 L 460,46 L 477,72 L 591,85 L 745,105 L 745,125 L 687,179 L 631,198 L 557,270 L 540,303 L 534,382 L 511,428 L 437,487 L 311,487 L 254,527 L 203,500 L 163,467 L 140,454 L 165,348 L 159,283 L 177,218 L 172,125 L 33,145 L 39,72 L 66,27 Z"
-          fill="#2d4a2d" fill-opacity=".7" stroke="#4a6a4a" stroke-width="1.5"/>
-        <!-- Portugal (west) -->
-        <path d="M 66,27 L 39,72 L 33,145 L 172,125 L 165,348 L 159,283 L 140,454 L 163,467 L 140,454 L 140,350 L 145,280 L 163,210 L 168,130 L 50,125 L 42,72 L 66,27 Z"
-          fill="#253d25" fill-opacity=".5"/>
-        <!-- France (north of Pyrenees hint) -->
-        <path d="M 477,72 L 591,85 L 745,105 L 780,60 L 720,20 L 560,15 L 450,30 Z"
-          fill="#2d3d4d" fill-opacity=".4"/>
-        <!-- Mediterranean sea label -->
-        <text x="660" y="380" fill="rgba(255,255,255,.15)" font-family="'Playfair Display',serif" font-style="italic" font-size="13">Mar Mediterrâneo</text>
-        <!-- Atlantic label -->
-        <text x="25" y="320" fill="rgba(255,255,255,.12)" font-family="'Playfair Display',serif" font-style="italic" font-size="11" transform="rotate(-90,25,320)">Atlântico</text>
-
-        <!-- ROUTE LINE: Madrid → Zaragoza → Barcelona -->
-        <path d="M 351,243 L 613,162 L 687,179"
-          fill="none" stroke="#c9a554" stroke-width="2.5" stroke-opacity=".85"
-          class="route-animated" marker-end="url(#arrowGold)"/>
-        <!-- DAY TRIP: Madrid ↔ Toledo -->
-        <path d="M 351,243 Q 310,265 332,279 Q 345,285 351,243"
-          fill="none" stroke="#c9a554" stroke-width="1.5" stroke-opacity=".55"
-          class="route-daytrip"/>
-
-        <!-- CITY MARKERS -->
-        <!-- 1. Madrid -->
-        <g filter="url(#glow)">
-          <circle cx="351" cy="243" r="12" fill="#8b1a1a" fill-opacity=".9" stroke="#c9a554" stroke-width="2"/>
-          <text x="351" y="247" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#fff">1</text>
+        <!-- Spain mainland -->
+        <path d="M66,27 L134,40 L237,40 L346,40 L397,53 L460,46 L477,72 L591,85 L745,105 L745,125 L687,179 L631,198 L557,270 L540,303 L534,382 L511,428 L437,487 L311,487 L254,527 L203,500 L163,467 L140,454 L165,348 L159,283 L177,218 L172,125 L33,145 L39,72 L66,27Z"
+          fill="#2d4a2d" fill-opacity=".6" stroke="#4a6a4a" stroke-width="1.5"/>
+        <!-- Portugal -->
+        <path d="M66,27 L39,72 L33,145 L172,125 L168,210 L145,280 L140,350 L140,454 L163,467 L140,454 L165,348 L159,283 L177,218 L172,125 L33,145 L39,72 L66,27Z"
+          fill="#253d25" fill-opacity=".4"/>
+        <!-- France hint -->
+        <path d="M477,72 L591,85 L745,105 L780,60 L720,20 L560,15 L450,30Z"
+          fill="#2d3d4d" fill-opacity=".35"/>
+        <!-- Sea labels -->
+        <text x="660" y="380" fill="rgba(255,255,255,.12)" font-family="Georgia,serif" font-style="italic" font-size="13">Mar Mediterrâneo</text>
+        <text x="25" y="320" fill="rgba(255,255,255,.1)" font-family="Georgia,serif" font-style="italic" font-size="11" transform="rotate(-90,25,320)">Atlântico</text>
+        <!-- AVE Route: Madri → Zaragoza → Barcelona -->
+        <path d="M351,243 L613,162 L687,179" fill="none" stroke="#c9a96e" stroke-width="2.5" stroke-opacity=".9" marker-end="url(#arrowGold)"/>
+        <!-- Day trip: Madri ↔ Toledo -->
+        <path d="M351,243 Q330,260 335,278" fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="4 4"/>
+        <path d="M335,278 Q340,265 351,243" fill="none" stroke="#c9a96e" stroke-width="1.5" stroke-opacity=".3" stroke-dasharray="4 4"/>
+        <!-- MADRI -->
+        <g filter="url(#glow2)">
+          <circle cx="351" cy="243" r="11" fill="#8b1a1a" fill-opacity=".9" stroke="#c9a96e" stroke-width="2"/>
+          <text x="351" y="247" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff">1</text>
         </g>
-        <text x="368" y="238" class="map-city-label">Madri</text>
-        <text x="368" y="250" class="map-day-label">Dias 1–3</text>
-
-        <!-- 2. Toledo (day trip) -->
-        <g filter="url(#glow)">
-          <circle cx="332" cy="279" r="9" fill="#6b3a1a" fill-opacity=".85" stroke="#c9a554" stroke-width="1.5" stroke-dasharray="3 2"/>
-          <text x="332" y="283" text-anchor="middle" font-family="'Inter',sans-serif" font-size="8" font-weight="700" fill="#fff">2</text>
+        <text x="367" y="238" font-size="11" fill="rgba(255,255,255,.85)" font-family="Inter,sans-serif">Madri</text>
+        <text x="367" y="250" font-size="9" fill="rgba(201,169,110,.8)" font-family="Inter,sans-serif" font-weight="600">Dias 1–3</text>
+        <!-- TOLEDO -->
+        <g filter="url(#glow2)">
+          <circle cx="335" cy="278" r="8" fill="#6b3a1a" fill-opacity=".85" stroke="#c9a96e" stroke-width="1.5" stroke-dasharray="3 2"/>
+          <text x="335" y="282" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#fff">2</text>
         </g>
-        <text x="348" y="275" class="map-city-label" font-size="10">Toledo</text>
-        <text x="348" y="286" class="map-day-label">Day trip</text>
-
-        <!-- 3. Zaragoza -->
-        <g filter="url(#glow)">
-          <circle cx="613" cy="162" r="12" fill="#8b1a1a" fill-opacity=".9" stroke="#c9a554" stroke-width="2"/>
-          <text x="613" y="166" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#fff">3</text>
+        <text x="348" y="274" font-size="10" fill="rgba(255,255,255,.75)" font-family="Inter,sans-serif">Toledo</text>
+        <text x="348" y="285" font-size="9" fill="rgba(201,169,110,.6)" font-family="Inter,sans-serif" font-weight="600">Day trip</text>
+        <!-- ZARAGOZA -->
+        <g filter="url(#glow2)">
+          <circle cx="613" cy="162" r="11" fill="#8b1a1a" fill-opacity=".9" stroke="#c9a96e" stroke-width="2"/>
+          <text x="613" y="166" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff">3</text>
         </g>
-        <text x="630" y="157" class="map-city-label">Zaragoza</text>
-        <text x="630" y="169" class="map-day-label">Dia 4</text>
-
-        <!-- 4. Barcelona -->
-        <g filter="url(#glow)">
-          <circle cx="687" cy="179" r="12" fill="#8b1a1a" fill-opacity=".9" stroke="#c9a554" stroke-width="2"/>
-          <text x="687" y="183" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="700" fill="#fff">4</text>
+        <text x="629" y="157" font-size="11" fill="rgba(255,255,255,.85)" font-family="Inter,sans-serif">Zaragoza</text>
+        <text x="629" y="169" font-size="9" fill="rgba(201,169,110,.8)" font-family="Inter,sans-serif" font-weight="600">Dia 4</text>
+        <!-- BARCELONA -->
+        <g filter="url(#glow2)">
+          <circle cx="687" cy="179" r="11" fill="#8b1a1a" fill-opacity=".9" stroke="#c9a96e" stroke-width="2"/>
+          <text x="687" y="183" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#fff">4</text>
         </g>
-        <text x="696" y="165" class="map-city-label">Barcelona</text>
-        <text x="696" y="177" class="map-day-label">Dias 5–6</text>
-
+        <text x="697" y="165" font-size="11" fill="rgba(255,255,255,.85)" font-family="Inter,sans-serif">Barcelona</text>
+        <text x="697" y="177" font-size="9" fill="rgba(201,169,110,.8)" font-family="Inter,sans-serif" font-weight="600">Dias 5–7</text>
         <!-- Legend -->
-        <rect x="20" y="490" width="240" height="58" rx="8" fill="rgba(0,0,0,.35)" stroke="rgba(201,165,84,.2)" stroke-width="1"/>
-        <line x1="35" y1="510" x2="65" y2="510" stroke="#c9a554" stroke-width="2.5" stroke-dasharray="8 5"/>
-        <text x="75" y="514" class="map-city-label">Rota principal (AVE)</text>
-        <line x1="35" y1="530" x2="65" y2="530" stroke="#c9a554" stroke-width="1.5" stroke-dasharray="4 4"/>
-        <text x="75" y="534" class="map-city-label">Excursão (day trip)</text>
+        <rect x="20" y="488" width="220" height="54" rx="5" fill="rgba(13,27,42,.85)" stroke="rgba(201,169,110,.2)" stroke-width="1"/>
+        <line x1="32" y1="506" x2="58" y2="506" stroke="#c9a96e" stroke-width="2.5"/>
+        <text x="66" y="510" font-size="9" fill="rgba(201,169,110,.7)" font-family="Inter,sans-serif">Rota AVE (trem bala)</text>
+        <line x1="32" y1="524" x2="58" y2="524" stroke="#c9a96e" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <text x="66" y="528" font-size="9" fill="rgba(201,169,110,.7)" font-family="Inter,sans-serif">Excursão day trip</text>
       </svg>
-      <a class="map-btn" href="https://www.google.com/maps/dir/Madrid,+Spain/Toledo,+Spain/Zaragoza,+Spain/Barcelona,+Spain" target="_blank" rel="noopener">
-        <i data-lucide="external-link" width="14" height="14"></i> Abrir no Maps
-      </a>
+      <button class="btn-maps" onclick="window.open('https://www.google.com/maps/dir/Madrid,+Spain/Toledo,+Spain/Zaragoza,+Spain/Barcelona,+Spain','_blank')">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Abrir no Maps
+      </button>
     </div>
-    <a class="maps-link reveal" href="https://www.google.com/maps/dir/Madrid,+Spain/Toledo,+Spain/Zaragoza,+Spain/Barcelona,+Spain" target="_blank" rel="noopener">
-      <i data-lucide="map" width="16" height="16"></i> Abrir Rota Completa no Google Maps
-    </a>
   </div>
 </section>
 
-<!-- ===== ITINERÁRIO ===== -->
+<!-- ITINERÁRIO -->
 <section class="section" id="itinerario">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Dia a dia</div>
-      <h2 class="section-title">Os 4 Atos da Jornada</h2>
-      <div class="section-divider"></div>
-      <p class="itinerario-intro">"De Madri ao Mediterrâneo — sete dias de história, gastronomia e pôr do sol perfeito a dois."</p>
-    </div>
+    <p class="section-eyebrow">4 destinos · 6 noites</p>
+    <h2 class="section-title">Os 4 Atos da <em>Jornada</em></h2>
+    <div class="divider"></div>
+    <p class="section-lead">De Madri ao Mediterrâneo — sete dias de história, gastronomia e pôr do sol perfeito a dois.</p>
+    <div class="dest-grid">
 
-    <!-- MADRI -->
-    <div class="dest-card reveal">
-      <div class="dest-img-wrap">
-        <img src="https://images.unsplash.com/photo-1570698473651-b2de99bae12f?w=800&auto=format&fit=crop&q=80" alt="Madri" loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="dest-img-fallback" style="display:none;background:linear-gradient(135deg,#8b1a1a,#1a0f0a)">
-          <span style="color:var(--accent);font-family:'Playfair Display',serif;font-size:2rem;opacity:.4">Madri</span>
+      <!-- MADRI -->
+      <div class="dest-card">
+        <div class="dest-top">
+          <span class="dest-badge badge-madrid">Comunidade de Madri</span>
+          <span class="dest-dates">Dias 1–3 · 15–18 Nov</span>
         </div>
-        <div class="dest-img-overlay"></div>
+        <h3 class="dest-name">Madri</h3>
+        <p class="dest-dist">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72"/></svg>
+          Chegada · 3 noites · Aeroporto Adolfo Suárez (MAD T1)
+        </p>
+        <p class="dest-desc">Capital da Espanha com arte de classe mundial, gastronomia autêntica e energia noturna única. Chegam de madrugada no dia 15 — o ritmo europeu começa aqui.</p>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><strong>Pontos imperdíveis</strong> <span>— Prado, Reina Sofía (Guernica!), Palácio Real, Plaza Mayor, Retiro, Gran Vía, Malasaña</span></div>
+        </div>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+          <div><strong>Gastronomia</strong> <span>— Bocadillo de calamares (Plaza Mayor), tapas no San Miguel, cocido madrileño no La Bola (desde 1870)</span></div>
+        </div>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <div><strong>Pôr do Sol</strong> <span>— Templo de Debod · Templo egípcio de 2.200 anos com vista para o Palácio Real</span></div>
+        </div>
+        <div class="dest-footer">
+          <div class="clima-pills">
+            <span class="clima-pill">🌥 14°/5°C</span>
+            <span class="clima-pill">🌧 27%</span>
+            <span class="clima-pill">☀ 5,2h</span>
+            <span class="clima-pill">💨 14km/h</span>
+          </div>
+          <button class="btn-mapa" onclick="window.open('https://maps.google.com/?q=Madrid+Spain','_blank')">
+            Ver no Mapa <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="dest-body">
-        <div class="dest-badge"><i data-lucide="calendar" width="12" height="12"></i> 15 – 18 Nov · 3 noites</div>
-        <div class="dest-day">Madri</div>
-        <div class="dest-region">Comunidade de Madri · Espanha</div>
-        <p class="dest-desc">Capital da Espanha e uma das grandes metrópoles europeias, Madri entrega arte de classe mundial, gastronomia autêntica e uma energia noturna única. Chegam de madrugada no dia 15 — o ritmo europeu começa aqui: descansem, e deixem a cidade revelar seu ritmo.</p>
-        <div class="dest-highlights">
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="map-pin" width="15" height="15"></i></div>
-            <div><strong>Pontos obrigatórios</strong><p>Museo del Prado, Reina Sofía (Guernica!), Palácio Real, Plaza Mayor, Parque del Retiro, Gran Vía e o bairro de Malasaña</p></div>
-          </div>
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="utensils" width="15" height="15"></i></div>
-            <div><strong>Gastronomia</strong><p>Bocadillo de calamares na Plaza Mayor, tapas no Mercado de San Miguel, cocido madrileño no La Bola (desde 1870) e vida noturna em La Latina</p></div>
-          </div>
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="sunset" width="15" height="15"></i></div>
-            <div><strong>Pôr do sol</strong><p>Templo de Debod — um templo egípcio de 2.200 anos com vista para o Palácio Real. Chegar 1h antes do pôr do sol para garantir lugar</p></div>
-          </div>
-        </div>
-        <div class="dest-actions">
-          <a class="btn-map" href="https://www.google.com/maps/place/Madrid,+Spain" target="_blank" rel="noopener"><i data-lucide="map-pin" width="13" height="13"></i> Ver no Mapa</a>
-          <a class="btn-map" href="https://www.museodelprado.es" target="_blank" rel="noopener"><i data-lucide="external-link" width="13" height="13"></i> Museo del Prado</a>
-        </div>
-      </div>
-    </div>
 
-    <!-- TOLEDO (day trip) -->
-    <div class="dest-card reverse dest-card-daytrip reveal">
-      <div class="dest-img-wrap">
-        <img src="https://images.unsplash.com/photo-1468412526475-8cc70299f66f?w=800&auto=format&fit=crop&q=80" alt="Toledo" loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="dest-img-fallback" style="display:none;background:linear-gradient(135deg,#6b3a1a,#2c1a0e)">
-          <span style="color:var(--accent);font-family:'Playfair Display',serif;font-size:2rem;opacity:.4">Toledo</span>
+      <!-- TOLEDO (Day Trip) -->
+      <div class="dest-card daytrip">
+        <div class="dest-top">
+          <span class="dest-badge badge-daytrip">Day trip — 33 min de trem</span>
+          <span class="dest-dates">Dia 3 · 17 Nov</span>
         </div>
-        <div class="dest-img-overlay"></div>
+        <h3 class="dest-name">Toledo</h3>
+        <p class="dest-dist">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/></svg>
+          Castilla-La Mancha · Madri Atocha → Toledo · 33 min · Renfe
+        </p>
+        <p class="dest-desc">A "Cidade das Três Culturas" — cristã, judaica e mourisca — labirinto medieval Patrimônio da Humanidade. Trem de manhã, retorno ao fim da tarde.</p>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><strong>Pontos imperdíveis</strong> <span>— Catedral (séc. XIII), Alcázar, Sinagoga del Tránsito, El Greco em Santo Tomé, muralhas medievais</span></div>
+        </div>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+          <div><strong>Gastronomia</strong> <span>— Mazapán de Toledo (desde o séc. XII) e carcamusas — prato típico com vista para a cidade antiga</span></div>
+        </div>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <div><strong>Pôr do Sol</strong> <span>— Mirador del Valle · A cidade inteira iluminada pelo sol dourado da tarde</span></div>
+        </div>
+        <div class="dest-footer">
+          <div class="clima-pills">
+            <span class="clima-pill">🌥 12°/4°C</span>
+            <span class="clima-pill">🌧 40%</span>
+            <span class="clima-pill">☀ 5,3h</span>
+            <span class="clima-pill">💨 11km/h</span>
+          </div>
+          <button class="btn-mapa" onclick="window.open('https://maps.google.com/?q=Toledo+Spain','_blank')">
+            Ver no Mapa <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="dest-body">
-        <div class="dest-badge" style="background:rgba(201,165,84,.06);border-style:dashed"><i data-lucide="train" width="12" height="12"></i> 17 Nov · Excursão de um dia</div>
-        <div class="dest-day">Toledo</div>
-        <div class="dest-region">Castilla-La Mancha · 33 min de Madri (AVE)</div>
-        <p class="dest-desc">A "Cidade das Três Culturas" — cristã, judaica e mourisca — que conviveram por séculos em harmonia. Um labirinto medieval perfeitamente preservado e Patrimônio da Humanidade. Trem saindo de Madrid Atocha pela manhã, retorno ao fim da tarde.</p>
-        <div class="dest-highlights">
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="map-pin" width="15" height="15"></i></div>
-            <div><strong>Pontos obrigatórios</strong><p>Catedral de Toledo (gótica, século XIII), Alcázar, Sinagoga del Tránsito, Iglesia de Santo Tomé com El Greco e as muralhas medievais</p></div>
-          </div>
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="utensils" width="15" height="15"></i></div>
-            <div><strong>Gastronomia</strong><p>Mazapán de Toledo (doce típico desde o séc. XII) e carcamusas — prato típico da cidade. Almoço com vista para a cidade antiga</p></div>
-          </div>
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="sunset" width="15" height="15"></i></div>
-            <div><strong>Pôr do sol</strong><p>Mirador del Valle — a vista panorâmica mais famosa de Toledo. A cidade inteira iluminada pelo sol dourado da tarde é inesquecível</p></div>
-          </div>
-        </div>
-        <div class="dest-actions">
-          <a class="btn-map" href="https://www.google.com/maps/place/Toledo,+Spain" target="_blank" rel="noopener"><i data-lucide="map-pin" width="13" height="13"></i> Ver no Mapa</a>
-          <a class="btn-map" href="https://www.renfe.com" target="_blank" rel="noopener"><i data-lucide="train" width="13" height="13"></i> Trem Renfe</a>
-        </div>
-      </div>
-    </div>
 
-    <!-- ZARAGOZA -->
-    <div class="dest-card reveal">
-      <div class="dest-img-wrap">
-        <img src="https://images.unsplash.com/photo-1663408445669-d5e96e38fdfc?w=800&auto=format&fit=crop&q=80" alt="Zaragoza" loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="dest-img-fallback" style="display:none;background:linear-gradient(135deg,#1a3050,#0d2035)">
-          <span style="color:var(--accent);font-family:'Playfair Display',serif;font-size:2rem;opacity:.4">Zaragoza</span>
+      <!-- ZARAGOZA -->
+      <div class="dest-card">
+        <div class="dest-top">
+          <span class="dest-badge badge-aragon">Aragão</span>
+          <span class="dest-dates">Dia 4 · 18–19 Nov</span>
         </div>
-        <div class="dest-img-overlay"></div>
+        <h3 class="dest-name">Zaragoza</h3>
+        <p class="dest-dist">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/></svg>
+          Madri Atocha → Zaragoza Delicias · AVE · 1h20
+        </p>
+        <p class="dest-desc">A surpresa da rota — literalmente no caminho do AVE entre Madri e Barcelona. A Basílica del Pilar iluminada à beira do Rio Ebro à noite é uma das imagens mais bonitas da Espanha.</p>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><strong>Pontos imperdíveis</strong> <span>— Basílica del Pilar (imperdível à noite), Palácio da Aljafería (UNESCO), Plaza del Pilar, La Seo</span></div>
+        </div>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+          <div><strong>Gastronomia</strong> <span>— El Tubo (bairro dos bares de tapas), migas aragonesas, ternasco assado e montaditos</span></div>
+        </div>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <div><strong>Pôr do Sol</strong> <span>— Puente de Piedra · Basílica del Pilar iluminada refletida no Rio Ebro à noite</span></div>
+        </div>
+        <div class="dest-footer">
+          <div class="clima-pills">
+            <span class="clima-pill">🌥 13°/4°C</span>
+            <span class="clima-pill">🌧 37%</span>
+            <span class="clima-pill">☀ 4,9h</span>
+            <span class="clima-pill">💨 Cierzo 22km/h</span>
+          </div>
+          <button class="btn-mapa" onclick="window.open('https://maps.google.com/?q=Zaragoza+Spain','_blank')">
+            Ver no Mapa <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="dest-body">
-        <div class="dest-badge"><i data-lucide="calendar" width="12" height="12"></i> 18 – 19 Nov · 1 noite</div>
-        <div class="dest-day">Zaragoza</div>
-        <div class="dest-region">Aragão · 1h20 de Madri · 1h40 de Barcelona</div>
-        <p class="dest-desc">A surpresa da rota — Zaragoza fica literalmente no caminho do AVE entre Madri e Barcelona, sem desvios. A Basílica del Pilar iluminada à beira do Rio Ebro à noite é uma das imagens mais bonitas da Espanha, e a cena de tapas é das melhores do país.</p>
-        <div class="dest-highlights">
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="map-pin" width="15" height="15"></i></div>
-            <div><strong>Pontos obrigatórios</strong><p>Basílica de Nuestra Señora del Pilar (imperdível à noite), Palácio da Aljafería (mourisca, Patrimônio UNESCO), Plaza del Pilar e La Seo</p></div>
-          </div>
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="utensils" width="15" height="15"></i></div>
-            <div><strong>Gastronomia</strong><p>El Tubo — o bairro dos bares de tapas. Migas aragonesas, ternasco assado e os famosos "montaditos". Jantar tardio como os espanhóis</p></div>
-          </div>
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="sunset" width="15" height="15"></i></div>
-            <div><strong>Pôr do sol</strong><p>Puente de Piedra sobre o Rio Ebro — com a Basílica del Pilar ao fundo. À noite, a iluminação da basílica refletida no rio é simplesmente mágica</p></div>
-          </div>
-        </div>
-        <div class="dest-actions">
-          <a class="btn-map" href="https://www.google.com/maps/place/Zaragoza,+Spain" target="_blank" rel="noopener"><i data-lucide="map-pin" width="13" height="13"></i> Ver no Mapa</a>
-          <a class="btn-map" href="https://www.zaragoza.es/ciudad/turismo" target="_blank" rel="noopener"><i data-lucide="external-link" width="13" height="13"></i> Turismo Zaragoza</a>
-        </div>
-      </div>
-    </div>
 
-    <!-- BARCELONA -->
-    <div class="dest-card reverse reveal">
-      <div class="dest-img-wrap">
-        <img src="https://images.unsplash.com/photo-1745186487192-09eccb385169?w=800&auto=format&fit=crop&q=80" alt="Barcelona" loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="dest-img-fallback" style="display:none;background:linear-gradient(135deg,#1a3050,#8b1a1a)">
-          <span style="color:var(--accent);font-family:'Playfair Display',serif;font-size:2rem;opacity:.4">Barcelona</span>
+      <!-- BARCELONA -->
+      <div class="dest-card" style="border-color:rgba(139,26,26,.2);background:rgba(139,26,26,.02)">
+        <div class="dest-top">
+          <span class="dest-badge badge-cataluna">Catalunha · 🎂 Aniversário Momo</span>
+          <span class="dest-dates">Dias 5–7 · 19–21 Nov</span>
         </div>
-        <div class="dest-img-overlay"></div>
+        <h3 class="dest-name">Barcelona</h3>
+        <p class="dest-dist">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/></svg>
+          Zaragoza Delicias → Barcelona Sants · AVE · 1h40 · Grande Finale
+        </p>
+        <p class="dest-desc">O grande finale e o palco da celebração do aniversário da Andreza. Capital da Catalunha, Barcelona mistura Gaudí, praias, gastronomia de vanguarda e vida noturna depois da meia-noite.</p>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><strong>Pontos imperdíveis</strong> <span>— Sagrada Família (reservar!), Park Güell (reservar!), Casa Batlló, Bairro Gótico, La Rambla, Boqueria</span></div>
+        </div>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          <div><strong>Jantar de Aniversário</strong> <span>— El Nacional (Gran Vía, 4 restaurantes, ambiente elegante) ou La Mar Salada (frutos do mar com vista para a Barceloneta)</span></div>
+        </div>
+        <div class="dest-detail">
+          <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <div><strong>Pôr do Sol</strong> <span>— Bunkers del Carmel · Vista 360° com a Sagrada Família ao fundo e o mar no horizonte</span></div>
+        </div>
+        <div class="dest-footer">
+          <div class="clima-pills">
+            <span class="clima-pill">🌥 17°/11°C</span>
+            <span class="clima-pill">🌊 18°C</span>
+            <span class="clima-pill">🌧 37%</span>
+            <span class="clima-pill">☀ 4,8h</span>
+          </div>
+          <button class="btn-mapa" onclick="window.open('https://maps.google.com/?q=Barcelona+Spain','_blank')">
+            Ver no Mapa <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="dest-body">
-        <div class="dest-badge"><i data-lucide="calendar" width="12" height="12"></i> 19 – 21 Nov · 2 noites</div>
-        <div class="dest-day">Barcelona</div>
-        <div class="dest-region">Catalunha · Grande Finale</div>
-        <p class="dest-desc">O grande finale da viagem — e o palco da celebração do aniversário da Andreza. Capital da Catalunha, Barcelona mistura Gaudí, praias, gastronomia de vanguarda e uma vida noturna que começa depois da meia-noite. Reservar Sagrada Família e Park Güell com antecedência é obrigatório.</p>
-        <div class="dest-highlights">
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="map-pin" width="15" height="15"></i></div>
-            <div><strong>Pontos obrigatórios</strong><p>Sagrada Família (reservar online!), Park Güell (reservar!), Casa Batlló ou La Pedrera, Bairro Gótico, La Rambla e Mercado de La Boqueria</p></div>
-          </div>
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="utensils" width="15" height="15"></i></div>
-            <div><strong>Gastronomia &amp; Aniversário Momo 🎂</strong><p>Jantar especial no <strong>El Nacional</strong> (Gran Vía, 4 restaurantes sob um teto, ambiente elegante) ou no <strong>La Mar Salada</strong> (frutos do mar com vista para a Barceloneta). Reserva antecipada recomendada</p></div>
-          </div>
-          <div class="dest-highlight">
-            <div class="dest-highlight-icon"><i data-lucide="sunset" width="15" height="15"></i></div>
-            <div><strong>Pôr do sol</strong><p>Bunkers del Carmel — vista panorâmica 360° de Barcelona. O pôr do sol mais bonito da cidade, com Sagrada Família ao fundo e o mar no horizonte</p></div>
-          </div>
-        </div>
-        <div class="dest-actions">
-          <a class="btn-map" href="https://www.google.com/maps/place/Barcelona,+Spain" target="_blank" rel="noopener"><i data-lucide="map-pin" width="13" height="13"></i> Ver no Mapa</a>
-          <a class="btn-map" href="https://sagradafamilia.org" target="_blank" rel="noopener"><i data-lucide="external-link" width="13" height="13"></i> Sagrada Família</a>
-          <a class="btn-map" href="https://parkguell.barcelona" target="_blank" rel="noopener"><i data-lucide="external-link" width="13" height="13"></i> Park Güell</a>
-        </div>
-      </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
-<!-- ===== CLIMA ===== -->
-<section class="section clima-section" id="clima">
+<!-- CLIMA -->
+<section class="section section-alt" id="clima">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Novembro na Espanha</div>
-      <h2 class="section-title">Clima em Cada Destino</h2>
-      <div class="section-divider"></div>
-      <p class="section-intro" style="color:rgba(255,255,255,.55)">Médias históricas dos últimos 10 anos para o período exato da viagem (novembro). Novembro é outono — leve, com dias ensolarados e noites frias. Casaco médio é essencial.</p>
-    </div>
+    <p class="section-eyebrow">Médias históricas 2014–2024</p>
+    <h2 class="section-title">Clima em <em>Novembro</em></h2>
+    <div class="divider"></div>
+    <p class="section-lead">Novembro é outono — leve, com dias ensolarados e noites frias. Casaco impermeável e guarda-chuva compacto são essenciais. Fontes: Open-Meteo, NOAA, AEMET.</p>
     <div class="clima-grid">
-
-      <!-- Madri -->
-      <div class="clima-card reveal">
-        <div class="clima-city">Madri</div>
-        <div class="clima-period">15 – 18 Nov · Comunidade de Madri</div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="thermometer" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Temperatura</div>
-            <div class="clima-info-value">Máx 14°C · Mín 5°C</div>
-            <div class="temp-bar"><div class="temp-bar-fill" style="width:55%"></div></div>
+      <div class="clima-card">
+        <div class="clima-card-head"><h4>Madri</h4><small>15–18 Nov</small></div>
+        <div class="clima-card-body">
+          <div class="clima-temp">14°<small>/ 5°C</small></div>
+          <div class="clima-stats">
+            <div class="cstat"><span class="cstat-val">5,2 h</span><span class="cstat-key">Sol/dia</span></div>
+            <div class="cstat"><span class="cstat-val">27%</span><span class="cstat-key">Chuva</span></div>
+            <div class="cstat"><span class="cstat-val">NO 14</span><span class="cstat-key">Vento km/h</span></div>
+            <div class="cstat"><span class="cstat-val">Outono</span><span class="cstat-key">Estação</span></div>
           </div>
+          <p class="clima-desc">Dias claros e secos são comuns, mas pancadas de chuva aparecem. Casaco impermeável e camadas recomendados.</p>
         </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="droplets" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Probabilidade de chuva</div>
-            <div class="clima-info-value" style="display:flex;align-items:center;gap:.5rem">27% por dia <span class="rain-pill rain-orange">⬤ Alta</span></div>
-          </div>
-        </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="sun" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Horas de sol</div>
-            <div class="clima-info-value">~5,2 h/dia</div>
-          </div>
-        </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="wind" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Vento</div>
-            <div class="clima-info-value">14 km/h · NO</div>
-          </div>
-        </div>
-        <div class="clima-note">Outono madrilenho: dias claros e secos são comuns, mas pancadas de chuva aparecem. Casaco impermeável e camadas recomendados.</div>
       </div>
-
-      <!-- Toledo -->
-      <div class="clima-card reveal">
-        <div class="clima-city">Toledo</div>
-        <div class="clima-period">17 Nov · Day trip · Castilla-La Mancha</div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="thermometer" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Temperatura</div>
-            <div class="clima-info-value">Máx 12°C · Mín 4°C</div>
-            <div class="temp-bar"><div class="temp-bar-fill" style="width:45%"></div></div>
+      <div class="clima-card">
+        <div class="clima-card-head"><h4>Toledo</h4><small>17 Nov · Day trip</small></div>
+        <div class="clima-card-body">
+          <div class="clima-temp">12°<small>/ 4°C</small></div>
+          <div class="clima-stats">
+            <div class="cstat"><span class="cstat-val">5,3 h</span><span class="cstat-key">Sol/dia</span></div>
+            <div class="cstat"><span class="cstat-val">40%</span><span class="cstat-key">Chuva</span></div>
+            <div class="cstat"><span class="cstat-val">NO 11</span><span class="cstat-key">Vento km/h</span></div>
+            <div class="cstat"><span class="cstat-val">Frio</span><span class="cstat-key">Sensação</span></div>
           </div>
+          <p class="clima-desc">Ligeiramente mais frio que Madri. Manhãs podem ser nubladas, tarde tende a abrir. Sapatos fechados e casaco robusto.</p>
         </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="droplets" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Probabilidade de chuva</div>
-            <div class="clima-info-value" style="display:flex;align-items:center;gap:.5rem">40% por dia <span class="rain-pill rain-orange">⬤ Alta</span></div>
-          </div>
-        </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="sun" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Horas de sol</div>
-            <div class="clima-info-value">~5,3 h/dia</div>
-          </div>
-        </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="wind" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Vento</div>
-            <div class="clima-info-value">11 km/h · NO</div>
-          </div>
-        </div>
-        <div class="clima-note">Clima similar a Madri, ligeiramente mais frio. Manhãs podem ser nubladas, mas a tarde tende a abrir. Leve casaco robusto e sapatos fechados.</div>
       </div>
-
-      <!-- Zaragoza -->
-      <div class="clima-card reveal">
-        <div class="clima-city">Zaragoza</div>
-        <div class="clima-period">18 – 19 Nov · Aragão</div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="thermometer" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Temperatura</div>
-            <div class="clima-info-value">Máx 13°C · Mín 4°C</div>
-            <div class="temp-bar"><div class="temp-bar-fill" style="width:50%"></div></div>
+      <div class="clima-card">
+        <div class="clima-card-head"><h4>Zaragoza</h4><small>18–19 Nov</small></div>
+        <div class="clima-card-body">
+          <div class="clima-temp">13°<small>/ 4°C</small></div>
+          <div class="clima-stats">
+            <div class="cstat"><span class="cstat-val">4,9 h</span><span class="cstat-key">Sol/dia</span></div>
+            <div class="cstat"><span class="cstat-val">37%</span><span class="cstat-key">Chuva</span></div>
+            <div class="cstat"><span class="cstat-val">NO 22</span><span class="cstat-key">Vento (Cierzo)</span></div>
+            <div class="cstat"><span class="cstat-val">Intenso</span><span class="cstat-key">Vento frio</span></div>
           </div>
+          <p class="clima-desc">O vento Cierzo é o fenômeno local — frio e seco, vindo do norte. Sensação térmica cai bem abaixo do previsto. Cachecol e gorro são importantes.</p>
         </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="droplets" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Probabilidade de chuva</div>
-            <div class="clima-info-value" style="display:flex;align-items:center;gap:.5rem">37% por dia <span class="rain-pill rain-orange">⬤ Alta</span></div>
-          </div>
-        </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="sun" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Horas de sol</div>
-            <div class="clima-info-value">~4,9 h/dia</div>
-          </div>
-        </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="wind" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Vento (Cierzo)</div>
-            <div class="clima-info-value">22 km/h · NO — intenso!</div>
-          </div>
-        </div>
-        <div class="clima-note">O vento Cierzo é o fenômeno local — frio e seco, vindo do norte. Pode fazer a sensação térmica cair bem abaixo do previsto. Cachecol e gorro são importantes.</div>
       </div>
-
-      <!-- Barcelona -->
-      <div class="clima-card reveal">
-        <div class="clima-city">Barcelona</div>
-        <div class="clima-period">19 – 21 Nov · Catalunha</div>
-        <div class="clima-sea"><i data-lucide="waves" width="13" height="13"></i> Mar Mediterrâneo: 18°C</div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="thermometer" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Temperatura</div>
-            <div class="clima-info-value">Máx 17°C · Mín 11°C</div>
-            <div class="temp-bar"><div class="temp-bar-fill" style="width:65%"></div></div>
+      <div class="clima-card">
+        <div class="clima-card-head"><h4>Barcelona</h4><small>19–21 Nov</small></div>
+        <div class="clima-card-body">
+          <div class="clima-temp">17°<small>/ 11°C</small></div>
+          <div class="clima-stats">
+            <div class="cstat"><span class="cstat-val">18°C</span><span class="cstat-key">Mar Mediterrâneo</span></div>
+            <div class="cstat"><span class="cstat-val">37%</span><span class="cstat-key">Chuva</span></div>
+            <div class="cstat"><span class="cstat-val">E 15</span><span class="cstat-key">Vento km/h</span></div>
+            <div class="cstat"><span class="cstat-val">4,8 h</span><span class="cstat-key">Sol/dia</span></div>
           </div>
+          <p class="clima-desc">Mais amena graças ao mar. Novembro pode trazer chuvas intensas (gota fría), mas os intervalos de sol são longos. A mais confortável para caminhar.</p>
         </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="droplets" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Probabilidade de chuva</div>
-            <div class="clima-info-value" style="display:flex;align-items:center;gap:.5rem">37% por dia <span class="rain-pill rain-orange">⬤ Alta</span></div>
-          </div>
-        </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="sun" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Horas de sol</div>
-            <div class="clima-info-value">~4,8 h/dia</div>
-          </div>
-        </div>
-        <div class="clima-row">
-          <div class="clima-icon"><i data-lucide="wind" width="18" height="18"></i></div>
-          <div class="clima-info">
-            <div class="clima-info-label">Vento</div>
-            <div class="clima-info-value">15 km/h · E (marítimo)</div>
-          </div>
-        </div>
-        <div class="clima-note">Mais amena que o interior graças ao mar. Novembro pode trazer chuvas intensas (gota fría), mas os intervalos de sol são longos. A mais confortável da rota para caminhar.</div>
       </div>
     </div>
-
-    <div class="clima-footer reveal">
-      ⚠️ Novembro na Espanha exige guarda-chuva compacto, casaco impermeável e camadas. As probabilidades de chuva são para o mês inteiro — vários dias podem ser completamente secos.<br>
-      📊 Fonte: Médias históricas 2014–2024 — Open-Meteo, NOAA, Agencia Estatal de Meteorología (AEMET) e Weather-and-Climate.com
+    <div class="clima-footer">
+      <div class="csum"><span class="csum-val">14–17°C</span><span class="csum-key">Máxima média na rota</span></div>
+      <div class="csum"><span class="csum-val">35%</span><span class="csum-key">Prob. média de chuva</span></div>
+      <div class="csum"><span class="csum-val">5,1 h</span><span class="csum-key">Sol por dia</span></div>
+      <div class="csum"><span class="csum-val">Casaco</span><span class="csum-key">Item essencial</span></div>
     </div>
   </div>
 </section>
 
-<!-- ===== RESERVAS ===== -->
-<section class="section reservas-section" id="reservas">
+<!-- RESERVAS -->
+<section class="section" id="reservas">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Status das reservas</div>
-      <h2 class="section-title">Central de Reservas</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="reservas-grid">
-
-      <!-- VOOS -->
+    <p class="section-eyebrow">Status das reservas</p>
+    <h2 class="section-title">Central de <em>Reservas</em></h2>
+    <div class="divider"></div>
+    <p class="section-lead">Links rápidos para todos os voos, trens, hotéis e restaurantes da viagem.</p>
+    <div class="reservas-cols">
       <div>
-        <h3><i data-lucide="plane" width="15" height="15"></i> Voos</h3>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">UX58 — GRU → MAD</div><div class="reserva-sub">Air Europa · Ida</div></div>
-            <span class="badge badge-ok"><i data-lucide="check-circle" width="11" height="11"></i> Confirmado</span>
+        <h3>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          Voos &amp; Trens
+        </h3>
+        <div class="reserva-list">
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>UX58 — GRU → MAD</h4>
+              <p>Air Europa · 14 Nov 2026 · 15:05 → 05:15 (+1)</p>
+              <p class="price price-ok">✓ Confirmado · Localizador: UX/9VG5DB</p>
+            </div>
+            <span class="badge-ok">Confirmado</span>
           </div>
-          <div class="reserva-details">
-            <strong>14 Nov 2026</strong> · 15:05 → <strong>15 Nov</strong> 05:15<br>
-            Terminal 2 GRU → Terminal 1 MAD<br>
-            Localizador: <strong>UX/9VG5DB</strong><br>
-            Bagagem: 1 peça 23kg (sem custo)
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>UX7708 — BCN → MAD</h4>
+              <p>Air Europa · 21 Nov · 20:30 → 22:00 · Conexão</p>
+              <p class="price price-ok">✓ Confirmado</p>
+            </div>
+            <span class="badge-ok">Confirmado</span>
           </div>
-        </div>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">UX7708 — BCN → MAD</div><div class="reserva-sub">Air Europa · Conexão</div></div>
-            <span class="badge badge-ok"><i data-lucide="check-circle" width="11" height="11"></i> Confirmado</span>
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>UX57 — MAD → GRU</h4>
+              <p>Air Europa · 21 Nov · 23:55 → 06:30 (+1)</p>
+              <p class="price price-ok">✓ Confirmado · Bilhete: 996 2427341233</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://www.aireuropa.com','_blank')">Gerir</button>
           </div>
-          <div class="reserva-details">
-            <strong>21 Nov 2026</strong> · 20:30 → 22:00<br>
-            Terminal 1 BCN → Terminal 2 MAD<br>
-            Duração: 1h30
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>MAD → Toledo (R/T)</h4>
+              <p>Renfe · 17 Nov · 33 min · ~€6,50/pessoa</p>
+              <p class="price price-pending">⏳ Pendente — comprar em renfe.com</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://www.renfe.com','_blank')">Comprar</button>
           </div>
-        </div>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">UX57 — MAD → GRU</div><div class="reserva-sub">Air Europa · Volta</div></div>
-            <span class="badge badge-ok"><i data-lucide="check-circle" width="11" height="11"></i> Confirmado</span>
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>MAD → Zaragoza</h4>
+              <p>AVE · 18 Nov · 1h20 · ~€25–35/pessoa</p>
+              <p class="price price-pending">⏳ Pendente — comprar com antecedência</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://www.renfe.com','_blank')">Comprar</button>
           </div>
-          <div class="reserva-details">
-            <strong>21 Nov 2026</strong> · 23:55 → <strong>22 Nov</strong> 06:30<br>
-            Terminal 1 MAD → Terminal 2 GRU<br>
-            Duração: 10h35
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>Zaragoza → Barcelona</h4>
+              <p>AVE · 19 Nov · 1h40 · ~€25–35/pessoa</p>
+              <p class="price price-pending">⏳ Pendente</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://www.renfe.com','_blank')">Comprar</button>
           </div>
-          <a class="reserva-link" href="https://www.aireuropa.com" target="_blank" rel="noopener"><i data-lucide="external-link" width="12" height="12"></i> Gerir reserva Air Europa</a>
         </div>
       </div>
-
-      <!-- TRENS -->
       <div>
-        <h3><i data-lucide="train" width="15" height="15"></i> Trens AVE</h3>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">MAD → Toledo R/T</div><div class="reserva-sub">Renfe · 33 min · Excursão</div></div>
-            <span class="badge badge-pending"><i data-lucide="clock" width="11" height="11"></i> Pendente</span>
+        <h3>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          Hotéis &amp; Jantar Especial
+        </h3>
+        <div class="reserva-list">
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>Hotel — Madri</h4>
+              <p>15–18 Nov · 3 noites · NH Collection Gran Vía ★★★★</p>
+              <p class="price price-open">~€110/noite · ou Vincci Centrum ~€90/noite</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://www.booking.com/search.html?ss=Madrid','_blank')">Reservar</button>
           </div>
-          <div class="reserva-details">
-            <strong>17 Nov 2026</strong> · Madrid Atocha → Toledo<br>
-            ~€6,50/pessoa · ida e volta ~€13/pessoa<br>
-            Recomendação: partir às 09h, voltar ~18h
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>Hotel — Zaragoza</h4>
+              <p>18–19 Nov · 1 noite · Hotel Palafox ★★★★</p>
+              <p class="price price-open">~€85/noite · centro histórico, perto do Pilar</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://www.booking.com/search.html?ss=Zaragoza','_blank')">Reservar</button>
           </div>
-          <a class="reserva-link" href="https://www.renfe.com" target="_blank" rel="noopener"><i data-lucide="external-link" width="12" height="12"></i> Comprar na Renfe</a>
-        </div>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">MAD → Zaragoza</div><div class="reserva-sub">Renfe AVE · 1h20</div></div>
-            <span class="badge badge-pending"><i data-lucide="clock" width="11" height="11"></i> Pendente</span>
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>Hotel — Barcelona</h4>
+              <p>19–21 Nov · 2 noites · Praktik Rambla ★★★★</p>
+              <p class="price price-open">~€130/noite · ou Yurbban Trafalgar ★★★★ ~€120/noite</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://www.booking.com/search.html?ss=Barcelona','_blank')">Reservar</button>
           </div>
-          <div class="reserva-details">
-            <strong>18 Nov 2026</strong> · Atocha → Zaragoza Delicias<br>
-            ~€25–35/pessoa · reservar com antecedência
+          <div class="reserva-item" style="border-color:rgba(139,26,26,.2);background:rgba(139,26,26,.02)">
+            <div class="reserva-info">
+              <h4>🎂 Jantar Aniversário Momo</h4>
+              <p>Barcelona · El Nacional (Gran Vía) — 4 restaurantes elegantes</p>
+              <p class="price" style="color:#8b1a1a">Ou La Mar Salada — frutos do mar + vista Barceloneta</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://maps.google.com/?q=El+Nacional+Barcelona','_blank')">Ver</button>
           </div>
-          <a class="reserva-link" href="https://www.renfe.com" target="_blank" rel="noopener"><i data-lucide="external-link" width="12" height="12"></i> Comprar na Renfe</a>
-        </div>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">Zaragoza → Barcelona</div><div class="reserva-sub">Renfe AVE · 1h40</div></div>
-            <span class="badge badge-pending"><i data-lucide="clock" width="11" height="11"></i> Pendente</span>
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>Sagrada Família</h4>
+              <p>Reserva online obrigatória — sagradafamilia.org</p>
+              <p class="price price-open">~€26/pessoa · reservar com semanas de antecedência</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://sagradafamilia.org','_blank')">Reservar</button>
           </div>
-          <div class="reserva-details">
-            <strong>19 Nov 2026</strong> · Zaragoza Delicias → Barcelona Sants<br>
-            ~€25–35/pessoa · reservar com antecedência
+          <div class="reserva-item">
+            <div class="reserva-info">
+              <h4>Park Güell</h4>
+              <p>Reserva online obrigatória — parkguell.barcelona</p>
+              <p class="price price-open">~€10/pessoa · horário com reserva prévia</p>
+            </div>
+            <button class="btn-reserva" onclick="window.open('https://parkguell.barcelona','_blank')">Reservar</button>
           </div>
-          <a class="reserva-link" href="https://www.renfe.com" target="_blank" rel="noopener"><i data-lucide="external-link" width="12" height="12"></i> Comprar na Renfe</a>
         </div>
       </div>
-
-      <!-- HOTÉIS -->
-      <div>
-        <h3><i data-lucide="building" width="15" height="15"></i> Hospedagem</h3>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">Hotel — Madri</div><div class="reserva-sub">15–18 Nov · 3 noites</div></div>
-            <span class="badge badge-open"><i data-lucide="circle" width="11" height="11"></i> Em aberto</span>
-          </div>
-          <div class="reserva-details">
-            Indicação: <strong>NH Collection Gran Vía ★★★★</strong><br>
-            Booking 8.7 · +3.000 avaliações · ~€110/noite<br>
-            Central, a 5 min a pé do Prado<br>
-            ou <strong>Hotel Vincci Centrum</strong> ~€90/noite
-          </div>
-          <a class="reserva-link" href="https://www.booking.com/search.html?ss=Madrid" target="_blank" rel="noopener"><i data-lucide="external-link" width="12" height="12"></i> Buscar no Booking</a>
-        </div>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">Hotel — Zaragoza</div><div class="reserva-sub">18–19 Nov · 1 noite</div></div>
-            <span class="badge badge-open"><i data-lucide="circle" width="11" height="11"></i> Em aberto</span>
-          </div>
-          <div class="reserva-details">
-            Indicação: <strong>Hotel Palafox ★★★★</strong><br>
-            Booking 8.6 · +1.500 avaliações · ~€85/noite<br>
-            Centro histórico, perto do Pilar
-          </div>
-          <a class="reserva-link" href="https://www.booking.com/search.html?ss=Zaragoza" target="_blank" rel="noopener"><i data-lucide="external-link" width="12" height="12"></i> Buscar no Booking</a>
-        </div>
-        <div class="reserva-card reveal">
-          <div class="reserva-header">
-            <div><div class="reserva-title">Hotel — Barcelona</div><div class="reserva-sub">19–21 Nov · 2 noites</div></div>
-            <span class="badge badge-open"><i data-lucide="circle" width="11" height="11"></i> Em aberto</span>
-          </div>
-          <div class="reserva-details">
-            Indicação: <strong>Hotel Praktik Rambla ★★★★</strong><br>
-            Booking 8.8 · +2.500 avaliações · ~€130/noite<br>
-            ou <strong>Hotel Yurbban Trafalgar</strong> Booking 9.0 · ~€120/noite
-          </div>
-          <a class="reserva-link" href="https://www.booking.com/search.html?ss=Barcelona" target="_blank" rel="noopener"><i data-lucide="external-link" width="12" height="12"></i> Buscar no Booking</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ===== PAINEL OPERACIONAL ===== -->
-<section class="section operacional-section" id="operacional">
+<!-- PAINEL OPERACIONAL -->
+<section class="section section-dark" id="painel">
   <div class="section-inner">
-    <div class="op-header reveal">
-      <div class="section-label">Gestão da viagem</div>
-      <h2 class="section-title">Painel Operacional</h2>
-      <div class="section-divider"></div>
-      <p class="section-intro">Todos os dados da viagem em um só lugar. As informações são salvas automaticamente no navegador.</p>
-    </div>
-
-    <div class="op-tabs">
-      <button class="op-tab active" onclick="switchTab('custos')"><i data-lucide="dollar-sign" width="14" height="14" style="display:inline;vertical-align:-3px;margin-right:4px"></i>Custos</button>
-      <button class="op-tab" onclick="switchTab('hoteis')"><i data-lucide="building" width="14" height="14" style="display:inline;vertical-align:-3px;margin-right:4px"></i>Hotéis</button>
-      <button class="op-tab" onclick="switchTab('voos')"><i data-lucide="plane" width="14" height="14" style="display:inline;vertical-align:-3px;margin-right:4px"></i>Voos</button>
-      <button class="op-tab" onclick="switchTab('trens')"><i data-lucide="train" width="14" height="14" style="display:inline;vertical-align:-3px;margin-right:4px"></i>Trens</button>
-      <button class="op-tab" onclick="switchTab('malas')"><i data-lucide="package" width="14" height="14" style="display:inline;vertical-align:-3px;margin-right:4px"></i>Malas</button>
-      <button class="op-tab" onclick="switchTab('checklist')"><i data-lucide="check-square" width="14" height="14" style="display:inline;vertical-align:-3px;margin-right:4px"></i>Checklist</button>
-    </div>
-
-    <!-- CUSTOS -->
-    <div class="op-panel active" id="panel-custos">
-      <table class="cost-table">
-        <thead>
-          <tr><th>Categoria</th><th>Por Pessoa</th><th>Casal (Total)</th><th>Status</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>✈️ Voos (Air Europa)</td><td>BRL 4.567,90</td><td>BRL 9.135,80</td><td><span class="badge badge-ok">Confirmado</span></td></tr>
-          <tr><td>🏨 Hospedagem (6 noites ÷ 2)</td><td>€ 360,00</td><td>€ 720,00</td><td><span class="badge badge-pending">Pendente</span></td></tr>
-          <tr><td>🍽️ Alimentação (€20/dia × 7)</td><td>€ 140,00</td><td>€ 280,00</td><td><span class="badge badge-open">Estimado</span></td></tr>
-          <tr><td>🚄 Trens (Toledo + ZGZ + BCN)</td><td>€ 73,00</td><td>€ 146,00</td><td><span class="badge badge-pending">Pendente</span></td></tr>
-          <tr><td>🎟️ Passeios &amp; Ingressos</td><td>€ 80,00</td><td>€ 160,00</td><td><span class="badge badge-open">Estimado</span></td></tr>
-          <tr><td>🛡️ Seguro Viagem</td><td>€ 50,00</td><td>€ 100,00</td><td><span class="badge badge-pending">Pendente</span></td></tr>
-          <tr><td>💶 Outros / Imprevistos</td><td>€ 50,00</td><td>€ 100,00</td><td><span class="badge badge-open">Estimado</span></td></tr>
-          <tr class="cost-total"><td>TOTAL ESTIMADO (EUR)</td><td>€ 753,00</td><td>€ 1.506,00</td><td>—</td></tr>
-          <tr class="cost-total"><td>TOTAL GERAL (incl. voos BRL)</td><td colspan="2">BRL 4.567,90 + € 753/pessoa</td><td>—</td></tr>
-        </tbody>
-      </table>
-      <p style="font-size:.78rem;color:var(--text-muted);margin-top:1rem">* Cotação de referência: 1 EUR ≈ R$ 6,20 · Hospedagem estimada em €120/noite. Valores de passeios: Sagrada Família €26, Park Güell €10, Prado €15, Reina Sofía €12, Aljafería €5.</p>
-    </div>
-
-    <!-- HOTÉIS -->
-    <div class="op-panel" id="panel-hoteis">
-      <div style="overflow-x:auto">
-        <table class="hotel-table">
-          <thead>
-            <tr><th>Destino</th><th>Hotel Sugerido</th><th>Check-in</th><th>Check-out</th><th>Noites</th><th>Plataforma</th><th>Status</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Madri</td><td>NH Collection Gran Vía ★★★★ <br><span style="font-size:.75rem;color:var(--text-muted)">ou Vincci Centrum / Airbnb Malasaña</span></td><td>15 Nov</td><td>18 Nov</td><td>3</td><td>Booking / Airbnb</td><td><span class="badge badge-open">Em aberto</span></td></tr>
-            <tr><td>Zaragoza</td><td>Hotel Palafox ★★★★<br><span style="font-size:.75rem;color:var(--text-muted)">ou Hotel Tibur ★★★★</span></td><td>18 Nov</td><td>19 Nov</td><td>1</td><td>Booking</td><td><span class="badge badge-open">Em aberto</span></td></tr>
-            <tr><td>Barcelona</td><td>Praktik Rambla ★★★★<br><span style="font-size:.75rem;color:var(--text-muted)">ou Yurbban Trafalgar ★★★★ / Airbnb El Born</span></td><td>19 Nov</td><td>21 Nov</td><td>2</td><td>Booking / Airbnb</td><td><span class="badge badge-open">Em aberto</span></td></tr>
-          </tbody>
-        </table>
+    <p class="section-eyebrow">Gestão da viagem</p>
+    <h2 class="section-title">Painel <em>Operacional</em></h2>
+    <div class="divider"></div>
+    <p class="section-lead">Dados logísticos, checklist e lista de malas — tudo em um só lugar. As informações são salvas automaticamente no navegador.</p>
+    <div class="panel-box">
+      <div class="panel-tabs">
+        <button class="ptab active" onclick="switchPanel('viajantes',this)">Viajantes</button>
+        <button class="ptab" onclick="switchPanel('voos',this)">Voos</button>
+        <button class="ptab" onclick="switchPanel('trens',this)">Trens</button>
+        <button class="ptab" onclick="switchPanel('hospedagens',this)">Hospedagens</button>
+        <button class="ptab" onclick="switchPanel('checklist',this)">Checklist</button>
+        <button class="ptab" onclick="switchPanel('malas',this)">Malas</button>
+        <button class="ptab" onclick="switchPanel('custos',this)">Custos</button>
       </div>
-      <p style="font-size:.78rem;color:var(--text-muted);margin-top:1rem">Critérios: bem localizado, nota ≥8.5 no Booking com mínimo 1.000 avaliações, custo-benefício alto. Reservar com pelo menos 60 dias de antecedência para melhores preços.</p>
-    </div>
+      <div class="panel-content">
 
-    <!-- VOOS -->
-    <div class="op-panel" id="panel-voos">
-      <div style="overflow-x:auto">
-        <table class="hotel-table">
-          <thead><tr><th>Trecho</th><th>Voo</th><th>Data</th><th>Saída</th><th>Chegada</th><th>Terminal</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>GRU → MAD</td><td>UX58</td><td>14 Nov 2026</td><td>15:05</td><td>05:15 (+1)</td><td>GRU T2 → MAD T1</td><td><span class="badge badge-ok">Confirmado</span></td></tr>
-            <tr><td>BCN → MAD</td><td>UX7708</td><td>21 Nov 2026</td><td>20:30</td><td>22:00</td><td>BCN T1 → MAD T2</td><td><span class="badge badge-ok">Confirmado</span></td></tr>
-            <tr><td>MAD → GRU</td><td>UX57</td><td>21 Nov 2026</td><td>23:55</td><td>06:30 (+1)</td><td>MAD T1 → GRU T2</td><td><span class="badge badge-ok">Confirmado</span></td></tr>
-          </tbody>
-        </table>
+        <!-- VIAJANTES -->
+        <div class="ppane active" id="ppane-viajantes">
+          <div class="traveler-grid">
+            <div class="traveler-card">
+              <div class="traveler-num">Viajante 01</div>
+              <h4>Marcos Toledo Jr</h4>
+              <p class="traveler-field"><strong>WhatsApp:</strong> +55 (13) 99111-0894</p>
+              <p class="traveler-field"><strong>E-mail:</strong> marcostoledojr@gmail.com</p>
+            </div>
+            <div class="traveler-card">
+              <div class="traveler-num">Viajante 02 · 🎂 Aniversariante</div>
+              <h4>Andreza Fávero (Momo)</h4>
+              <p class="traveler-field"><strong>WhatsApp:</strong> +55 (11) 98904-2858</p>
+              <p class="traveler-field"><strong>E-mail:</strong> andreza.favero@oficina1.com.br</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VOOS -->
+        <div class="ppane" id="ppane-voos">
+          <table class="panel-table">
+            <thead><tr><th>Trecho</th><th>Voo</th><th>Data</th><th>Saída</th><th>Chegada</th><th>Terminal</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>GRU → MAD</td><td>UX58</td><td>14 Nov 2026</td><td>15:05</td><td>05:15 (+1)</td><td>GRU T2 → MAD T1</td><td class="td-ok">✓ Confirmado</td></tr>
+              <tr><td>BCN → MAD</td><td>UX7708</td><td>21 Nov 2026</td><td>20:30</td><td>22:00</td><td>BCN T1 → MAD T2</td><td class="td-ok">✓ Confirmado</td></tr>
+              <tr><td>MAD → GRU</td><td>UX57</td><td>21 Nov 2026</td><td>23:55</td><td>06:30 (+1)</td><td>MAD T1 → GRU T2</td><td class="td-ok">✓ Confirmado</td></tr>
+            </tbody>
+          </table>
+          <div class="info-grid" style="margin-top:1.5rem">
+            <div class="info-item"><span class="key">Companhia</span><span class="val">Air Europa</span></div>
+            <div class="info-item"><span class="key">Localizador</span><span class="val">UX/9VG5DB</span></div>
+            <div class="info-item"><span class="key">Bilhete</span><span class="val">996 2427341233</span></div>
+            <div class="info-item"><span class="key">Valor por pessoa</span><span class="val">BRL 4.567,90</span></div>
+            <div class="info-item"><span class="key">Bagagem</span><span class="val">1 peça 23 kg</span><span class="sub">sem custo adicional</span></div>
+            <div class="info-item"><span class="key">Check-in online</span><span class="val">48h antes de cada voo</span><span class="sub">aireuropa.com</span></div>
+          </div>
+        </div>
+
+        <!-- TRENS -->
+        <div class="ppane" id="ppane-trens">
+          <table class="panel-table">
+            <thead><tr><th>Trecho</th><th>Tipo</th><th>Data</th><th>Duração</th><th>Preço/pessoa</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>MAD Atocha → Toledo</td><td>Renfe Regional</td><td>17 Nov</td><td>33 min</td><td>~€6,50</td><td class="td-pending">⏳ Pendente</td></tr>
+              <tr><td>Toledo → MAD Atocha</td><td>Renfe Regional</td><td>17 Nov</td><td>33 min</td><td>~€6,50</td><td class="td-pending">⏳ Pendente</td></tr>
+              <tr><td>MAD Atocha → Zaragoza Delicias</td><td>AVE alta velocidade</td><td>18 Nov</td><td>1h20</td><td>~€25–35</td><td class="td-pending">⏳ Pendente</td></tr>
+              <tr><td>Zaragoza Delicias → BCN Sants</td><td>AVE alta velocidade</td><td>19 Nov</td><td>1h40</td><td>~€25–35</td><td class="td-pending">⏳ Pendente</td></tr>
+            </tbody>
+          </table>
+          <div class="info-item" style="margin-top:1.2rem;background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.2);border-radius:8px;padding:.9rem 1rem">
+            <span class="key">💡 Dica</span>
+            <span class="val" style="font-size:.82rem;color:rgba(255,255,255,.65)">Comprar passagens AVE com 2–3 meses de antecedência garante preços bem menores. Comprar em <a href="https://www.renfe.com" target="_blank" style="color:var(--accent)">renfe.com</a></span>
+          </div>
+        </div>
+
+        <!-- HOSPEDAGENS -->
+        <div class="ppane" id="ppane-hospedagens">
+          <table class="panel-table">
+            <thead><tr><th>Destino</th><th>Hotel</th><th>Check-in</th><th>Check-out</th><th>Noites</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Madri</td><td>NH Collection Gran Vía ★★★★<br><small style="color:rgba(255,255,255,.4)">~€110/noite · ou Vincci Centrum ~€90</small></td><td>15 Nov</td><td>18 Nov</td><td>3</td><td class="td-open">Em aberto</td></tr>
+              <tr><td>Zaragoza</td><td>Hotel Palafox ★★★★<br><small style="color:rgba(255,255,255,.4)">~€85/noite · perto do Pilar</small></td><td>18 Nov</td><td>19 Nov</td><td>1</td><td class="td-open">Em aberto</td></tr>
+              <tr><td>Barcelona</td><td>Praktik Rambla ★★★★<br><small style="color:rgba(255,255,255,.4)">~€130/noite · ou Yurbban Trafalgar ~€120</small></td><td>19 Nov</td><td>21 Nov</td><td>2</td><td class="td-open">Em aberto</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CHECKLIST -->
+        <div class="ppane" id="ppane-checklist">
+          <div class="checklist-group">
+            <h4>Reservas &amp; Documentos</h4>
+            <div id="clist-docs"></div>
+          </div>
+          <div class="checklist-group">
+            <h4>Preparativos</h4>
+            <div id="clist-prep"></div>
+          </div>
+        </div>
+
+        <!-- MALAS -->
+        <div class="ppane" id="ppane-malas">
+          <div class="packing-grid-inner">
+            <div class="pcat">
+              <h4>👕 Roupas</h4>
+              <div id="pack-roupas"></div>
+            </div>
+            <div class="pcat">
+              <h4>📄 Documentos</h4>
+              <div id="pack-docs"></div>
+            </div>
+            <div class="pcat">
+              <h4>📱 Eletrônicos</h4>
+              <div id="pack-eletro"></div>
+            </div>
+            <div class="pcat">
+              <h4>💊 Farmácia</h4>
+              <div id="pack-farm"></div>
+            </div>
+            <div class="pcat">
+              <h4>🎒 Outros</h4>
+              <div id="pack-outros"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CUSTOS -->
+        <div class="ppane" id="ppane-custos">
+          <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem">Estimativas por pessoa. Cotação de referência: 1 EUR ≈ R$ 6,20.</p>
+          <table class="panel-table">
+            <thead><tr><th>Categoria</th><th>Por pessoa</th><th>Casal</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>✈ Voos (Air Europa)</td><td>R$ 4.567,90</td><td>R$ 9.135,80</td><td class="td-ok">✓ Confirmado</td></tr>
+              <tr><td>🏨 Hospedagem (6 noites ÷ 2)</td><td>~€360</td><td>~€720</td><td class="td-pending">Pendente</td></tr>
+              <tr><td>🍽 Alimentação (€20/dia × 7)</td><td>~€140</td><td>~€280</td><td class="td-open">Estimado</td></tr>
+              <tr><td>🚄 Trens (Toledo + ZGZ + BCN)</td><td>~€73</td><td>~€146</td><td class="td-pending">Pendente</td></tr>
+              <tr><td>🎟 Passeios &amp; Ingressos</td><td>~€80</td><td>~€160</td><td class="td-open">Estimado</td></tr>
+              <tr><td>🛡 Seguro Viagem</td><td>~€50</td><td>~€100</td><td class="td-pending">Pendente</td></tr>
+              <tr><td>💶 Outros / Imprevistos</td><td>~€50</td><td>~€100</td><td class="td-open">Estimado</td></tr>
+              <tr class="total"><td>TOTAL EUR / PESSOA</td><td>~€753</td><td>~€1.506</td><td>—</td></tr>
+              <tr class="total"><td>TOTAL GERAL (voos + EUR)</td><td colspan="3">R$ 4.567,90 + €753 por pessoa</td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:.72rem;color:rgba(255,255,255,.3);margin-top:1rem">* Ingressos estimados: Sagrada Família €26 · Park Güell €10 · Prado €15 · Reina Sofía €12 · Aljafería €5</p>
+        </div>
+
       </div>
-      <p style="font-size:.78rem;color:var(--text-muted);margin-top:1rem">Companhia: Air Europa · Localizador: <strong>UX/9VG5DB</strong> · Bilhete: 996 2427341233 · Valor: BRL 4.567,90/pessoa<br>⚠️ Check-in online disponível 48h antes de cada voo em aireuropa.com</p>
-    </div>
-
-    <!-- TRENS -->
-    <div class="op-panel" id="panel-trens">
-      <div style="overflow-x:auto">
-        <table class="hotel-table">
-          <thead><tr><th>Trecho</th><th>Tipo</th><th>Data</th><th>Duração</th><th>Preço Est./pessoa</th><th>Comprar em</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>MAD Atocha → Toledo</td><td>Renfe Regional</td><td>17 Nov</td><td>33 min</td><td>~€6,50</td><td>renfe.com</td><td><span class="badge badge-pending">Pendente</span></td></tr>
-            <tr><td>Toledo → MAD Atocha</td><td>Renfe Regional</td><td>17 Nov</td><td>33 min</td><td>~€6,50</td><td>renfe.com</td><td><span class="badge badge-pending">Pendente</span></td></tr>
-            <tr><td>MAD Atocha → Zaragoza Delicias</td><td>AVE (alta velocidade)</td><td>18 Nov</td><td>1h20</td><td>~€25–35</td><td>renfe.com</td><td><span class="badge badge-pending">Pendente</span></td></tr>
-            <tr><td>Zaragoza Delicias → BCN Sants</td><td>AVE (alta velocidade)</td><td>19 Nov</td><td>1h40</td><td>~€25–35</td><td>renfe.com</td><td><span class="badge badge-pending">Pendente</span></td></tr>
-          </tbody>
-        </table>
+      <div class="panel-actions">
+        <button class="btn-panel" onclick="exportData()">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Exportar dados
+        </button>
+        <button class="btn-panel" onclick="document.getElementById('importFile').click()">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Importar dados
+        </button>
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
       </div>
-      <p style="font-size:.78rem;color:var(--text-muted);margin-top:1rem">💡 Dica: comprar passagens AVE com 2–3 meses de antecedência garante preços bem menores. Renfe vende online com cartão internacional sem problemas.<br>
-      🔗 <a href="https://www.renfe.com" target="_blank" style="color:var(--accent)">www.renfe.com</a></p>
-    </div>
-
-    <!-- MALAS -->
-    <div class="op-panel" id="panel-malas">
-      <div class="packing-grid" id="packingGrid">
-        <div class="packing-cat">
-          <h4><i data-lucide="shirt" width="14" height="14" style="display:inline;vertical-align:-2px;color:var(--accent)"></i> Roupas</h4>
-          <div id="pack-roupas"></div>
-        </div>
-        <div class="packing-cat">
-          <h4><i data-lucide="file-text" width="14" height="14" style="display:inline;vertical-align:-2px;color:var(--accent)"></i> Documentos</h4>
-          <div id="pack-docs"></div>
-        </div>
-        <div class="packing-cat">
-          <h4><i data-lucide="smartphone" width="14" height="14" style="display:inline;vertical-align:-2px;color:var(--accent)"></i> Eletrônicos</h4>
-          <div id="pack-eletro"></div>
-        </div>
-        <div class="packing-cat">
-          <h4><i data-lucide="pill" width="14" height="14" style="display:inline;vertical-align:-2px;color:var(--accent)"></i> Farmácia</h4>
-          <div id="pack-farm"></div>
-        </div>
-        <div class="packing-cat">
-          <h4><i data-lucide="more-horizontal" width="14" height="14" style="display:inline;vertical-align:-2px;color:var(--accent)"></i> Outros</h4>
-          <div id="pack-outros"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CHECKLIST -->
-    <div class="op-panel" id="panel-checklist">
-      <div class="checklist-group">
-        <h4>Antes de Viajar</h4>
-        <div id="checklist-items"></div>
-      </div>
-    </div>
-
-    <div class="op-actions">
-      <button class="btn-op" onclick="exportJSON()"><i data-lucide="download" width="14" height="14"></i> Exportar JSON</button>
-      <button class="btn-op" onclick="document.getElementById('importInput').click()"><i data-lucide="upload" width="14" height="14"></i> Importar JSON</button>
-      <input type="file" id="importInput" accept=".json" style="display:none" onchange="importJSON(event)">
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  Feito com ❤️ para <strong>Marcos &amp; Andreza</strong> · Aniversário Momo · Espanha 2026<br>
-  <span style="opacity:.5;font-size:.72rem;margin-top:.4rem;display:block">Dados persistidos localmente · Nenhuma informação enviada para servidores</span>
+<footer>
+  <p class="footer-quote">"Viajar é a única coisa que você compra que te faz mais rico."</p>
+  <p class="footer-end">Aniversário Momo · Espanha 2026</p>
+  <p style="font-size:.75rem;color:rgba(255,255,255,.3);margin-bottom:1rem">Feito com ♥ para Marcos &amp; Andreza</p>
+  <div class="footer-stats">
+    <span>2 Viajantes</span>
+    <span>7 Dias</span>
+    <span>4 Destinos</span>
+    <span>Infinitas Memórias</span>
+  </div>
 </footer>
 
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script>
-// Ativa animações reveal apenas se JS carregou
-document.documentElement.classList.add('js-loaded');
+const SK = 'momo-espanha-2026-v2';
+const TARGET = new Date('2026-11-14T18:05:00.000Z');
 
-// ===== LUCIDE ICONS =====
-document.addEventListener('DOMContentLoaded', () => {
-  if (typeof lucide !== 'undefined') lucide.createIcons();
-});
-
-// ===== MOBILE MENU =====
-const navToggle = document.getElementById('navToggle');
-const navMobile = document.getElementById('navMobile');
-navToggle.addEventListener('click', () => navMobile.classList.toggle('open'));
-function closeMobileMenu() { navMobile.classList.remove('open'); }
-
-// ===== COUNTDOWN =====
-const targetDate = new Date('2026-11-14T18:05:00.000Z'); // 14 Nov 15:05 Brasília (UTC-3)
-function updateCountdown() {
-  const now = new Date();
-  const diff = targetDate - now;
-  if (diff <= 0) {
-    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
-    return;
-  }
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+// COUNTDOWN
+function tick(){
+  const diff = TARGET - Date.now();
+  if(diff<=0){['d','h','m','s'].forEach(k=>{const e=document.getElementById('cd-'+k);if(e)e.textContent='00';});return;}
+  const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+  const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=String(v).padStart(2,'0');};
+  set('cd-d',d);set('cd-h',h);set('cd-m',m);set('cd-s',s);
 }
-updateCountdown();
-setInterval(updateCountdown, 1000);
+tick();setInterval(tick,1000);
 
-// ===== SCROLL REVEAL =====
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// ===== TABS =====
-function switchTab(name) {
-  document.querySelectorAll('.op-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.op-panel').forEach(p => p.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  document.getElementById('panel-' + name).classList.add('active');
-  if (typeof lucide !== 'undefined') lucide.createIcons();
+// TABS
+function switchPanel(id,btn){
+  document.querySelectorAll('.ppane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('ppane-'+id).classList.add('active');
+  btn.classList.add('active');
+  renderAll();
 }
 
-// ===== LOCAL STORAGE =====
-const STORAGE_KEY = 'momo-espanha-2026-operacional';
-const DATA_VERSION = 'v1-espanha-2026';
-
-const DEFAULT_DATA = {
-  version: DATA_VERSION,
+// DATA
+const DEFAULT = {
+  version: SK,
+  checklist: {
+    docs: [
+      {id:'c1',label:'✅ Passagens compradas — Air Europa UX/9VG5DB',checked:true},
+      {id:'c2',label:'Contratar seguro viagem',checked:false},
+      {id:'c3',label:'Reservar hotel em Madri (Booking/Airbnb)',checked:false},
+      {id:'c4',label:'Reservar hotel em Zaragoza (Booking)',checked:false},
+      {id:'c5',label:'Reservar hotel em Barcelona (Booking/Airbnb)',checked:false},
+      {id:'c6',label:'Comprar bilhetes trem MAD → Toledo R/T (renfe.com)',checked:false},
+      {id:'c7',label:'Comprar bilhetes AVE MAD → Zaragoza (renfe.com)',checked:false},
+      {id:'c8',label:'Comprar bilhetes AVE Zaragoza → Barcelona (renfe.com)',checked:false},
+      {id:'c9',label:'Reservar Sagrada Família online — OBRIGATÓRIO (sagradafamilia.org)',checked:false},
+      {id:'c10',label:'Reservar Park Güell online (parkguell.barcelona)',checked:false},
+      {id:'c11',label:'Reservar restaurante para aniversário em Barcelona',checked:false},
+    ],
+    prep: [
+      {id:'c12',label:'Verificar validade dos passaportes (mín. 6 meses após retorno)',checked:false},
+      {id:'c13',label:'Providenciar plano de dados internacionais (Claro/Vivo)',checked:false},
+      {id:'c14',label:'Baixar apps: Google Maps offline, Moovit, Renfe',checked:false},
+      {id:'c15',label:'Baixar mapas offline da Espanha no Google Maps',checked:false},
+      {id:'c16',label:'Fazer check-in online Air Europa (48h antes de cada voo)',checked:false},
+    ]
+  },
   malas: {
-    roupas: [
+    roupas:[
       {id:'r1',label:'Casaco impermeável / corta-vento',checked:false},
       {id:'r2',label:'Suéter ou moletom (2x)',checked:false},
       {id:'r3',label:'Calças jeans / sarja (2x)',checked:false},
@@ -1174,9 +1028,9 @@ const DEFAULT_DATA = {
       {id:'r10',label:'Cachecol e gorro',checked:false},
       {id:'r11',label:'Meias (7 pares)',checked:false},
     ],
-    docs: [
-      {id:'d1',label:'Passaporte (Marcos)',checked:false},
-      {id:'d2',label:'Passaporte (Andreza)',checked:false},
+    docs:[
+      {id:'d1',label:'Passaporte — Marcos',checked:false},
+      {id:'d2',label:'Passaporte — Andreza',checked:false},
       {id:'d3',label:'Bilhetes aéreos (impresso + digital)',checked:false},
       {id:'d4',label:'Reservas de hotel impressas',checked:false},
       {id:'d5',label:'Bilhetes de trem',checked:false},
@@ -1184,7 +1038,7 @@ const DEFAULT_DATA = {
       {id:'d7',label:'Cartão de crédito internacional',checked:false},
       {id:'d8',label:'Euros em espécie (~€200/pessoa)',checked:false},
     ],
-    eletro: [
+    eletro:[
       {id:'e1',label:'Adaptador europeu tipo F (2 pinos)',checked:false},
       {id:'e2',label:'Carregador celular (2x)',checked:false},
       {id:'e3',label:'Powerbank',checked:false},
@@ -1192,7 +1046,7 @@ const DEFAULT_DATA = {
       {id:'e5',label:'Cabo USB / carregador universal',checked:false},
       {id:'e6',label:'Fones de ouvido',checked:false},
     ],
-    farm: [
+    farm:[
       {id:'f1',label:'Analgésico (dipirona / ibuprofeno)',checked:false},
       {id:'f2',label:'Antigripal',checked:false},
       {id:'f3',label:'Antidiarreico',checked:false},
@@ -1200,120 +1054,76 @@ const DEFAULT_DATA = {
       {id:'f5',label:'Protetor solar FPS 30',checked:false},
       {id:'f6',label:'Hidratante labial',checked:false},
     ],
-    outros: [
+    outros:[
       {id:'o1',label:'Guarda-chuva compacto',checked:false},
       {id:'o2',label:'Mochila daypack (20–25L)',checked:false},
       {id:'o3',label:'Óculos de sol',checked:false},
       {id:'o4',label:'Pochete / belt bag para segurança',checked:false},
       {id:'o5',label:'Cadeado para bagagem',checked:false},
     ]
-  },
-  checklist: [
-    {id:'c1',label:'✅ Passagens compradas (Air Europa UX/9VG5DB)',checked:true},
-    {id:'c2',label:'Contratar seguro viagem',checked:false},
-    {id:'c3',label:'Reservar hotel em Madri (Booking/Airbnb)',checked:false},
-    {id:'c4',label:'Reservar hotel em Zaragoza (Booking)',checked:false},
-    {id:'c5',label:'Reservar hotel em Barcelona (Booking/Airbnb)',checked:false},
-    {id:'c6',label:'Comprar bilhetes trem MAD→Toledo R/T (renfe.com)',checked:false},
-    {id:'c7',label:'Comprar bilhetes AVE MAD→Zaragoza (renfe.com)',checked:false},
-    {id:'c8',label:'Comprar bilhetes AVE Zaragoza→Barcelona (renfe.com)',checked:false},
-    {id:'c9',label:'Reservar Sagrada Família online (sagradafamilia.org) — OBRIGATÓRIO',checked:false},
-    {id:'c10',label:'Reservar Park Güell online (parkguell.barcelona)',checked:false},
-    {id:'c11',label:'Reservar restaurante para aniversário Barcelona',checked:false},
-    {id:'c12',label:'Baixar apps: Google Maps offline, Moovit, Renfe',checked:false},
-    {id:'c13',label:'Verificar validade dos passaportes (mín. 6 meses após retorno)',checked:false},
-    {id:'c14',label:'Providenciar plano de dados internacionais (Claro/Vivo)',checked:false},
-    {id:'c15',label:'Fazer check-in online Air Europa (48h antes de cada voo)',checked:false},
-    {id:'c16',label:'Baixar mapas offline da Espanha no Google Maps',checked:false},
-  ]
+  }
 };
 
-function loadData() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return JSON.parse(JSON.stringify(DEFAULT_DATA));
-    const saved = JSON.parse(raw);
-    if (saved.version !== DATA_VERSION) return JSON.parse(JSON.stringify(DEFAULT_DATA));
-    return saved;
-  } catch(e) { return JSON.parse(JSON.stringify(DEFAULT_DATA)); }
+function loadData(){
+  try{
+    const r=localStorage.getItem(SK);
+    if(!r)return JSON.parse(JSON.stringify(DEFAULT));
+    const s=JSON.parse(r);
+    if(s.version!==SK)return JSON.parse(JSON.stringify(DEFAULT));
+    return s;
+  }catch(e){return JSON.parse(JSON.stringify(DEFAULT));}
 }
+function saveData(d){try{localStorage.setItem(SK,JSON.stringify(d));}catch(e){}}
+let data=loadData();
 
-function saveData(data) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch(e) {}
-}
-
-let appData = loadData();
-
-// ===== RENDER PACKING =====
-function renderPacking() {
-  const cats = {roupas:'pack-roupas',docs:'pack-docs',eletro:'pack-eletro',farm:'pack-farm',outros:'pack-outros'};
-  Object.entries(cats).forEach(([key, elId]) => {
-    const el = document.getElementById(elId);
-    if (!el) return;
-    const items = appData.malas[key] || [];
-    el.innerHTML = items.map(item => `
-      <div class="packing-item${item.checked?' checked':''}" onclick="togglePack('${key}','${item.id}')">
-        <div class="check-box"></div>
-        <span class="check-label">${item.label}</span>
-      </div>
-    `).join('');
+function renderChecklist(){
+  ['docs','prep'].forEach(group=>{
+    const el=document.getElementById('clist-'+group);
+    if(!el)return;
+    const items=data.checklist[group]||[];
+    el.innerHTML=items.map(item=>`
+      <div class="clist-item${item.checked?' checked':''}" onclick="toggleCheck('${group}','${item.id}')">
+        <div class="clist-box"></div>
+        <span class="clist-label">${item.label}</span>
+      </div>`).join('');
   });
 }
-
-function togglePack(cat, id) {
-  const item = appData.malas[cat].find(i => i.id === id);
-  if (item) { item.checked = !item.checked; saveData(appData); renderPacking(); }
+function toggleCheck(g,id){
+  const item=data.checklist[g].find(i=>i.id===id);
+  if(item){item.checked=!item.checked;saveData(data);renderChecklist();}
 }
 
-// ===== RENDER CHECKLIST =====
-function renderChecklist() {
-  const el = document.getElementById('checklist-items');
-  if (!el) return;
-  el.innerHTML = appData.checklist.map(item => `
-    <div class="checklist-item${item.checked?' checked':''}" onclick="toggleCheck('${item.id}')">
-      <div class="check-box"></div>
-      <span class="check-label">${item.label}</span>
-    </div>
-  `).join('');
+function renderPacking(){
+  const cats={roupas:'pack-roupas',docs:'pack-docs',eletro:'pack-eletro',farm:'pack-farm',outros:'pack-outros'};
+  Object.entries(cats).forEach(([k,elId])=>{
+    const el=document.getElementById(elId);
+    if(!el)return;
+    const items=data.malas[k]||[];
+    el.innerHTML=items.map(item=>`
+      <div class="pitem${item.checked?' checked':''}" onclick="togglePack('${k}','${item.id}')">
+        <div class="clist-box"></div>
+        <span class="clist-label">${item.label}</span>
+      </div>`).join('');
+  });
+}
+function togglePack(cat,id){
+  const item=data.malas[cat].find(i=>i.id===id);
+  if(item){item.checked=!item.checked;saveData(data);renderPacking();}
 }
 
-function toggleCheck(id) {
-  const item = appData.checklist.find(i => i.id === id);
-  if (item) { item.checked = !item.checked; saveData(appData); renderChecklist(); }
+function renderAll(){renderChecklist();renderPacking();}
+renderAll();
+
+function exportData(){
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='espanha-2026-dados.json';a.click();
 }
-
-// ===== EXPORT / IMPORT =====
-function exportJSON() {
-  const blob = new Blob([JSON.stringify(appData, null, 2)], {type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'momo-espanha-2026.json'; a.click();
-  URL.revokeObjectURL(url);
+function importData(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{try{data=JSON.parse(ev.target.result);saveData(data);renderAll();alert('Importado!');}catch{alert('Arquivo inválido.');}};
+  r.readAsText(f);
 }
-
-function importJSON(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    try {
-      const data = JSON.parse(e.target.result);
-      appData = data;
-      saveData(appData);
-      renderPacking();
-      renderChecklist();
-      alert('Dados importados com sucesso!');
-    } catch(err) { alert('Arquivo inválido. Verifique o JSON.'); }
-  };
-  reader.readAsText(file);
-}
-
-// ===== INIT =====
-renderPacking();
-renderChecklist();
-
-// Re-init lucide after dynamic content
-setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 300);
 </script>
 </body>
-</
+</html>
