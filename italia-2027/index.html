@@ -82,8 +82,9 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
 .section-title{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
 .section-divider{width:48px;height:2px;background:linear-gradient(to right,var(--accent),transparent);margin-bottom:2rem}
 .section-intro{font-size:1.05rem;color:var(--text-muted);max-width:620px;line-height:1.75}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:none}
+.reveal{opacity:1;transform:none}
+.js-loaded .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.js-loaded .reveal.visible{opacity:1;transform:none}
 
 /* STATS BAR */
 .stats-bar{background:var(--primary);padding:2rem 1.5rem}
@@ -1068,6 +1069,9 @@ footer p{font-size:.82rem;color:var(--text-muted)}
 </footer>
 
 <script>
+// Marca que JS carregou — ativa animações de reveal
+document.documentElement.classList.add('js-loaded');
+
 // STORAGE
 const STORAGE_KEY = 'roteiro-italia-sul-2027';
 const DATA_VERSION = 'v1-italia-sul-2027';
