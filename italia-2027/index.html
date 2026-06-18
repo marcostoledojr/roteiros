@@ -50,9 +50,11 @@ button{cursor:pointer;font-family:'Inter',sans-serif}
 .nav-mobile a{display:block;padding:.75rem 0;font-size:.9rem;font-weight:500;color:rgba(255,255,255,0.8);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(201,169,110,0.1)}
 
 /* HERO */
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1600&auto=format&fit=crop&q=80');background-size:cover;background-position:center 60%;filter:brightness(.42)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,27,42,.25) 0%,rgba(13,27,42,.55) 60%,rgba(13,27,42,.88) 100%)}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#0d1b2a url('https://images.unsplash.com/photo-1599472338539-7a9578e98f47?w=1600&auto=format&fit=crop&q=80') center 40% / cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(8,16,28,.58);z-index:0}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(8,16,28,.85) 100%);z-index:0}
+.hero-bg{display:none}
+.hero-overlay{display:none}
 .hero-content{position:relative;z-index:2;padding:2rem 1.5rem;max-width:880px;margin:0 auto}
 .hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.45rem 1.2rem;border-radius:2px;margin-bottom:1.8rem;background:rgba(201,169,110,.08)}
 .hero-title{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;color:#fff;line-height:1.05;margin-bottom:.6rem;letter-spacing:-.01em}
@@ -1117,10 +1119,15 @@ function switchTab(id) {
 }
 
 // SCROLL REVEAL
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('visible'));
+}
 
 // CHECKLIST
 const checklistData = {
