@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sul da Itália 2027 — Sicília • Calábria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary-dark: #0d1b2a;
+  --primary: #1a3050;
+  --accent: #c9a96e;
+  --accent-light: #e8d5a8;
+  --bg: #f8f5f0;
+  --bg-card: #ffffff;
+  --text: #0d1b2a;
+  --text-muted: #5a6a7a;
+  --border: #d8d0c5;
+  --section-dark: #0d1b2a;
+  --green: #2d6a4f;
+  --yellow: #9a7020;
+  --orange: #b84a10;
+  --shadow: 0 4px 24px rgba(13,27,42,0.10);
+  --shadow-lg: 0 8px 40px rgba(13,27,42,0.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:'Inter',sans-serif}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,27,42,0.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,169,110,0.2);transition:all .3s}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--accent);font-style:italic;letter-spacing:.02em}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
+.nav-toggle span{width:24px;height:2px;background:var(--accent);border-radius:2px;display:block;transition:.3s}
+.nav-mobile{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(13,27,42,0.97);padding:1.5rem 2rem;border-bottom:1px solid rgba(201,169,110,0.15);z-index:999}
+.nav-mobile.open{display:block}
+.nav-mobile a{display:block;padding:.75rem 0;font-size:.9rem;font-weight:500;color:rgba(255,255,255,0.8);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(201,169,110,0.1)}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1600&auto=format&fit=crop&q=80');background-size:cover;background-position:center;filter:brightness(.42)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,27,42,.25) 0%,rgba(13,27,42,.55) 60%,rgba(13,27,42,.88) 100%)}
+.hero-content{position:relative;z-index:2;padding:2rem 1.5rem;max-width:880px;margin:0 auto}
+.hero-badge{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.45rem 1.2rem;border-radius:2px;margin-bottom:1.8rem;background:rgba(201,169,110,.08)}
+.hero-title{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;color:#fff;line-height:1.05;margin-bottom:.6rem;letter-spacing:-.01em}
+.hero-title em{color:var(--accent);font-style:italic}
+.hero-subtitle{font-size:clamp(.95rem,2.2vw,1.2rem);color:rgba(255,255,255,.7);font-weight:300;letter-spacing:.3em;text-transform:uppercase;margin-bottom:.6rem}
+.hero-slogan{font-size:.8rem;color:rgba(255,255,255,.45);letter-spacing:.15em;text-transform:uppercase;margin-bottom:3rem}
+.countdown{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.countdown-block{display:flex;flex-direction:column;align-items:center;min-width:72px}
+.countdown-num{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:#fff;line-height:1;background:rgba(255,255,255,.07);border:1px solid rgba(201,169,110,.3);border-radius:8px;width:72px;height:72px;display:flex;align-items:center;justify-content:center}
+.countdown-label{font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.4rem}
+.hero-date{font-size:.85rem;color:rgba(255,255,255,.5);letter-spacing:.1em}
+.hero-date strong{color:var(--accent)}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:bounce 2s infinite}
+.hero-scroll span{width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--accent));display:block}
+.hero-scroll-label{font-size:.65rem;letter-spacing:.2em;color:rgba(255,255,255,.4);text-transform:uppercase}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* SECTIONS */
+.section{padding:6rem 1.5rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-dark{background:var(--section-dark);color:#fff}
+.section-dark .section-title{color:#fff}
+.section-dark .section-intro{color:rgba(255,255,255,.65)}
+.section-label{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.section-title{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;margin-bottom:1rem}
+.section-divider{width:48px;height:2px;background:linear-gradient(to right,var(--accent),transparent);margin-bottom:2rem}
+.section-intro{font-size:1.05rem;color:var(--text-muted);max-width:620px;line-height:1.75}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* STATS BAR */
+.stats-bar{background:var(--primary);padding:2rem 1.5rem}
+.stats-inner{max-width:1100px;margin:0 auto;display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+.stat-item{text-align:center;padding:.5rem 1.5rem;border-right:1px solid rgba(201,169,110,.2)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--accent);line-height:1}
+.stat-label{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:.3rem}
+
+/* PILARES */
+.pilares-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
+.pilar-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.pilar-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--accent),transparent);opacity:0;transition:.3s}
+.pilar-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.pilar-card:hover::before{opacity:1}
+.pilar-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(201,169,110,.15),rgba(201,169,110,.05));display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;color:var(--accent)}
+.pilar-num{position:absolute;top:1.5rem;right:1.5rem;font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:rgba(201,169,110,.08);line-height:1;pointer-events:none}
+.pilar-card h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+.pilar-card p{font-size:.88rem;color:var(--text-muted);line-height:1.65}
+
+/* MAPA */
+.map-container{position:relative;background:linear-gradient(135deg,#0a1f35 0%,#1a3a5c 50%,#0a1528 100%);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid rgba(201,169,110,.2)}
+.map-container svg{width:100%;height:auto;display:block}
+.map-btn{position:absolute;bottom:1rem;right:1rem;background:var(--accent);color:#0d1b2a;font-size:.78rem;font-weight:600;padding:.55rem 1.1rem;border-radius:6px;border:none;display:flex;align-items:center;gap:.4rem;letter-spacing:.04em;transition:all .2s}
+.map-btn:hover{background:#e0bc80;transform:translateY(-1px)}
+.route-intro{font-size:.95rem;color:var(--text-muted);line-height:1.75;margin-bottom:2rem;max-width:680px}
+.rota-stats{display:flex;gap:2rem;flex-wrap:wrap;margin:2.5rem 0 3rem}
+
+/* DESTINOS TIMELINE */
+.timeline{position:relative;margin-top:3rem}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(201,169,110,.1));transform:translateX(-50%)}
+.timeline-item{display:flex;gap:3rem;margin-bottom:3.5rem;position:relative;align-items:flex-start}
+.timeline-item:nth-child(even){flex-direction:row-reverse}
+.timeline-dot{position:absolute;left:50%;top:1.5rem;width:16px;height:16px;background:var(--accent);border-radius:50%;transform:translateX(-50%);border:3px solid var(--bg);z-index:2;box-shadow:0 0 0 3px rgba(201,169,110,.3)}
+.timeline-side{flex:1;max-width:calc(50% - 2.5rem)}
+.timeline-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:all .3s}
+.timeline-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.timeline-img{height:180px;overflow:hidden;position:relative}
+.timeline-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.timeline-card:hover .timeline-img img{transform:scale(1.05)}
+.timeline-badge{position:absolute;top:.8rem;left:.8rem;background:rgba(13,27,42,.82);backdrop-filter:blur(6px);color:var(--accent);font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border-radius:4px;border:1px solid rgba(201,169,110,.3)}
+.timeline-body{padding:1.4rem}
+.timeline-day{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
+.timeline-body h3{font-size:1.25rem;font-weight:700;margin-bottom:.4rem}
+.timeline-meta{font-size:.78rem;color:var(--text-muted);margin-bottom:.9rem;display:flex;flex-wrap:wrap;gap:.6rem}
+.timeline-meta span{display:flex;align-items:center;gap:.3rem}
+.detail-row{display:flex;align-items:flex-start;gap:.6rem;font-size:.82rem;margin-bottom:.5rem}
+.detail-icon{color:var(--accent);flex-shrink:0;margin-top:2px}
+.detail-row strong{color:var(--text);font-weight:600}
+.detail-row span{color:var(--text-muted)}
+.clima-pills{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem;padding-top:.8rem;border-top:1px solid var(--border)}
+.clima-pill{font-size:.68rem;font-weight:500;padding:.2rem .6rem;border-radius:20px;border:1px solid var(--border);color:var(--text-muted);background:var(--bg)}
+
+/* FERRY DIVIDER */
+.ferry-divider{display:flex;align-items:center;gap:1rem;margin:2rem 0;justify-content:center}
+.ferry-line{flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--accent) 0,var(--accent) 8px,transparent 8px,transparent 16px)}
+.ferry-badge{background:var(--primary);color:var(--accent);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.45rem 1.2rem;border-radius:20px;border:1px solid rgba(201,169,110,.3);white-space:nowrap;display:flex;align-items:center;gap:.5rem}
+
+/* PAINEL OPERACIONAL */
+.panel{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.panel-tabs{display:flex;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.panel-tabs::-webkit-scrollbar{display:none}
+.panel-tab{flex:1;min-width:80px;padding:.9rem 1rem;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);background:none;border:none;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.panel-tab.active{color:var(--accent);border-bottom-color:var(--accent);background:rgba(201,169,110,.04)}
+.panel-tab:hover:not(.active){color:var(--text);background:rgba(0,0,0,.02)}
+.panel-content{padding:2rem}
+.panel-pane{display:none}
+.panel-pane.active{display:block}
+
+/* CUSTOS TABLE */
+.custo-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.custo-table th{text-align:left;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);font-weight:600;padding:.6rem .5rem;border-bottom:2px solid var(--border)}
+.custo-table td{padding:.75rem .5rem;border-bottom:1px solid var(--border)}
+.custo-table tr:last-child td{border-bottom:none;font-weight:600;color:var(--text)}
+.custo-table .total-row{background:rgba(201,169,110,.06)}
+.custo-table .total-row td{font-size:.95rem;color:var(--accent)}
+.custo-range{font-size:.78rem;color:var(--text-muted)}
+
+/* CHECKLIST */
+.checklist-group{margin-bottom:1.5rem}
+.checklist-group h4{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.check-item{display:flex;align-items:center;gap:.8rem;padding:.5rem 0;border-bottom:1px solid var(--border)}
+.check-item:last-child{border-bottom:none}
+.check-item input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);cursor:pointer;flex-shrink:0}
+.check-item label{font-size:.88rem;color:var(--text);cursor:pointer;flex:1}
+.check-item input:checked + label{text-decoration:line-through;color:var(--text-muted)}
+
+/* MALA */
+.mala-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.mala-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.2rem}
+.mala-card h4{font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.mala-card ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.mala-card li{font-size:.84rem;color:var(--text-muted);padding-left:1rem;position:relative}
+.mala-card li::before{content:'·';position:absolute;left:0;color:var(--accent)}
+
+/* CARRO */
+.carro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-bottom:1.5rem}
+.carro-item{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1rem}
+.carro-item .label{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.3rem}
+.carro-item .value{font-size:.92rem;font-weight:600;color:var(--text)}
+.carro-dica{font-size:.84rem;color:var(--text-muted);background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.2);border-radius:10px;padding:1rem;margin-top:.5rem;line-height:1.65}
+.carro-dica strong{color:var(--text)}
+
+/* BALSAS */
+.balsa-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.4rem;margin-bottom:1rem;display:flex;gap:1.5rem;align-items:center}
+.balsa-num{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),rgba(201,169,110,.6));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#0d1b2a;flex-shrink:0}
+.balsa-info h4{font-size:.92rem;font-weight:600;margin-bottom:.25rem}
+.balsa-info p{font-size:.82rem;color:var(--text-muted)}
+.balsa-info .balsa-meta{display:flex;gap:1rem;margin-top:.4rem;font-size:.75rem}
+.balsa-meta span{color:var(--text-muted);display:flex;align-items:center;gap:.3rem}
+
+/* EXPORT */
+.export-bar{display:flex;gap:.8rem;padding:1rem 2rem;border-top:1px solid var(--border);background:var(--bg);flex-wrap:wrap}
+.btn-export{font-size:.78rem;font-weight:600;padding:.5rem 1rem;border-radius:6px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-muted);display:flex;align-items:center;gap:.4rem;transition:all .2s}
+.btn-export:hover{border-color:var(--accent);color:var(--accent)}
+
+/* FOOTER */
+footer{text-align:center;padding:3rem 1.5rem;border-top:1px solid var(--border)}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-style:italic;color:var(--accent);margin-bottom:.5rem}
+footer p{font-size:.82rem;color:var(--text-muted)}
+
+@media(max-width:768px){
+  .timeline::before{left:20px}
+  .timeline-item,.timeline-item:nth-child(even){flex-direction:column}
+  .timeline-dot{left:20px}
+  .timeline-side{max-width:100%;padding-left:48px}
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .stats-inner{gap:1rem}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(201,169,110,.2);padding:.5rem}
+  .stat-item:last-child{border-bottom:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">Sul da Itália 2027</div>
+  <ul class="nav-links">
+    <li><a href="#rota">Rota</a></li>
+    <li><a href="#destinos">Destinos</a></li>
+    <li><a href="#operacional">Operacional</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-mobile').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile">
+  <a href="#rota" onclick="this.closest('.nav-mobile').classList.remove('open')">Rota</a>
+  <a href="#destinos" onclick="this.closest('.nav-mobile').classList.remove('open')">Destinos</a>
+  <a href="#operacional" onclick="this.closest('.nav-mobile').classList.remove('open')">Operacional</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Roteiro Oficial Executivo · 2 Casais Brasileiros</div>
+    <h1 class="hero-title">Sul da <em>Itália</em></h1>
+    <p class="hero-subtitle">Sicília · Calábria</p>
+    <p class="hero-slogan">A rota circular mais bela do Mediterrâneo</p>
+    <div class="countdown">
+      <div class="countdown-block"><div class="countdown-num" id="cd-days">--</div><div class="countdown-label">Dias</div></div>
+      <div class="countdown-block"><div class="countdown-num" id="cd-hours">--</div><div class="countdown-label">Horas</div></div>
+      <div class="countdown-block"><div class="countdown-num" id="cd-mins">--</div><div class="countdown-label">Min</div></div>
+      <div class="countdown-block"><div class="countdown-num" id="cd-secs">--</div><div class="countdown-label">Seg</div></div>
+    </div>
+    <p class="hero-date">Pouso em Palermo: <strong>26 Mai 2027</strong> · Retorno ao Brasil: <strong>11 Jun 2027</strong></p>
+  </div>
+  <div class="hero-scroll"><span></span><span class="hero-scroll-label">Explorar</span></div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num">16</div><div class="stat-label">Dias na Itália</div></div>
+    <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">Destinos</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Viajantes</div></div>
+    <div class="stat-item"><div class="stat-num">~1.100</div><div class="stat-label">Km de rota</div></div>
+    <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Travessias de balsa</div></div>
+    <div class="stat-item"><div class="stat-num">14</div><div class="stat-label">Noites</div></div>
+  </div>
+</div>
+
+<!-- PILARES -->
+<section class="section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Filosofia da Viagem</div>
+      <h2 class="section-title">Os três pilares</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="pilares-grid">
+      <div class="pilar-card reveal">
+        <div class="pilar-num">1</div>
+        <div class="pilar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>O Carro Perfeito</h3>
+        <p>Fiat 500X Automático — SUV compacto ideal para 4 pessoas e 4 bagagens de bordo. Retirada e devolução no aeroporto de Palermo (PMO). Rota circular de ~1.100 km sem estresse com frotas ou trens.</p>
+      </div>
+      <div class="pilar-card reveal">
+        <div class="pilar-num">2</div>
+        <div class="pilar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h12l2 7H4L6 2z"/><path d="M4 9v12a1 1 0 001 1h14a1 1 0 001-1V9"/><path d="M9 9v6m6-6v6"/></svg>
+        </div>
+        <h3>Mala Inteligente</h3>
+        <p>Uma mala de bordo por pessoa (máx. 55×40×20cm). Cabe tudo no porta-malas do 500X. Sem despachar bagagem, sem fila no check-in, sem esperar na esteira — direto pro carro.</p>
+      </div>
+      <div class="pilar-card reveal">
+        <div class="pilar-num">3</div>
+        <div class="pilar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Época de Ouro</h3>
+        <p>26 Mai a 10 Jun — dias longuíssimos (sol até ~20h35), temperatura do mar já em 20–22°C, praias ainda sem superlotação do pico de julho/agosto. O momento ideal para a Sicília e Calábria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROTA / MAPA -->
+<section class="section section-dark" id="rota">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Rota Circular · PMO → PMO</div>
+      <h2 class="section-title">O percurso</h2>
+      <div class="section-divider"></div>
+      <p class="route-intro">Circular perfeita de 1.100 km — arranca de Palermo, contorna a Sicília no sentido horário, cruza de balsa para a Calábria, e retorna por Cefalù. Zero voo doméstico, zero trem, zero complicação.</p>
+    </div>
+    <div class="rota-stats">
+      <div class="stat-item" style="text-align:left;border-right:1px solid rgba(201,169,110,.2);padding-right:2rem">
+        <div class="stat-num">Palermo → Palermo</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.45)">Rota circular, 8 destinos</div>
+      </div>
+      <div class="stat-item" style="text-align:left;border-right:1px solid rgba(201,169,110,.2);padding:0 2rem">
+        <div class="stat-num">2 Balsas</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.45)">Estreito de Messina</div>
+      </div>
+      <div class="stat-item" style="text-align:left;padding-left:2rem">
+        <div class="stat-num">~20 min</div>
+        <div class="stat-label" style="color:rgba(255,255,255,.45)">Por travessia de balsa</div>
+      </div>
+    </div>
+    <div class="map-container reveal">
+      <svg viewBox="0 20 760 480" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <marker id="arrowGold" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L8,3 z" fill="#c9a96e" opacity=".8"/>
+          </marker>
+        </defs>
+
+        <!-- Mar Mediterrâneo -->
+        <rect width="760" height="520" fill="none"/>
+        <text x="200" y="460" font-size="11" fill="rgba(201,169,110,0.2)" font-family="Georgia,serif" letter-spacing="3">MAR MEDITERRÂNEO</text>
+        <text x="500" y="80" font-size="10" fill="rgba(201,169,110,0.2)" font-family="Georgia,serif" letter-spacing="2">MAR TIRRENO</text>
+        <text x="550" y="440" font-size="10" fill="rgba(201,169,110,0.2)" font-family="Georgia,serif" letter-spacing="2">MAR JÔNICO</text>
+
+        <!-- Sicília outline -->
+        <polygon points="102,259 117,218 151,190 210,185 260,185 310,188 380,185 430,175 500,178 555,185 610,185 560,240 530,310 565,390 540,455 460,470 350,460 280,430 215,390 155,335 110,290"
+          fill="rgba(26,58,95,0.7)" stroke="rgba(201,169,110,0.35)" stroke-width="1.5"/>
+
+        <!-- Calábria outline (southern tip) -->
+        <polygon points="610,185 635,175 660,95 665,115 655,155 625,178 620,182"
+          fill="rgba(26,58,95,0.6)" stroke="rgba(201,169,110,0.3)" stroke-width="1.5"/>
+
+        <!-- Estreito de Messina (water gap) -->
+        <path d="M 610,185 Q 618,182 625,178" stroke="rgba(100,160,220,0.6)" stroke-width="8" fill="none"/>
+
+        <!-- Etna -->
+        <polygon points="530,260 540,230 550,260" fill="rgba(201,169,110,0.15)" stroke="rgba(201,169,110,0.3)" stroke-width="1"/>
+        <text x="545" y="258" font-size="9" fill="rgba(201,169,110,0.5)" font-family="Georgia">▲ Etna</text>
+
+        <!-- Stromboli (small island) -->
+        <circle cx="590" cy="105" r="6" fill="rgba(26,58,95,0.6)" stroke="rgba(201,169,110,0.3)" stroke-width="1"/>
+        <text x="600" y="108" font-size="8" fill="rgba(201,169,110,0.4)" font-family="Georgia">Stromboli</text>
+
+        <!-- ROTA PRINCIPAL (Sicília) -->
+        <polyline points="260,185 151,190 215,390 565,390 555,240 610,185"
+          fill="none" stroke="rgba(201,169,110,0.6)" stroke-width="2" stroke-dasharray="6,3"/>
+
+        <!-- BALSA 1: Messina → Calabria -->
+        <line x1="610" y1="185" x2="625" y2="178" stroke="#c9a96e" stroke-width="2.5" stroke-dasharray="4,3" opacity=".9"/>
+
+        <!-- ROTA CALÁBRIA -->
+        <polyline points="625,178 635,175 660,95"
+          fill="none" stroke="rgba(201,169,110,0.6)" stroke-width="2" stroke-dasharray="6,3"/>
+
+        <!-- BALSA 2: volta pra Sicília -->
+        <line x1="660" y1="95" x2="625" y2="178" stroke="#c9a96e" stroke-width="2.5" stroke-dasharray="4,3" opacity=".7"/>
+
+        <!-- ROTA RETORNO (Messina → Cefalù → Palermo) -->
+        <polyline points="610,185 370,188 260,185"
+          fill="none" stroke="rgba(201,169,110,0.6)" stroke-width="2" stroke-dasharray="6,3"/>
+
+        <!-- CITY MARKERS -->
+        <!-- 1. Palermo -->
+        <circle cx="260" cy="185" r="8" fill="#c9a96e" opacity=".9" filter="url(#glow)"/>
+        <circle cx="260" cy="185" r="14" fill="none" stroke="#c9a96e" stroke-width="1" opacity=".4"/>
+        <text x="240" y="172" font-size="11" fill="#e8d5a8" font-weight="bold" font-family="Georgia">Palermo</text>
+        <text x="244" y="163" font-size="9" fill="rgba(201,169,110,0.7)" font-family="Georgia">Dia 1–2 · 16</text>
+
+        <!-- 2. San Vito lo Capo -->
+        <circle cx="151" cy="190" r="7" fill="#c9a96e" opacity=".85"/>
+        <text x="60" y="187" font-size="10" fill="#e8d5a8" font-family="Georgia">San Vito</text>
+        <text x="66" y="178" font-size="9" fill="rgba(201,169,110,0.7)" font-family="Georgia">Dia 3–4</text>
+
+        <!-- 3. Agrigento -->
+        <circle cx="215" cy="390" r="7" fill="#c9a96e" opacity=".85"/>
+        <text x="155" y="405" font-size="10" fill="#e8d5a8" font-family="Georgia">Agrigento</text>
+        <text x="158" y="415" font-size="9" fill="rgba(201,169,110,0.7)" font-family="Georgia">Dia 5</text>
+
+        <!-- 4. Siracusa -->
+        <circle cx="565" cy="390" r="7" fill="#c9a96e" opacity=".85"/>
+        <text x="575" y="390" font-size="10" fill="#e8d5a8" font-family="Georgia">Siracusa</text>
+        <text x="578" y="400" font-size="9" fill="rgba(201,169,110,0.7)" font-family="Georgia">Dia 6–7</text>
+
+        <!-- 5. Taormina -->
+        <circle cx="555" cy="240" r="7" fill="#c9a96e" opacity=".85"/>
+        <text x="565" y="238" font-size="10" fill="#e8d5a8" font-family="Georgia">Taormina</text>
+        <text x="568" y="248" font-size="9" fill="rgba(201,169,110,0.7)" font-family="Georgia">Dia 8–10</text>
+
+        <!-- Balsa icons -->
+        <text x="610" y="200" font-size="12" fill="rgba(201,169,110,0.7)">⛴</text>
+        <text x="628" y="200" font-size="8" fill="rgba(201,169,110,0.5)" font-family="Georgia">~20 min</text>
+
+        <!-- 6. Scilla -->
+        <circle cx="635" cy="175" r="7" fill="#c9a96e" opacity=".85"/>
+        <text x="643" y="173" font-size="10" fill="#e8d5a8" font-family="Georgia">Scilla</text>
+        <text x="646" y="183" font-size="9" fill="rgba(201,169,110,0.7)" font-family="Georgia">Dia 11</text>
+
+        <!-- 7. Tropea -->
+        <circle cx="660" cy="95" r="7" fill="#c9a96e" opacity=".85"/>
+        <text x="668" y="93" font-size="10" fill="#e8d5a8" font-family="Georgia">Tropea</text>
+        <text x="671" y="103" font-size="9" fill="rgba(201,169,110,0.7)" font-family="Georgia">Dia 12–13</text>
+
+        <!-- 8. Cefalù -->
+        <circle cx="370" cy="188" r="7" fill="#c9a96e" opacity=".85"/>
+        <text x="355" y="204" font-size="10" fill="#e8d5a8" font-family="Georgia">Cefalù</text>
+        <text x="358" y="214" font-size="9" fill="rgba(201,169,110,0.7)" font-family="Georgia">Dia 14–15</text>
+
+        <!-- Legenda -->
+        <rect x="20" y="430" width="160" height="55" rx="6" fill="rgba(13,27,42,0.8)" stroke="rgba(201,169,110,0.2)" stroke-width="1"/>
+        <line x1="32" y1="445" x2="60" y2="445" stroke="#c9a96e" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="67" y="448" font-size="9" fill="rgba(201,169,110,0.8)" font-family="Georgia">Rota de carro</text>
+        <line x1="32" y1="462" x2="60" y2="462" stroke="#c9a96e" stroke-width="2.5" stroke-dasharray="4,3"/>
+        <text x="67" y="465" font-size="9" fill="rgba(201,169,110,0.8)" font-family="Georgia">Travessia de balsa</text>
+        <circle cx="46" cy="479" r="5" fill="#c9a96e" opacity=".85"/>
+        <text x="67" y="482" font-size="9" fill="rgba(201,169,110,0.8)" font-family="Georgia">Destino</text>
+      </svg>
+      <button class="map-btn" onclick="window.open('https://www.google.com/maps/dir/Palermo/San+Vito+lo+Capo/Agrigento/Siracusa/Taormina/Scilla/Tropea/Cefalù/Palermo','_blank')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Ver no Google Maps
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINOS -->
+<section class="section" id="destinos">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">8 Destinos · 14 Noites</div>
+      <h2 class="section-title">O itinerário dia a dia</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="timeline">
+
+      <!-- 1. PALERMO -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-img">
+              <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&auto=format&fit=crop&q=80" alt="Palermo" loading="lazy">
+              <span class="timeline-badge">Sicília · Chegada</span>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-day">Dias 1–2 · 26–27 Mai · 2 noites</div>
+              <h3>Palermo</h3>
+              <div class="timeline-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Aeroporto PMO
+                </span>
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  Retirada do carro
+                </span>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                <div><strong>Hotel:</strong> <span>Masseria Mirabile</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div><strong>Highlights:</strong> <span>Mercados Capo e Ballarò, Palazzo dei Normanni, Catedral arabo-normanda</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Pôr do sol:</strong> <span>Teto da Catedral de Palermo (360°)</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+                <div><strong>Jantar:</strong> <span>Il Siciliano ou Via Maqueda</span></div>
+              </div>
+              <div class="clima-pills">
+                <span class="clima-pill">☀ 26°/17°C</span>
+                <span class="clima-pill">🌊 Mar 20°C</span>
+                <span class="clima-pill">🌧 Chuva 9%</span>
+                <span class="clima-pill">☀ 10,5h sol</span>
+                <span class="clima-pill">💨 NW 15km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SAN VITO LO CAPO -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-img">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80" alt="San Vito lo Capo" loading="lazy">
+              <span class="timeline-badge">Sicília · Noroeste</span>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-day">Dias 3–4 · 28–29 Mai · 2 noites</div>
+              <h3>San Vito lo Capo</h3>
+              <div class="timeline-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  Palermo → 90 km · ~1h35
+                </span>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                <div><strong>Hotel:</strong> <span>Capo San Vito Hotel</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div><strong>Highlights:</strong> <span>Praia de areia coralina, Reserva Natural dello Zingaro</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Pôr do sol:</strong> <span>Praia di Macari</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+                <div><strong>Jantar:</strong> <span>Couscous di Pesce no centro histórico</span></div>
+              </div>
+              <div class="clima-pills">
+                <span class="clima-pill">☀ 25°/17°C</span>
+                <span class="clima-pill">🌊 Mar 20°C</span>
+                <span class="clima-pill">🌧 Chuva 7%</span>
+                <span class="clima-pill">☀ 10,5h sol</span>
+                <span class="clima-pill">💨 NW 13km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. AGRIGENTO -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-img">
+              <img src="https://images.unsplash.com/photo-1570897511184-f2ff8bba7439?w=800&auto=format&fit=crop&q=80" alt="Agrigento" loading="lazy">
+              <span class="timeline-badge">Sicília · UNESCO</span>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-day">Dia 5 · 30 Mai · 1 noite</div>
+              <h3>Agrigento</h3>
+              <div class="timeline-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  San Vito → 130 km · ~2h
+                </span>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                <div><strong>Hotel:</strong> <span>Colleverde Park Hotel</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div><strong>Highlights:</strong> <span>Valle dei Templi (UNESCO), Scala dei Turchi (falésias brancas)</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Pôr do sol:</strong> <span>Scala dei Turchi — falésias de mármore branco ao entardecer</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+                <div><strong>Jantar:</strong> <span>Caffè Concordia</span></div>
+              </div>
+              <div class="clima-pills">
+                <span class="clima-pill">☀ 27°/18°C</span>
+                <span class="clima-pill">🌊 Mar 21°C</span>
+                <span class="clima-pill">🌧 Chuva 6%</span>
+                <span class="clima-pill">☀ 10,6h sol</span>
+                <span class="clima-pill">💨 SE 12km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. SIRACUSA / ORTIGIA -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-img">
+              <img src="https://images.unsplash.com/photo-1570503350832-29a89a73daee?w=800&auto=format&fit=crop&q=80" alt="Ortigia Siracusa" loading="lazy">
+              <span class="timeline-badge">Sicília · White Lotus</span>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-day">Dias 6–7 · 31 Mai–1 Jun · 2 noites</div>
+              <h3>Ortigia / Siracusa</h3>
+              <div class="timeline-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  Agrigento → 200 km · ~2h30
+                </span>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                <div><strong>Hotel:</strong> <span>Hotel Posta Siracusa · Carro estacionado na entrada da ponte</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div><strong>Highlights:</strong> <span>Ilha histórica sem carro, Parque Arqueológico da Neápolis, bate-volta a Noto (Barroco UNESCO)</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Pôr do sol:</strong> <span>Lungomare Alfeo nas muralhas</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+                <div><strong>Jantar:</strong> <span>Sunset Ortigia ou Mikchan</span></div>
+              </div>
+              <div class="clima-pills">
+                <span class="clima-pill">☀ 27°/19°C</span>
+                <span class="clima-pill">🌊 Mar 21°C</span>
+                <span class="clima-pill">🌧 Chuva 5%</span>
+                <span class="clima-pill">☀ 10,7h sol</span>
+                <span class="clima-pill">💨 SE 11km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. TAORMINA -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-img">
+              <img src="https://images.unsplash.com/photo-1599472338539-7a9578e98f47?w=800&auto=format&fit=crop&q=80" alt="Taormina" loading="lazy">
+              <span class="timeline-badge">Sicília · Etna</span>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-day">Dias 8–10 · 2–4 Jun · 3 noites</div>
+              <h3>Taormina</h3>
+              <div class="timeline-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  Siracusa → 120 km · ~1h30
+                </span>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                <div><strong>Hotel:</strong> <span>Hotel Instyle</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div><strong>Highlights:</strong> <span>Teatro Greco com Etna ao fundo, Isola Bella (teleférico), Corso Umberto I</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Pôr do sol:</strong> <span>Teatro Greco — Etna nevado ao fundo</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+                <div><strong>Jantar:</strong> <span>Caffè Wunderbar na Piazza IX Aprile</span></div>
+              </div>
+              <div class="clima-pills">
+                <span class="clima-pill">☀ 28°/20°C</span>
+                <span class="clima-pill">🌊 Mar 22°C</span>
+                <span class="clima-pill">🌧 Chuva 8%</span>
+                <span class="clima-pill">☀ 10,8h sol</span>
+                <span class="clima-pill">💨 NE 14km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FERRY DIVIDER 1 -->
+      <div class="ferry-divider reveal" style="margin:1rem 0 2rem">
+        <div class="ferry-line"></div>
+        <div class="ferry-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 21c.6.5 1.2 1 2.5 1C7 22 7 20 9.5 20s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/><path d="M19.38 20A11.6 11.6 0 0021 14l-9-4-9 4c0 2.9.94 5.34 2.61 7.76"/><path d="M19 13V7H5v6"/><path d="M12 9v4"/><path d="M8 13V9m8 4V9"/></svg>
+          Balsa 1 · Messina → Villa San Giovanni · ~20 min
+        </div>
+        <div class="ferry-line"></div>
+      </div>
+
+      <!-- 6. SCILLA -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-img">
+              <img src="https://images.unsplash.com/photo-1517282009859-f000ec3b26fe?w=800&auto=format&fit=crop&q=80" alt="Scilla Calabria" loading="lazy">
+              <span class="timeline-badge">Calábria · Italia</span>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-day">Dia 11 · 5 Jun · 1 noite</div>
+              <h3>Scilla — Calábria</h3>
+              <div class="timeline-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  Taormina → Balsa → Scilla · 90 km · ~1h30
+                </span>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                <div><strong>Hotel:</strong> <span>Hotel Ganimede Scilla · Carro no estacionamento de cima</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div><strong>Highlights:</strong> <span>Vilarejo de pescadores sobre o mar, Castello Ruffo, bairro Chianalea (só a pé)</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Pôr do sol:</strong> <span>Castello Ruffo — vê a Sicília e o continente simultaneamente</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+                <div><strong>Jantar:</strong> <span>Peixe fresco do porto de Chianalea</span></div>
+              </div>
+              <div class="clima-pills">
+                <span class="clima-pill">☀ 27°/19°C</span>
+                <span class="clima-pill">🌊 Mar 22°C</span>
+                <span class="clima-pill">🌧 Chuva 12%</span>
+                <span class="clima-pill">☀ 10,8h sol</span>
+                <span class="clima-pill">💨 NW 16km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. TROPEA -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-img">
+              <img src="https://images.unsplash.com/photo-1590059390047-4cd7e547a1df?w=800&auto=format&fit=crop&q=80" alt="Tropea" loading="lazy">
+              <span class="timeline-badge">Calábria · Stromboli</span>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-day">Dias 12–13 · 6–7 Jun · 2 noites</div>
+              <h3>Tropea — Calábria</h3>
+              <div class="timeline-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  Scilla → 100 km · ~1h30 pela SS18 costeira
+                </span>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                <div><strong>Hotel:</strong> <span>Hotel Villa Antica</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div><strong>Highlights:</strong> <span>Cidadela medieval sobre falésias de arenito, bate-volta a Pizzo (tartufo di cioccolato), vista do vulcão Stromboli</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Pôr do sol:</strong> <span>Piazza Cannonone — Stromboli no horizonte</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+                <div><strong>Jantar:</strong> <span>Incipit — 'Nduja + vinho Cirò</span></div>
+              </div>
+              <div class="clima-pills">
+                <span class="clima-pill">☀ 27°/18°C</span>
+                <span class="clima-pill">🌊 Mar 22°C</span>
+                <span class="clima-pill">🌧 Chuva 11%</span>
+                <span class="clima-pill">☀ 10,9h sol</span>
+                <span class="clima-pill">💨 NW 14km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FERRY DIVIDER 2 -->
+      <div class="ferry-divider reveal" style="margin:1rem 0 2rem">
+        <div class="ferry-line"></div>
+        <div class="ferry-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 21c.6.5 1.2 1 2.5 1C7 22 7 20 9.5 20s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/><path d="M19.38 20A11.6 11.6 0 0021 14l-9-4-9 4c0 2.9.94 5.34 2.61 7.76"/><path d="M19 13V7H5v6"/><path d="M12 9v4"/><path d="M8 13V9m8 4V9"/></svg>
+          Balsa 2 · Villa San Giovanni → Messina · Retorno à Sicília
+        </div>
+        <div class="ferry-line"></div>
+      </div>
+
+      <!-- 8. CEFALÙ -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-img">
+              <img src="https://images.unsplash.com/photo-1559652099-f7e39ab7da12?w=800&auto=format&fit=crop&q=80" alt="Cefalù" loading="lazy">
+              <span class="timeline-badge">Sicília · Volta</span>
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-day">Dias 14–15 · 8–9 Jun · 2 noites</div>
+              <h3>Cefalù</h3>
+              <div class="timeline-meta">
+                <span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                  Tropea → Balsa → Cefalù · 280 km · ~3h30
+                </span>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                <div><strong>Hotel:</strong> <span>Hotel Riva del Sole</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div><strong>Highlights:</strong> <span>Vila normanda, Catedral UNESCO (mosaicos bizantinos), Rocca di Cefalù</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Pôr do sol:</strong> <span>Rocca di Cefalù — panorama 360°, mar Tirreno + montanhas Madonie</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
+                <div><strong>Jantar:</strong> <span>Orla com a catedral iluminada ao fundo</span></div>
+              </div>
+              <div class="clima-pills">
+                <span class="clima-pill">☀ 27°/18°C</span>
+                <span class="clima-pill">🌊 Mar 21°C</span>
+                <span class="clima-pill">🌧 Chuva 8%</span>
+                <span class="clima-pill">☀ 10,9h sol</span>
+                <span class="clima-pill">💨 NW 15km/h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIA 16: PALERMO → VOO -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" style="background:var(--primary)"></div>
+        <div class="timeline-side">
+          <div class="timeline-card">
+            <div class="timeline-body" style="padding:1.8rem">
+              <div class="timeline-day">Dia 16 · 10 Jun · Voo noturno</div>
+              <h3>Palermo → Brasil</h3>
+              <div class="detail-row" style="margin-top:1rem">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <div><strong>Trecho:</strong> <span>Cefalù → PMO (90 km · ~1h pela A20)</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                <div><strong>Check-in:</strong> <span>Masseria Mirabile (opcional, se necessário antes do voo)</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                <div><strong>Tarde livre:</strong> <span>Última volta em Palermo antes do voo noturno para o Brasil</span></div>
+              </div>
+              <div class="detail-row">
+                <svg class="detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .99h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.18a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15.18v1.74z"/></svg>
+                <div><strong>Devolução do carro:</strong> <span>Aeroporto Falcone-Borsellino (PMO)</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAINEL OPERACIONAL -->
+<section class="section" id="operacional" style="background:#f4f0eb">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Logística & Custos</div>
+      <h2 class="section-title">Painel operacional</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="panel reveal">
+      <div class="panel-tabs">
+        <button class="panel-tab active" onclick="switchTab('custos')">💶 Custos</button>
+        <button class="panel-tab" onclick="switchTab('carro')">🚗 Carro</button>
+        <button class="panel-tab" onclick="switchTab('balsas')">⛴ Balsas</button>
+        <button class="panel-tab" onclick="switchTab('malas')">🧳 Malas</button>
+        <button class="panel-tab" onclick="switchTab('checklist')">✅ Checklist</button>
+      </div>
+      <div class="panel-content">
+
+        <!-- CUSTOS -->
+        <div class="panel-pane active" id="pane-custos">
+          <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.5rem">Estimativas em euros por pessoa. Carro dividido por 4.</p>
+          <table class="custo-table">
+            <thead><tr><th>Categoria</th><th>Estimativa / pessoa</th><th>Observação</th></tr></thead>
+            <tbody>
+              <tr><td>✈ Voos internacionais (ida e volta)</td><td>€ 800 – 1.200</td><td class="custo-range">Varia por data de compra</td></tr>
+              <tr><td>🏨 Hospedagem (14 noites)</td><td>€ 600 – 900</td><td class="custo-range">~€120/noite casal ÷ 2</td></tr>
+              <tr><td>🚗 Aluguel do carro (16 dias ÷ 4)</td><td>€ 120 – 180</td><td class="custo-range">Fiat 500X automático</td></tr>
+              <tr><td>⛽ Combustível (~1.100 km)</td><td>€ 40 – 60</td><td class="custo-range">÷ 4 pessoas</td></tr>
+              <tr><td>⛴ Balsas — 2 travessias</td><td>€ 25 – 40</td><td class="custo-range">Com carro · ÷ 4</td></tr>
+              <tr><td>🍝 Alimentação (almoço + jantar · 16 dias)</td><td>€ 480 – 640</td><td class="custo-range">~€15–20/refeição</td></tr>
+              <tr><td>🏛 Passeios e ingressos</td><td>€ 80 – 120</td><td class="custo-range">Valle dei Templi, Teatro Greco...</td></tr>
+              <tr><td>🛡 Seguro viagem</td><td>€ 60 – 100</td><td class="custo-range">Cobertura médica Europa</td></tr>
+              <tr><td>🎁 Compras e extras</td><td>€ 100 – 200</td><td class="custo-range">A definir</td></tr>
+              <tr class="total-row"><td><strong>TOTAL ESTIMADO / PESSOA</strong></td><td><strong>€ 2.305 – 3.440</strong></td><td class="custo-range">~R$ 13.500 – 20.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CARRO -->
+        <div class="panel-pane" id="pane-carro">
+          <div class="carro-grid">
+            <div class="carro-item"><div class="label">Modelo</div><div class="value">Fiat 500X Automático</div></div>
+            <div class="carro-item"><div class="label">Categoria</div><div class="value">SUV Compacto</div></div>
+            <div class="carro-item"><div class="label">Retirada</div><div class="value">PMO · 26 Mai 2027</div></div>
+            <div class="carro-item"><div class="label">Devolução</div><div class="value">PMO · 10 Jun 2027</div></div>
+            <div class="carro-item"><div class="label">Duração</div><div class="value">16 dias</div></div>
+            <div class="carro-item"><div class="label">Km estimado</div><div class="value">~1.100 km</div></div>
+          </div>
+          <div class="carro-dica"><strong>⚠ Chianalea (Scilla):</strong> o bairro histórico é acessível apenas a pé. Estacionar no parcheggio acima do vilarejo e descer a pé.</div>
+          <div class="carro-dica" style="margin-top:.8rem"><strong>⚠ Ortigia (Siracusa):</strong> a ilha histórica não permite carros. Estacionar na entrada da Ponte Umbertino.</div>
+          <div class="carro-dica" style="margin-top:.8rem"><strong>💡 ZTL:</strong> centros históricos italianos têm zonas de tráfego restrito (ZTL). Não entrar de carro no centro de Palermo, Taormina centro ou Tropea sem verificar sinalização.</div>
+        </div>
+
+        <!-- BALSAS -->
+        <div class="panel-pane" id="pane-balsas">
+          <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.5rem">Duas travessias do Estreito de Messina. ~20 minutos cada. Comprar com antecedência ou embarcar direto no cais.</p>
+          <div class="balsa-card">
+            <div class="balsa-num">1</div>
+            <div class="balsa-info">
+              <h4>Messina (Sicília) → Villa San Giovanni (Calábria)</h4>
+              <p>Dia 11 · 5 Jun 2027 · Entrada na Calábria</p>
+              <div class="balsa-meta">
+                <span>⏱ ~20 min</span>
+                <span>💶 €10–15 com carro</span>
+                <span>🚗 Embarque direto</span>
+              </div>
+            </div>
+          </div>
+          <div class="balsa-card">
+            <div class="balsa-num">2</div>
+            <div class="balsa-info">
+              <h4>Villa San Giovanni (Calábria) → Messina (Sicília)</h4>
+              <p>Dia 13→14 · Regresso à Sicília · Em direção a Cefalù</p>
+              <div class="balsa-meta">
+                <span>⏱ ~20 min</span>
+                <span>💶 €10–15 com carro</span>
+                <span>🗓 Após Tropea</span>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:.82rem;color:var(--text-muted);margin-top:1rem">Operadoras: <strong>Caronte & Tourist</strong> ou <strong>RFI/Bluferries</strong>. Frequência: a cada 30–60 min.</p>
+        </div>
+
+        <!-- MALAS -->
+        <div class="panel-pane" id="pane-malas">
+          <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.5rem">Uma mala de bordo por pessoa (55×40×20 cm). As 4 malas cabem no porta-malas do Fiat 500X.</p>
+          <div class="mala-grid">
+            <div class="mala-card">
+              <h4>👕 Roupas (8 dias + lavagem)</h4>
+              <ul>
+                <li>4 camisetas leves</li>
+                <li>2 calças/bermudas</li>
+                <li>1 calça para jantares</li>
+                <li>1 vestido/blusa social</li>
+                <li>Roupa de banho (2)</li>
+                <li>1 casaco leve (noites)</li>
+                <li>Roupas íntimas (7)</li>
+                <li>Meias (6 pares)</li>
+              </ul>
+            </div>
+            <div class="mala-card">
+              <h4>👟 Calçados</h4>
+              <ul>
+                <li>Tênis confortável para caminhada</li>
+                <li>Sandália para praia/passeio</li>
+                <li>Sapato/sandália para jantar</li>
+                <li>Chinelo para hotel</li>
+              </ul>
+            </div>
+            <div class="mala-card">
+              <h4>💊 Saúde & Higiene</h4>
+              <ul>
+                <li>Protetor solar FPS 50+</li>
+                <li>Repelente</li>
+                <li>Kit primeiros socorros</li>
+                <li>Medicamentos pessoais</li>
+                <li>Antialérgico e analgésico</li>
+                <li>Antidiarreico</li>
+              </ul>
+            </div>
+            <div class="mala-card">
+              <h4>📱 Tecnologia</h4>
+              <ul>
+                <li>Celular + carregador</li>
+                <li>Adaptador plug europeu (tipo F)</li>
+                <li>Power bank</li>
+                <li>Fone de ouvido</li>
+                <li>Câmera (opcional)</li>
+                <li>Cabo USB-C</li>
+              </ul>
+            </div>
+            <div class="mala-card">
+              <h4>📄 Documentos</h4>
+              <ul>
+                <li>Passaporte (válido +6 meses)</li>
+                <li>Seguro viagem impresso</li>
+                <li>Carteira de motorista internacional</li>
+                <li>Voucher do carro</li>
+                <li>Reservas de hotel impressas</li>
+                <li>Cartão de débito/crédito internacional</li>
+              </ul>
+            </div>
+            <div class="mala-card">
+              <h4>🏖 Praia & Passeio</h4>
+              <ul>
+                <li>Toalha de microfibra</li>
+                <li>Óculos de sol</li>
+                <li>Chapéu ou boné</li>
+                <li>Mochila leve para passeios</li>
+                <li>Sacola reutilizável</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHECKLIST -->
+        <div class="panel-pane" id="pane-checklist">
+          <div id="checklist-container"></div>
+        </div>
+
+      </div>
+      <div class="export-bar">
+        <button class="btn-export" onclick="exportData()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Exportar dados
+        </button>
+        <button class="btn-export" onclick="document.getElementById('importFile').click()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Importar dados
+        </button>
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Sul da Itália 2027</div>
+  <p>Sicília · Calábria · 26 Mai → 10 Jun</p>
+  <p style="margin-top:.3rem">4 viajantes · Fiat 500X · ~1.100 km</p>
+</footer>
+
+<script>
+// STORAGE
+const STORAGE_KEY = 'roteiro-italia-sul-2027';
+const DATA_VERSION = 'v1-italia-sul-2027';
+
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const d = JSON.parse(raw);
+    return d.version === DATA_VERSION ? d : null;
+  } catch { return null; }
+}
+function saveData(data) {
+  data.version = DATA_VERSION;
+  data.savedAt = new Date().toISOString();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+// COUNTDOWN
+const targetDate = new Date('2027-05-26T06:00:00.000Z');
+function updateCountdown() {
+  const now = new Date();
+  const diff = targetDate - now;
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '0';
+    document.getElementById('cd-hours').textContent = '0';
+    document.getElementById('cd-mins').textContent = '0';
+    document.getElementById('cd-secs').textContent = '0';
+    return;
+  }
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins = Math.floor((diff % 3600000) / 60000);
+  const secs = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// TABS
+function switchTab(id) {
+  document.querySelectorAll('.panel-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.panel-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('pane-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// SCROLL REVEAL
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// CHECKLIST
+const checklistData = {
+  'Antes de Viajar': [
+    'Passaporte válido por +6 meses após 10 Jun 2027',
+    'Voos internacionais comprados (ida e volta)',
+    'Aluguel do carro reservado — Fiat 500X PMO',
+    'Todas as 8 hospedagens confirmadas',
+    'Seguro viagem contratado',
+    'Carteira de motorista internacional emitida',
+    'Chip/eSIM europeu ou plano internacional ativado',
+    'Euros em espécie (€200–300 por pessoa)',
+    'Baixar offline: Google Maps, Waze, iOverlander',
+    'App da locadora do carro instalado',
+  ],
+  'Logística Itália': [
+    'Verificar regras ZTL Palermo, Taormina, Tropea',
+    'Estacionamento Ortigia (entrada Ponte Umbertino) pesquisado',
+    'Estacionamento Chianalea (Scilla) pesquisado',
+    'Pesquisar horários balsas Caronte & Tourist',
+    'Valle dei Templi — ingressos antecipados',
+    'Teatro Greco Taormina — ingressos antecipados',
+    'Restaurante para jantar especial reservado',
+    'Rota offline baixada no GPS',
+  ],
+  'No Dia da Viagem': [
+    'Malas no peso de bordo (máx. 55×40×20 cm)',
+    'Documentos na bagagem de mão',
+    'Seguro viagem impresso/salvo no celular',
+    'Reservas de hotel impressas/salvas offline',
+    'Voucher do carro salvo offline',
+    'Carregadores e adaptadores na mochila',
+    'Protetor solar e remédios essenciais na mão',
+    'Notificar banco sobre viagem ao exterior',
+  ],
+  'Na Sicília': [
+    'Retirar carro no aeroporto PMO',
+    'Confirmar combustível — volante à esquerda ✅',
+    'Mercados Capo e Ballarò — Palermo',
+    'Scala dei Turchi ao pôr do sol — Agrigento',
+    'Valle dei Templi visitado',
+    'Noto bate-volta — arquitetura barroca',
+    'Teatro Greco Taormina visitado',
+    'Isola Bella teleférico — Taormina',
+  ],
+  'Na Calábria': [
+    'Balsa Messina → Villa San Giovanni (Balsa 1)',
+    'Chianalea a pé explorado — Scilla',
+    'Castello Ruffo pôr do sol — Scilla',
+    'Bate-volta a Pizzo — tartufo di cioccolato',
+    'Pôr do sol com vista Stromboli — Tropea',
+    'Jantar 'Nduja + vinho Cirò — Tropea',
+    'Balsa Villa San Giovanni → Messina (Balsa 2)',
+    'Rocca di Cefalù panorama 360°',
+  ],
+  'Volta para o Brasil': [
+    'Devolução do carro no aeroporto PMO',
+    'Check-in online feito',
+    'Últimas horas livres em Palermo',
+    'Nada de líquidos na bagagem de mão',
+    'Declaração alfandegária preparada',
+    'Guardar notas fiscais de compras',
+  ],
+};
+
+function buildChecklist() {
+  const saved = loadData() || {};
+  const checks = saved.checks || {};
+  const container = document.getElementById('checklist-container');
+  container.innerHTML = '';
+  Object.entries(checklistData).forEach(([group, items]) => {
+    const div = document.createElement('div');
+    div.className = 'checklist-group';
+    div.innerHTML = `<h4>${group}</h4>`;
+    items.forEach((item, idx) => {
+      const id = `chk-${group}-${idx}`;
+      const key = `${group}|${idx}`;
+      const checked = checks[key] ? 'checked' : '';
+      div.innerHTML += `
+        <div class="check-item">
+          <input type="checkbox" id="${id}" ${checked} onchange="toggleCheck('${group}',${idx},this.checked)">
+          <label for="${id}">${item}</label>
+        </div>`;
+    });
+    container.appendChild(div);
+  });
+}
+
+function toggleCheck(group, idx, checked) {
+  const data = loadData() || { checks: {} };
+  if (!data.checks) data.checks = {};
+  data.checks[`${group}|${idx}`] = checked;
+  saveData(data);
+}
+
+// EXPORT / IMPORT
+function exportData() {
+  const data = loadData() || {};
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'italia-sul-2027-dados.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      saveData(data);
+      buildChecklist();
+      alert('Dados importados com sucesso!');
+    } catch { alert('Erro ao importar — arquivo inválido.'); }
+  };
+  reader.readAsText(file);
+}
+
+// INIT
+buildChecklist();
+</script>
+</body>
+</html>
