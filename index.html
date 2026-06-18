@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiros de Viagem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1a0f0a;
+  --accent: #c9a554;
+  --accent-light: #e8d5a0;
+  --bg: #f8f4ef;
+  --text: #1a1207;
+  --text-muted: #7a6a58;
+  --border: #e0d5c8;
+  --shadow: 0 4px 24px rgba(26,15,10,0.10);
+  --shadow-lg: 0 8px 40px rgba(26,15,10,0.18);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 42vh;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(.38);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26,15,10,.2) 0%, rgba(26,15,10,.7) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.5rem;
+}
+.hero-badge {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: .4rem 1.1rem;
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  background: rgba(201,165,84,.08);
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: .6rem;
+}
+.hero h1 em { color: var(--accent); font-style: italic; }
+.hero p {
+  color: rgba(255,255,255,.65);
+  font-size: .95rem;
+  font-weight: 300;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* GRID */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+.section-label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .6rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), transparent);
+  margin-bottom: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  transition: all .3s;
+  box-shadow: var(--shadow);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+.card-img {
+  height: 210px;
+  overflow: hidden;
+  position: relative;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.card:hover .card-img img { transform: scale(1.05); }
+.card-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(26,15,10,.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(201,165,84,.4);
+  color: var(--accent);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: .3rem .75rem;
+  border-radius: 4px;
+}
+.card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: .35rem;
+}
+.card-body .meta {
+  font-size: .8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.card-body .meta span { display: flex; align-items: center; gap: .3rem; }
+.card-body p {
+  font-size: .88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+.card-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-cta {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.card-cta svg { transition: transform .2s; }
+.card:hover .card-cta svg { transform: translateX(4px); }
+.card-cities {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+.city-pill {
+  font-size: .68rem;
+  font-weight: 500;
+  background: rgba(201,165,84,.12);
+  color: var(--text-muted);
+  padding: .2rem .6rem;
+  border-radius: 20px;
+  border: 1px solid rgba(201,165,84,.25);
+}
+
+/* PLACEHOLDER */
+.card-placeholder {
+  background: #fff;
+  border: 2px dashed var(--border);
+  border-radius: 16px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+  color: var(--text-muted);
+  padding: 2rem;
+  text-align: center;
+}
+.card-placeholder .plus {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--border);
+  margin-bottom: .4rem;
+}
+.card-placeholder p {
+  font-size: .85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* STATUS BADGE */
+.status {
+  font-size: .68rem;
+  font-weight: 600;
+  padding: .2rem .65rem;
+  border-radius: 20px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.status-planning { background: rgba(201,165,84,.15); color: #8a6a10; }
+.status-done { background: rgba(45,106,79,.15); color: #2d6a4f; }
+.status-dream { background: rgba(100,100,120,.1); color: #7a6a8a; }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: .8rem;
+  color: var(--text-muted);
+}
+footer em { color: var(--accent); font-style: italic; }
+
+@media(max-width:600px){
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Marcos & Andreza</div>
+    <h1>Nossos <em>Roteiros</em></h1>
+    <p>Memórias em construção · viagem a viagem</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Coleção</div>
+  <div class="section-title">Todas as viagens</div>
+  <div class="section-divider"></div>
+
+  <div class="grid">
+
+    <!-- ESPANHA 2026 -->
+    <a href="./espanha-2026/" class="card">
+      <div class="card-img">
+        <img src="https://images.unsplash.com/photo-1543785734-4b6e564642f8?w=800&auto=format&fit=crop&q=80" alt="Espanha 2026" loading="lazy">
+        <span class="card-tag">Novembro 2026</span>
+      </div>
+      <div class="card-body">
+        <h2>Espanha 2026</h2>
+        <div class="meta">
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            14 – 24 nov 2026
+          </span>
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            10 noites
+          </span>
+        </div>
+        <p>Madri, Toledo, Zaragoza e Barcelona. Aniversário da Andreza celebrado com jantar especial à beira do Mediterrâneo.</p>
+        <div class="card-cities" style="margin-top:.8rem">
+          <span class="city-pill">Madri</span>
+          <span class="city-pill">Toledo</span>
+          <span class="city-pill">Zaragoza</span>
+          <span class="city-pill">Barcelona</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <span class="status status-planning">Planejando</span>
+        <span class="card-cta">
+          Ver roteiro
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- PLACEHOLDER -->
+    <div class="card-placeholder">
+      <div class="plus">+</div>
+      <p>Próxima aventura<br>ainda sendo sonhada…</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  Feito com carinho para <em>Andreza</em> ♥
+</footer>
+
+</body>
+</html>
