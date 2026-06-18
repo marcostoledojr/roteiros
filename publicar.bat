@@ -17,10 +17,11 @@ if %errorlevel% neq 0 (
 :: Adiciona todos os arquivos
 git add .
 
-:: Commit com data e hora automaticos
-for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set dt=%%a
-set DATAHORA=%dt:~6,2%/%dt:~4,2%/%dt:~0,4% %dt:~8,2%:%dt:~10,2%
-git commit -m "Atualizacao em %DATAHORA%"
+:: Commit com data e hora
+git commit -m "Atualizacao em %date% %time:~0,5%"
+
+:: Sincroniza com o GitHub antes de subir
+git pull origin main --rebase
 
 :: Push
 git push -u origin main
