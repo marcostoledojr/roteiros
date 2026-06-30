@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Espanha 2026 — Aniversário Momo</name>
+  <description>Roteiro completo: Madri · Toledo · Barcelona — Novembro 2026</description>
+
+  <!-- ===== ESTILOS ===== -->
+  <!-- Vermelho (monumentos/cultura) -->
+  <Style id="red-pin">
+    <IconStyle><color>ff1a1aaa</color><scale>1.1</scale>
+      <Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.8</scale></LabelStyle>
+  </Style>
+  <!-- Laranja (gastronomia restaurantes) -->
+  <Style id="orange-pin">
+    <IconStyle><color>ff0060ff</color><scale>1.0</scale>
+      <Icon><href>https://maps.google.com/mapfiles/kml/paddle/orange-circle.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.8</scale></LabelStyle>
+  </Style>
+  <!-- Amarelo (tapas &amp; drinks) -->
+  <Style id="yellow-pin">
+    <IconStyle><color>ff00c8ff</color><scale>1.0</scale>
+      <Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.8</scale></LabelStyle>
+  </Style>
+  <!-- Azul (logística) -->
+  <Style id="blue-pin">
+    <IconStyle><color>ffcc3300</color><scale>1.1</scale>
+      <Icon><href>https://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.8</scale></LabelStyle>
+  </Style>
+  <!-- Verde (hospedagem) -->
+  <Style id="green-pin">
+    <IconStyle><color>ff009900</color><scale>1.2</scale>
+      <Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href></Icon>
+    </IconStyle>
+    <LabelStyle><scale>0.9</scale></LabelStyle>
+  </Style>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 1: LOGÍSTICA GERAL                                        -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>✈ Logística Geral</name>
+    <description>Aeroportos e estações de trem da viagem</description>
+    <visibility>1</visibility>
+
+    <Placemark>
+      <name>✈ Aeroporto MAD — Adolfo Suárez Barajas</name>
+      <description><![CDATA[
+        <b>Aeroporto de Madri</b><br/>
+        Terminal 1 (Air Europa)<br/>
+        <br/>
+        Chegada: 15 Nov às 05:15 (UX58 GRU→MAD)<br/>
+        Transfer: Metro Linha 8 → Nuevos Ministerios → Atocha (~45 min, €5)
+      ]]></description>
+      <styleUrl>#blue-pin</styleUrl>
+      <Point><coordinates>-3.5668,40.4774,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>✈ Aeroporto BCN — El Prat</name>
+      <description><![CDATA[
+        <b>Aeroporto de Barcelona</b><br/>
+        Terminal 1<br/>
+        <br/>
+        Embarque: 21 Nov às 20:30 (UX7708 BCN→MAD)<br/>
+        Transfer: Aerobus T1 → Plaça Catalunya (~30 min, €6,75)
+      ]]></description>
+      <styleUrl>#blue-pin</styleUrl>
+      <Point><coordinates>2.0785,41.2971,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🚄 Estação Madrid Atocha</name>
+      <description><![CDATA[
+        <b>Madrid Puerta de Atocha</b><br/>
+        Principal estação ferroviária de Madri<br/>
+        <br/>
+        17 Nov: Atocha → Toledo (Renfe, 33 min, ~€6,50)<br/>
+        18 Nov: Atocha → Barcelona Sants (AVE, 2h40, ~€25-45)<br/>
+        <br/>
+        Dica: Comprar bilhetes em renfe.com com antecedência
+      ]]></description>
+      <styleUrl>#blue-pin</styleUrl>
+      <Point><coordinates>-3.6909,40.4065,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🚄 Estação Toledo</name>
+      <description><![CDATA[
+        <b>Estação de Toledo</b><br/>
+        Estação mudejar em frente à cidade histórica<br/>
+        <br/>
+        17 Nov: Toledo → Madri Atocha (Renfe, 33 min, ~€6,50)
+      ]]></description>
+      <styleUrl>#blue-pin</styleUrl>
+      <Point><coordinates>-4.0258,39.8543,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🚄 Estação Barcelona Sants</name>
+      <description><![CDATA[
+        <b>Estació de Barcelona-Sants</b><br/>
+        Principal estação ferroviária de Barcelona<br/>
+        <br/>
+        18 Nov: Chegada AVE de Madri (~2h40 de viagem)<br/>
+        Metro L3 (verde) ou L5 (azul) → centro em 10 min
+      ]]></description>
+      <styleUrl>#blue-pin</styleUrl>
+      <Point><coordinates>2.1408,41.3793,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 2: MADRID — MONUMENTOS &amp; CULTURA                      -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>🏛 Madrid — Monumentos &amp; Cultura</name>
+    <description>Principais pontos turísticos de Madri · Dias 1-3 · 15-18 Nov</description>
+    <visibility>1</visibility>
+
+    <Placemark>
+      <name>🖼 Museo del Prado</name>
+      <description><![CDATA[
+        <b>Museo Nacional del Prado</b><br/>
+        Um dos maiores museus de arte do mundo<br/>
+        <br/>
+        Horário: Seg-Sáb 10h-20h / Dom 10h-19h<br/>
+        Entrada: €15 (grátis após 18h em dias úteis)<br/>
+        Destaques: Velázquez, Goya, Rubens, Tiziano<br/>
+        <br/>
+        ⭐ PRIORIDADE MÁXIMA — Reservar ingresso online
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.6919,40.4138,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🖼 Museo Reina Sofía</name>
+      <description><![CDATA[
+        <b>Museo Nacional Centro de Arte Reina Sofía</b><br/>
+        Arte contemporânea e moderna<br/>
+        <br/>
+        Horário: Seg e Qua-Sáb 10h-21h / Dom 10h-14h30 (fechado terça)<br/>
+        Entrada: €12 (grátis Seg-Sex após 19h e Sáb após 14h30)<br/>
+        <br/>
+        ⭐ IMPERDÍVEL: Guernica de Pablo Picasso (Sala 206)<br/>
+        <br/>
+        Dica: Ir de tarde para aproveitar gratuidade
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.6941,40.4072,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>👑 Palacio Real de Madrid</name>
+      <description><![CDATA[
+        <b>Palácio Real de Madri</b><br/>
+        Residência oficial da Família Real Espanhola<br/>
+        <br/>
+        Horário: Abr-Set 10h-20h / Out-Mar 10h-18h<br/>
+        Entrada: €12 / gratuito para cidadãos UE às Seg, Qua e Qui (16h-18h)<br/>
+        <br/>
+        Não deixar de ver: Armeria Real, Jardines de Sabatini
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.7143,40.4179,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🏛 Plaza Mayor</name>
+      <description><![CDATA[
+        <b>Plaza Mayor</b><br/>
+        A praça mais famosa de Madri · Séc. XVII<br/>
+        <br/>
+        Entrada gratuita · Aberta 24h<br/>
+        <br/>
+        Ao redor: mercados, restaurantes, street performers<br/>
+        Dica: Visite de manhã cedo (sem multidões) ou à noite (mais bonita)
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.7073,40.4155,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌳 Parque del Retiro</name>
+      <description><![CDATA[
+        <b>Parque do Retiro</b><br/>
+        Pulmão verde de Madri · Patrimônio UNESCO<br/>
+        <br/>
+        Aberto 24h · Entrada gratuita<br/>
+        <br/>
+        Ver: Estanque Grande (barcos a remo), Palácio de Cristal,<br/>
+        Monumento a Alfonso XII, Rose Garden<br/>
+        <br/>
+        Ótimo para caminhada matinal no Dia 2
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.6843,40.4150,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌅 Templo de Debod (Pôr do Sol)</name>
+      <description><![CDATA[
+        <b>Templo de Debod</b><br/>
+        Templo egípcio de 2.200 anos — presente do Egito à Espanha<br/>
+        <br/>
+        Entrada gratuita ao exterior<br/>
+        Interior: Ter-Sex 10h-14h e 18h-20h / Sáb-Dom 10h-14h<br/>
+        <br/>
+        ⭐ MELHOR PÔR DO SOL DE MADRI<br/>
+        Vista deslumbrante para o Palácio Real<br/>
+        Chegar 30 min antes do pôr do sol
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.7178,40.4229,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🛍 Gran Vía</name>
+      <description><![CDATA[
+        <b>Gran Vía</b><br/>
+        A "Broadway" de Madri · Arquitetura Belle Époque<br/>
+        <br/>
+        Aberta 24h · Melhor à noite<br/>
+        <br/>
+        Ver: Edificio Metrópolis, Edificio Telefónica, Teatro Capitol<br/>
+        Lojas, musicals, restaurantes e vida noturna<br/>
+        <br/>
+        Hotel Liabeny fica a 3 min a pé da Gran Vía
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.7035,40.4203,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🏘 Bairro de Malasaña</name>
+      <description><![CDATA[
+        <b>Malasaña</b><br/>
+        Bairro bohemio, alternativo e trendy de Madri<br/>
+        <br/>
+        Aberto 24h · Melhor à tarde e noite<br/>
+        <br/>
+        Ver: Mercado de Fuencarral, ruas com grafite, cafés artesanais,<br/>
+        Plaza del Dos de Mayo, lojas vintage e bares locais<br/>
+        <br/>
+        Ótimo para explorar no Dia 2 à tarde
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.7055,40.4260,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🎨 Museo Thyssen-Bornemisza</name>
+      <description><![CDATA[
+        <b>Museo Thyssen-Bornemisza</b><br/>
+        Terceiro grande museu do "Triângulo de Ouro"<br/>
+        <br/>
+        Horário: Ter-Dom 10h-19h (fechado segunda)<br/>
+        Entrada: €13<br/>
+        <br/>
+        Completa o Prado e o Reina Sofía<br/>
+        Destaques: Impressionismo, Arte Moderna
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-3.6942,40.4154,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 3: MADRID — GASTRONOMIA                                   -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>🍽 Madrid — Gastronomia</name>
+    <description>Restaurantes recomendados em Madri · 3 opções por refeição</description>
+    <visibility>0</visibility>
+
+    <!-- ALMOÇOS -->
+    <Placemark>
+      <name>🥘 ALMOÇO — Sobrino de Botín (Restaurante mais antigo do mundo)</name>
+      <description><![CDATA[
+        <b>Sobrino de Botín</b><br/>
+        ⭐ Guinness: restaurante mais antigo do mundo (1725)<br/>
+        Especialidade: Cochinillo asado e Cordero lechal<br/>
+        <br/>
+        Preço: €30-45/pessoa<br/>
+        Reserva: OBRIGATÓRIA em botin.es<br/>
+        Horário: 13h-16h e 20h-00h<br/>
+        <br/>
+        Calle de Cuchilleros, 17 · próximo à Plaza Mayor
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>-3.7082,40.4144,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🥘 ALMOÇO — Mercado de San Miguel</name>
+      <description><![CDATA[
+        <b>Mercado de San Miguel</b><br/>
+        ⭐ Mercado gastronômico premium no coração de Madri<br/>
+        Tapas, vinhos, frutos do mar frescos<br/>
+        <br/>
+        Preço: €15-25/pessoa<br/>
+        Horário: 10h-00h (Qui-Sáb até 02h)<br/>
+        <br/>
+        Plaza de San Miguel · ao lado da Plaza Mayor<br/>
+        Ótimo para almoço leve entre museus
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>-3.7090,40.4152,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🥘 ALMOÇO — Casa Lucio</name>
+      <description><![CDATA[
+        <b>Casa Lucio</b><br/>
+        ⭐ Tradicional taberna madrilena desde 1974<br/>
+        Famoso pelos huevos rotos e pratos castelhanos<br/>
+        <br/>
+        Preço: €25-40/pessoa<br/>
+        Reserva recomendada<br/>
+        Horário: 13h-16h e 20h30-00h<br/>
+        <br/>
+        Calle de la Cava Baja, 35 · La Latina
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>-3.7098,40.4125,0</coordinates></Point>
+    </Placemark>
+
+    <!-- JANTARES -->
+    <Placemark>
+      <name>🍷 JANTAR — Taberna La Daniela</name>
+      <description><![CDATA[
+        <b>Taberna La Daniela</b><br/>
+        ⭐ Cocido madrileño autêntico — prato típico da capital<br/>
+        Ambiente clássico e preços honestos<br/>
+        <br/>
+        Preço: €20-30/pessoa<br/>
+        Horário: 13h30-16h e 20h30-23h<br/>
+        <br/>
+        Calle del General Pardiñas, 21<br/>
+        <br/>
+        O cocido madrileño é prato de inverno — perfeito para novembro!
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>-3.6817,40.4258,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍷 JANTAR — La Tasquería</name>
+      <description><![CDATA[
+        <b>La Tasquería</b><br/>
+        ⭐ 1 estrela Michelin · Chef Javi Estévez<br/>
+        Cozinha criativa com offal (miúdos) de alta gastronomia<br/>
+        <br/>
+        Preço: €60-80/pessoa (menu degustação)<br/>
+        Reserva: OBRIGATÓRIA com semanas de antecedência<br/>
+        Horário: 14h-15h30 e 21h-22h30<br/>
+        <br/>
+        Calle del Duque de Sesto, 48
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>-3.6736,40.4210,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍷 JANTAR — StreetXO</name>
+      <description><![CDATA[
+        <b>StreetXO</b><br/>
+        ⭐ Chef Dabiz Muñoz (3 estrelas Michelin em outros restaurantes)<br/>
+        Street food de alta gastronomia — fusão ibero-asiática<br/>
+        <br/>
+        Preço: €50-70/pessoa<br/>
+        Reserva: muito difícil — tentar com meses de antecedência<br/>
+        Horário: 13h30-15h30 e 20h30-23h<br/>
+        <br/>
+        Calle de Serrano, 52 · El Corte Inglés Premium
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>-3.6880,40.4298,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 4: MADRID — TAPAS &amp; DRINKS                            -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>🍺 Madrid — Tapas &amp; Drinks</name>
+    <description>Melhores bares de tapas e drinks de Madri · Altamente recomendados</description>
+    <visibility>0</visibility>
+
+    <Placemark>
+      <name>🍷 Bodega de la Ardosa ⭐4.5</name>
+      <description><![CDATA[
+        <b>Bodega de la Ardosa</b><br/>
+        ⭐⭐ Taberna histórica desde 1892<br/>
+        A melhor tortilla de patatas de Madri (segundo os locais)<br/>
+        <br/>
+        Preço: €2-5 por tapa · Barato e bom<br/>
+        Ambiente: tradicional, azulejos, barris de vinho<br/>
+        Horário: 12h30-15h30 e 19h-00h<br/>
+        <br/>
+        Calle de Colón, 13 · Malasaña<br/>
+        Torilla com trufa: €4,50 — pedir sempre!
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>-3.7054,40.4244,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍺 Bares da Cava Baja ⭐4.4</name>
+      <description><![CDATA[
+        <b>Calle Cava Baja</b><br/>
+        ⭐⭐ A rua de tapas mais famosa de Madri · Bairro de La Latina<br/>
+        Dezenas de bares tradicionais lado a lado<br/>
+        <br/>
+        Melhor experiência: ir andando e "tapear" de bar em bar<br/>
+        Preço: €1,50-4 por tapa<br/>
+        Melhor horário: 13h-16h ou 20h-23h<br/>
+        <br/>
+        Favoritos: El Viajero, Txirimiri, Casa Lucas
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>-3.7097,40.4127,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌇 Azotea del Círculo de Bellas Artes ⭐4.3</name>
+      <description><![CDATA[
+        <b>Azotea del Círculo de Bellas Artes</b><br/>
+        ⭐⭐ Rooftop mais icônico de Madri<br/>
+        Vista panorâmica 360° da cidade<br/>
+        <br/>
+        Preço: €4 entrada + cócteis ~€10-14<br/>
+        Horário: 10h-01h (Qui-Sáb até 02h)<br/>
+        Ideal para pôr do sol e gin-tonic<br/>
+        <br/>
+        Calle de Alcalá, 42 · 7º andar<br/>
+        Vai direto pelo elevador no foyer do Círculo
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>-3.6985,40.4181,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍸 El Imparcial ⭐4.4</name>
+      <description><![CDATA[
+        <b>El Imparcial</b><br/>
+        ⭐ Bar gastronômico em antiga gráfica do séc. XIX<br/>
+        Coquetéis, vermutes, tapas criativas em ambiente incrível<br/>
+        <br/>
+        Preço: €8-14 por cóctel · Tapas €5-10<br/>
+        Horário: 13h-02h (Qui-Sáb até 03h)<br/>
+        <br/>
+        Calle del Duque de Alba, 4 · La Latina<br/>
+        Ambiente único — espaço de 4 andares em prédio histórico
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>-3.7094,40.4097,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍺 Bar Cock ⭐4.3</name>
+      <description><![CDATA[
+        <b>Bar Cock</b><br/>
+        ⭐ Coqueteria clássica de Madri desde 1920s<br/>
+        Ambiente Art Deco, bartenders de jaleco<br/>
+        Sem dúvida um dos melhores coquetéis de Madri<br/>
+        <br/>
+        Preço: €10-15 por drinque<br/>
+        Horário: 20h-04h (fechado domingos)<br/>
+        <br/>
+        Calle de la Reina, 16 · Chueca<br/>
+        Não tem cardápio — o bartender faz o que você quiser
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>-3.7004,40.4230,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍺 El Anciano Rey de los Vinos ⭐4.3</name>
+      <description><![CDATA[
+        <b>El Anciano Rey de los Vinos</b><br/>
+        ⭐ Taberna histórica desde 1909 · frente ao Palácio Real<br/>
+        Vinho da casa excelente, tapas clássicas, vista para a Almudena<br/>
+        <br/>
+        Preço: €2-4 por tapa · Vinho €2-4 por copo<br/>
+        Horário: 10h-23h30<br/>
+        <br/>
+        Calle Bailén, 19 · Em frente ao Palácio Real<br/>
+        Ótimo para uma pausa após visitar o Palácio
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>-3.7131,40.4157,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 5: TOLEDO — MONUMENTOS &amp; MIRANTES                     -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>⚔ Toledo — Monumentos &amp; Mirantes</name>
+    <description>Day trip · 17 Nov · Trem Madri-Toledo 33 min</description>
+    <visibility>0</visibility>
+
+    <Placemark>
+      <name>⛪ Catedral de Toledo (Primada de España)</name>
+      <description><![CDATA[
+        <b>Catedral Primada de Toledo</b><br/>
+        ⭐ Uma das maiores catedrais góticas do mundo (séc. XIII-XV)<br/>
+        <br/>
+        Entrada: €12,50 / inclui torre e sacristia<br/>
+        Horário: 10h-18h30 (Dom: 14h-18h30)<br/>
+        <br/>
+        Destaques: Transparente barroco, coro, sacristia com El Grecos<br/>
+        <br/>
+        PRIORIDADE MÁXIMA em Toledo — reservar online é recomendado
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-4.0222,39.8567,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🏰 Alcázar de Toledo</name>
+      <description><![CDATA[
+        <b>Alcázar de Toledo</b><br/>
+        ⭐ Fortaleza romana-medieval com museu militar<br/>
+        Ponto mais alto de Toledo — vistas magníficas<br/>
+        <br/>
+        Entrada: Grátis (domingos e feriados gratuito)<br/>
+        Horário: Ter-Dom 10h-17h (fechado segunda)<br/>
+        <br/>
+        Museu do Exército no interior<br/>
+        Vista panorâmica da cidade do terraço
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-4.0209,39.8574,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>✡ Sinagoga del Tránsito + Museo Sefardí</name>
+      <description><![CDATA[
+        <b>Sinagoga del Tránsito</b><br/>
+        ⭐ Melhor exemplo de arquitetura mudéjar judaica (1356)<br/>
+        Decoração de arabescos em estuque — impressionante<br/>
+        <br/>
+        Entrada: €3 (grátis Dom tarde e Sáb)<br/>
+        Horário: Mar-Sáb 9h30-19h30 / Dom 10h-15h<br/>
+        <br/>
+        Calle Samuel Levi, s/n · Judería de Toledo<br/>
+        Ao lado: Casa del Greco
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-4.0268,39.8545,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🎨 Iglesia de Santo Tomé — El Greco</name>
+      <description><![CDATA[
+        <b>Iglesia de Santo Tomé</b><br/>
+        ⭐ Abriga o maior e mais famoso quadro de El Greco:<br/>
+        "El entierro del conde de Orgaz" (1586)<br/>
+        <br/>
+        Entrada: €3<br/>
+        Horário: 10h-18h45 (Mar-Out até 19h45)<br/>
+        <br/>
+        Calle Santo Tomé, 4<br/>
+        Uma das obras-primas da pintura espanhola
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-4.0249,39.8557,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌅 Mirador del Valle (Pôr do Sol ÉPICO)</name>
+      <description><![CDATA[
+        <b>Mirador del Valle</b><br/>
+        ⭐⭐ A melhor vista panorâmica de Toledo<br/>
+        Toledo inteira ao pôr do sol — foto obrigatória<br/>
+        <br/>
+        Entrada: Gratuita<br/>
+        Aberto: 24h<br/>
+        <br/>
+        Carretera de Circunvalación · Margem sul do Tejo<br/>
+        <br/>
+        Como chegar: Taxi do centro (~€5) ou caminhar 25 min<br/>
+        Melhor horário: 1h antes do pôr do sol (por volta das 17h30 em Nov)
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-4.0357,39.8486,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌉 Puente de Alcántara e Muralhas</name>
+      <description><![CDATA>
+        <b>Puente de Alcántara</b><br/>
+        ⭐ Ponte romana (séc. I a.C.) com Torre de Homenagem<br/>
+        Uma das entradas mais fotogênicas de Toledo<br/>
+        <br/>
+        Entrada: Gratuita<br/>
+        <br/>
+        Vista da muralha árabe e do Rio Tejo<br/>
+        Ótimo ponto de partida para explorar a cidade histórica<br/>
+        A pé da estação de trem: 20 minutos
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>-4.0164,39.8584,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 6: TOLEDO — GASTRONOMIA &amp; TAPAS                       -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>🥩 Toledo — Gastronomia &amp; Tapas</name>
+    <description>Onde comer e beber em Toledo · Day trip · 17 Nov</description>
+    <visibility>0</visibility>
+
+    <Placemark>
+      <name>🥘 Bar Ludeña — Carcamusas (OBRIGATÓRIO)</name>
+      <description><![CDATA[
+        <b>Bar Ludeña</b><br/>
+        ⭐⭐ Criadores das famosas "carcamusas" — prato típico de Toledo<br/>
+        Carcamusas: guisado de porco com ervilhas e especiarias<br/>
+        <br/>
+        Preço: €5-10 por tapa · Muito custo-benefício<br/>
+        Horário: 12h-16h e 19h-23h (fechado segunda)<br/>
+        <br/>
+        Plaza de la Magdalena, 13<br/>
+        NÃO PODE FALTAR — é a experiência gastronômica de Toledo
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>-4.0237,39.8581,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍽 Alfileritos 24 — Tapas Criativas</name>
+      <description><![CDATA[
+        <b>Alfileritos 24</b><br/>
+        ⭐ Tapas criativas em ambiente histórico no centro de Toledo<br/>
+        Proposta moderna usando ingredientes castelhanos tradicionais<br/>
+        <br/>
+        Preço: €15-25/pessoa<br/>
+        Reserva recomendada<br/>
+        Horário: 13h-16h30 e 20h30-00h<br/>
+        <br/>
+        Calle de Alfileritos, 24
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>-4.0248,39.8603,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍰 Mazapán — Casa Santo Tomé (OBRIGATÓRIO)</name>
+      <description><![CDATA[
+        <b>Confeitaria Santo Tomé</b><br/>
+        ⭐⭐ O mazapão mais famoso de Toledo desde 1856<br/>
+        Mazapão de Toledo: IGP (Indicação Geográfica Protegida)<br/>
+        <br/>
+        Preço: Figurinhas de mazapão €2-5 · Caixas de presente €10-20<br/>
+        Horário: 9h-21h (todos os dias)<br/>
+        <br/>
+        Calle Santo Tomé, 3 · Na saída da Igreja de Santo Tomé<br/>
+        Comprar como lembrança + comer na hora
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>-4.0249,39.8555,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍷 El Trebol — Vermute e Tapas</name>
+      <description><![CDATA[
+        <b>Bar El Trebol</b><br/>
+        ⭐ Bar histórico para vermute e tapas clássicas<br/>
+        Frequentado por locais, não turistas<br/>
+        <br/>
+        Preço: €2-4 por tapa · Muito barato<br/>
+        Horário: 10h-16h e 19h-00h<br/>
+        <br/>
+        Calle Santa Fe, 1 · Zona antiga<br/>
+        Ótimo para almoço rápido e barato entre passeios
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>-4.0232,39.8568,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 7: BARCELONA — MONUMENTOS &amp; CULTURA                   -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>🏛 Barcelona — Monumentos &amp; Cultura</name>
+    <description>Pontos turísticos de Barcelona · Dias 4-7 · 18-21 Nov</description>
+    <visibility>0</visibility>
+
+    <Placemark>
+      <name>⛪ Sagrada Família (RESERVA OBRIGATÓRIA)</name>
+      <description><![CDATA[
+        <b>Basílica de la Sagrada Família</b><br/>
+        ⭐⭐ Obra-prima de Gaudí · Patrimônio UNESCO em construção<br/>
+        <br/>
+        Entrada: €26 (básico) / €36 com torres<br/>
+        RESERVA ONLINE OBRIGATÓRIA: sagradafamilia.org<br/>
+        Reservar com semanas de antecedência — esgota rápido!<br/>
+        <br/>
+        Horário: 9h-19h (Nov)<br/>
+        Dica: Visitar no período da manhã — melhor luz pelas vitrais<br/>
+        <br/>
+        Carrer de Mallorca, 401 · Eixample
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>2.1744,41.4036,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌳 Park Güell (RESERVA OBRIGATÓRIA)</name>
+      <description><![CDATA[
+        <b>Park Güell</b><br/>
+        ⭐⭐ Jardim artístico de Gaudí · Patrimônio UNESCO<br/>
+        Salamandras de mosaico, terraço com vista para Barcelona<br/>
+        <br/>
+        Entrada zona monumental: €10 / Gratuito fora da zona<br/>
+        RESERVA ONLINE OBRIGATÓRIA: parkguell.barcelona<br/>
+        Horário: 9h30-17h30 (Nov)<br/>
+        <br/>
+        Carrer d'Olot, s/n · Gràcia<br/>
+        Dica: Entrar pelo portão da Carretera del Carmel para vista panorâmica
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>2.1528,41.4145,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🦎 Casa Batlló</name>
+      <description><![CDATA[
+        <b>Casa Batlló</b><br/>
+        ⭐⭐ A mais fantástica das casas de Gaudí no Passeig de Gràcia<br/>
+        Fachada de azulejos coloridos inspirada em dragão e serpente<br/>
+        <br/>
+        Entrada: €29-35 (com tour audiovisual imersivo)<br/>
+        Reserva: muito recomendada em casabatllo.es<br/>
+        Horário: 9h-21h<br/>
+        <br/>
+        Passeig de Gràcia, 43 · Eixample<br/>
+        "Bloco da Discórdia" — lado a lado com Casa Amatller e Casa Lleó Morera
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>2.1650,41.3916,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🏘 Bairro Gótico (Barri Gòtic)</name>
+      <description><![CDATA[
+        <b>Barri Gòtic</b><br/>
+        ⭐ O coração medieval de Barcelona<br/>
+        Ruelas estreitas com 2.000 anos de história<br/>
+        <br/>
+        Entrada gratuita · Aberto 24h<br/>
+        <br/>
+        Ver: Catedral de Barcelona, Plaça Reial, Pont del Bisbe,<br/>
+        Plaça Sant Jaume, Muralha Romana<br/>
+        <br/>
+        Ótimo para se perder à tarde sem destino<br/>
+        Sair pelo Las Ramblas ao final
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>2.1764,41.3828,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌅 Bunkers del Carmel (MELHOR PÔRDO SOL)</name>
+      <description><![CDATA[
+        <b>Bunkers del Carmel</b><br/>
+        ⭐⭐ Vista 360° de Barcelona — o mirante mais bonito da cidade<br/>
+        Ruínas de bunkers da Guerra Civil com vista para o mar<br/>
+        <br/>
+        Entrada gratuita · Aberto 24h<br/>
+        <br/>
+        Turó de la Rovira · Barri del Carmel<br/>
+        Como chegar: Bus 24 ou V17, ou Taxi (~€8 do centro)<br/>
+        <br/>
+        ⭐ FOTO OBRIGATÓRIA: Sagrada Família ao fundo com o mar<br/>
+        Chegar 45 min antes do pôr do sol<br/>
+        Em novembro: pôr do sol ~17h30
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>2.1547,41.4200,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🛒 Mercat de La Boqueria</name>
+      <description><![CDATA[
+        <b>Mercat de Sant Josep de la Boqueria</b><br/>
+        ⭐ O mercado mais famoso da Espanha<br/>
+        Frutas, presuntos, frutos do mar, sucos frescos<br/>
+        <br/>
+        Entrada gratuita<br/>
+        Horário: 8h-20h30 (fechado domingo)<br/>
+        <br/>
+        La Rambla, 91<br/>
+        Dica: Ir de manhã cedo — à tarde fica lotado de turistas<br/>
+        Sucos de frutas frescas: €2-3 — os melhores da viagem
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>2.1718,41.3816,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🎨 Bairro El Born</name>
+      <description><![CDATA[
+        <b>El Born / El Barri de Sant Pere</b><br/>
+        ⭐ Bairro artístico e gastronômico de Barcelona<br/>
+        Galerias, restaurantes, bares e lojas independentes<br/>
+        <br/>
+        Ver: Museu Picasso (€12), Basílica de Santa Maria del Mar,<br/>
+        Parc de la Ciutadella, mercado El Born<br/>
+        <br/>
+        Ótimo para tarde e noite<br/>
+        Carrer del Born e Passeig del Born: rua principal de bares
+      ]]></description>
+      <styleUrl>#red-pin</styleUrl>
+      <Point><coordinates>2.1809,41.3848,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 8: BARCELONA — GASTRONOMIA &amp; ANIVERSÁRIO              -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>🎂 Barcelona — Gastronomia &amp; Aniversário</name>
+    <description>Restaurantes e jantar especial de aniversário · Momo 🎂</description>
+    <visibility>0</visibility>
+
+    <Placemark>
+      <name>🎂 JANTAR ANIVERSÁRIO — La Mar Salada ⭐⭐</name>
+      <description><![CDATA[
+        <b>La Mar Salada</b><br/>
+        ⭐⭐ RECOMENDAÇÃO #1 para o jantar de aniversário<br/>
+        Frutos do mar frescos, arrozes e paella — vista para o mar<br/>
+        <br/>
+        Preço: €40-55/pessoa<br/>
+        Reserva OBRIGATÓRIA com antecedência: lamarsal.com<br/>
+        Horário: 13h-15h30 e 20h-22h30<br/>
+        <br/>
+        Passeig de Joan de Borbó, 58 · Barceloneta<br/>
+        <br/>
+        ⭐ Perfeito para jantar especial de aniversário Momo<br/>
+        Pedir: arroz negro, bogavante, ceviche do dia
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>2.1884,41.3774,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🎂 JANTAR ANIVERSÁRIO — El Nacional ⭐⭐</name>
+      <description><![CDATA[
+        <b>El Nacional Barcelona</b><br/>
+        ⭐⭐ ALTERNATIVA ELEGANTE para o aniversário<br/>
+        Espaço gastronômico em palácio do séc. XIX<br/>
+        4 restaurantes + 4 bares no mesmo espaço<br/>
+        <br/>
+        Preço: €35-55/pessoa<br/>
+        Reserva: elnacionalbcn.com<br/>
+        Horário: 12h-01h<br/>
+        <br/>
+        Passeig de Gràcia, 24 bis · Eixample<br/>
+        Ambiente impressionante — ótimo para fotos e ocasiões especiais
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>2.1659,41.3919,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌟 JANTAR ANIVERSÁRIO — Disfrutar (2 Estrelas Michelin)</name>
+      <description><![CDATA[
+        <b>Disfrutar</b><br/>
+        ⭐⭐ 2 estrelas Michelin — uma das melhores experiências de BCN<br/>
+        Cozinha de vanguarda — ex-equipe elBulli<br/>
+        <br/>
+        Preço: €200-250/pessoa (menu degustação)<br/>
+        Reserva: MESES de antecedência — difícil conseguir<br/>
+        Horário: 13h30 e 21h (fechado Dom e Seg)<br/>
+        <br/>
+        Carrer de Villarroel, 163 · Eixample<br/>
+        <br/>
+        Opção premium para uma celebração inesquecível
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>2.1512,41.3876,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🥘 ALMOÇO — Cervecería Catalana</name>
+      <description><![CDATA[
+        <b>Cervecería Catalana</b><br/>
+        ⭐ Tapas e petiscos no coração do Eixample<br/>
+        Fila na porta mas vale cada minuto<br/>
+        <br/>
+        Preço: €15-25/pessoa<br/>
+        Sem reserva — chegar às 13h ou 20h para evitar fila longa<br/>
+        Horário: 8h-01h<br/>
+        <br/>
+        Carrer de Mallorca, 236 · Eixample<br/>
+        Pedir: pimientos de padrón, croquetas, patatas bravas, tortilla
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>2.1603,41.3919,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🦞 ALMOÇO — La Cova Fumada (Barceloneta)</name>
+      <description><![CDATA[
+        <b>La Cova Fumada</b><br/>
+        ⭐ Bar histórico onde nasceu a bomba (tapa típica de BCN)<br/>
+        Frutos do mar fresquíssimos, ambiente de pescadores<br/>
+        <br/>
+        Preço: €20-30/pessoa<br/>
+        Horário: 9h-15h (FECHA CEDO — chegar antes das 13h)<br/>
+        Fechado fins de semana à noite<br/>
+        <br/>
+        Carrer del Baluard, 56 · Barceloneta<br/>
+        Sem reserva, sem cardápio fixo — peça o que tem no dia
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>2.1892,41.3778,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍝 JANTAR — Bodega Sepúlveda</name>
+      <description><![CDATA[
+        <b>Bodega Sepúlveda</b><br/>
+        ⭐ Taberna acolhedora no Eixample<br/>
+        Cozinha catalã tradicional com bom vinho<br/>
+        <br/>
+        Preço: €20-30/pessoa<br/>
+        Horário: 13h-16h e 20h30-23h30<br/>
+        <br/>
+        Carrer de Sepúlveda, 173 · Eixample<br/>
+        Ótimo para jantar descontraído sem gastar muito
+      ]]></description>
+      <styleUrl>#orange-pin</styleUrl>
+      <Point><coordinates>2.1538,41.3854,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 9: BARCELONA — TAPAS &amp; PINTXOS                        -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>🍢 Barcelona — Tapas &amp; Pintxos</name>
+    <description>Melhores bares de tapas e pintxos de Barcelona · Qualificação alta + custo-benefício</description>
+    <visibility>0</visibility>
+
+    <Placemark>
+      <name>🍢 Koska Taberna ⭐4.6 (Pintxos Baratos!)</name>
+      <description><![CDATA[
+        <b>Koska Taberna</b><br/>
+        ⭐⭐ Avaliação 4.6/5 — um dos melhores de Barcelona<br/>
+        Pintxos vascos frescos renovados a cada hora<br/>
+        <br/>
+        Preço: €1,90 por pintxo · Melhor custo-benefício<br/>
+        Horário: 12h-16h e 19h30-23h30<br/>
+        <br/>
+        Carrer de Blai, 8 · Paral·lel (Poble Sec)<br/>
+        Carrer de Blai = "Rua dos Pintxos" de BCN<br/>
+        Ir a noite para animação máxima
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>2.1630,41.3751,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍷 Carrer de Blai — Rua dos Pintxos ⭐4.4</name>
+      <description><![CDATA[
+        <b>Carrer de Blai</b><br/>
+        ⭐⭐ A melhor rua de pintxos de Barcelona (Poble Sec)<br/>
+        Dezenas de bares lado a lado com pintxos frescos<br/>
+        <br/>
+        Preço: €1,50-2,50 por pintxo<br/>
+        Melhor horário: 19h30-22h (mais fresco e animado)<br/>
+        <br/>
+        Carrer de Blai · Poble Sec (Metro Paral·lel)<br/>
+        <br/>
+        Favoritos: Koska, Bar Calders, Bar Blai 9<br/>
+        Experiência completa: andar pela rua de bar em bar
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>2.1621,41.3749,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍾 El Xampanyet ⭐4.5 (El Born · desde 1929)</name>
+      <description><![CDATA[
+        <b>El Xampanyet</b><br/>
+        ⭐⭐ Bar histórico desde 1929 no coração de El Born<br/>
+        Famoso pelo cava artesanal e tapas clássicas<br/>
+        <br/>
+        Preço: €3-6 por tapa · Cava €2-4 por copo<br/>
+        Horário: 12h-15h30 e 19h-23h (fechado Dom à noite e Seg)<br/>
+        <br/>
+        Carrer de Montcada, 22 · El Born<br/>
+        Na rua mais bonita de El Born — próximo ao Museu Picasso<br/>
+        Ambiente único, azulejos, presuntos pendurados
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>2.1817,41.3844,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🍺 Bar Marsella ⭐4.3 (Absinthe desde 1820)</name>
+      <description><![CDATA[
+        <b>Bar Marsella</b><br/>
+        ⭐ O bar mais antigo de Barcelona — desde 1820<br/>
+        Especialidade: absinto (absinthe) artesanal<br/>
+        Lugar único: poeira centenária, garrafas antigas, espelhos<br/>
+        <br/>
+        Preço: €5-8 por drinque<br/>
+        Horário: 22h-02h30 (Qui-Sáb)<br/>
+        <br/>
+        Carrer de Sant Pau, 65 · El Raval<br/>
+        Imprescindível para quem curte atmosfera histórica<br/>
+        Ir tarde — só anima depois da meia-noite
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>2.1741,41.3800,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🌴 Bar La Terazza — Rooftop Barceloneta</name>
+      <description><![CDATA[
+        <b>Rooftop Barcelona</b><br/>
+        ⭐ Vista para o mar, coquetéis ao entardecer<br/>
+        Barceloneta — perfeito para terminar o dia<br/>
+        <br/>
+        Preço: €10-15 por cóctel<br/>
+        Horário: 12h-23h (Nov)<br/>
+        <br/>
+        Passeig de Joan de Borbó · Barceloneta<br/>
+        Ótimo para pôr do sol com os pés na areia
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>2.1898,41.3756,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🥂 Bodega Mastai ⭐4.4 (Vinho Natural, El Born)</name>
+      <description><![CDATA[
+        <b>Bodega Mastai</b><br/>
+        ⭐ Bar de vinhos naturais e biodinâmicos em El Born<br/>
+        Tapas criativas, seleção de queijos e frios<br/>
+        <br/>
+        Preço: €4-8 por copo de vinho · Tapas €5-8<br/>
+        Horário: 17h-00h (fechado segunda)<br/>
+        <br/>
+        Carrer del Rec Comtal, 17 · El Born<br/>
+        Ótimo para um wine bar tranquilo antes do jantar
+      ]]></description>
+      <styleUrl>#yellow-pin</styleUrl>
+      <Point><coordinates>2.1802,41.3866,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+  <!-- ================================================================ -->
+  <!-- CAMADA 10: HOSPEDAGEM                                            -->
+  <!-- ================================================================ -->
+  <Folder>
+    <name>🏨 Hospedagem — CONFIRMADA</name>
+    <description>Hotéis confirmados da viagem</description>
+    <visibility>1</visibility>
+
+    <Placemark>
+      <name>🏨 Hotel Liabeny ★★★★ — CONFIRMADO</name>
+      <description><![CDATA[
+        <b>Hotel Liabeny</b> ★★★★<br/>
+        <br/>
+        📍 Calle Salud, 3 · 28013 Madrid<br/>
+        (Entre Gran Vía e Puerta del Sol — localização perfeita)<br/>
+        <br/>
+        ✅ <b>CHECK-IN: 15 Nov 2026 às 15h</b><br/>
+        ✅ <b>CHECK-OUT: 18 Nov 2026 às 12h</b><br/>
+        3 noites · 2 viajantes<br/>
+        <br/>
+        Distâncias a pé:<br/>
+        • Puerta del Sol: 3 min<br/>
+        • Gran Vía: 3 min<br/>
+        • Plaza Mayor: 7 min<br/>
+        • Museu del Prado: 15 min
+      ]]></description>
+      <styleUrl>#green-pin</styleUrl>
+      <Point><coordinates>-3.7029,40.4194,0</coordinates></Point>
+    </Placemark>
+
+    <Placemark>
+      <name>🏨 Boutique H10 Montcada ★★★★ — CONFIRMADO</name>
+      <description><![CDATA[
+        <b>Boutique Hotel H10 Montcada</b> ★★★★<br/>
+        <br/>
+        📍 Barcelona — Eixample / Centro<br/>
+        <br/>
+        ✅ <b>CHECK-IN: 18 Nov 2026 às 15h</b><br/>
+        ✅ <b>CHECK-OUT: 21 Nov 2026 às 12h</b><br/>
+        3 noites · 2 viajantes<br/>
+        <br/>
+        🎂 Hotel do Aniversário da Momo!<br/>
+        <br/>
+        Chegada de trem de Madri (AVE 2h40)<br/>
+        Estação Barcelona Sants → Hotel: ~15 min de Metro
+      ]]></description>
+      <styleUrl>#green-pin</styleUrl>
+      <Point><coordinates>2.1623,41.3885,0</coordinates></Point>
+    </Placemark>
+
+  </Folder>
+
+</Document>
+</kml>
