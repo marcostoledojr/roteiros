@@ -375,7 +375,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
         <text x="700" y="179" font-size="9" fill="rgba(201,169,110,.9)" font-family="Inter,sans-serif" font-weight="600">Dias 4–7 · 3 noites 🎂</text>
         <text x="700" y="190" font-size="8" fill="rgba(255,255,255,.4)" font-family="Inter,sans-serif">H10 Montcada ✓</text>
         <!-- AVE label -->
-        <text x="500" y="195" font-size="9" fill="rgba(201,169,110,.7)" font-family="Inter,sans-serif" font-weight="600" transform="rotate(-8,500,195)">AVE · 2h40 · ~€30</text>
+        <text x="500" y="195" font-size="9" fill="rgba(201,169,110,.7)" font-family="Inter,sans-serif" font-weight="600" transform="rotate(-8,500,195)">AVE · 08:57 → 12:06 · €48,50</text>
         <!-- Legend -->
         <rect x="20" y="488" width="220" height="54" rx="5" fill="rgba(13,27,42,.85)" stroke="rgba(201,169,110,.2)" stroke-width="1"/>
         <line x1="32" y1="506" x2="58" y2="506" stroke="#c9a96e" stroke-width="2.5"/>
@@ -409,7 +409,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
         <h3 class="dest-name">Madri</h3>
         <p class="dest-dist">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-          Hotel Liabeny · Calle Salud 3 · Check-in 15 Nov 15h · Check-out 18 Nov 12h
+          Hotel Liabeny · Calle Salud 3 · Check-in 15 Nov 15h · Check-out 18 Nov cedo (AVE 08:57)
         </p>
         <p class="dest-desc">Capital da Espanha com arte de classe mundial, gastronomia autêntica e energia noturna única. Chegam de madrugada no dia 15 — o ritmo europeu começa aqui com calma.</p>
         <div class="dest-detail">
@@ -446,7 +446,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
         <h3 class="dest-name">Toledo</h3>
         <p class="dest-dist">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/></svg>
-          Castilla-La Mancha · Madri Atocha → Toledo · 33 min · Renfe · volta no fim da tarde
+          Castilla-La Mancha · Avant Atocha 10:15 → Toledo 10:49 · volta Toledo 18:45 → Atocha 19:19
         </p>
         <p class="dest-desc">A "Cidade das Três Culturas" — cristã, judaica e mourisca — labirinto medieval Patrimônio da Humanidade. Trem de manhã, Toledo o dia todo, retorno a Madrid para dormir.</p>
         <div class="dest-detail">
@@ -483,7 +483,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
         <h3 class="dest-name">Barcelona</h3>
         <p class="dest-dist">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-          H10 Montcada · Check-in 18 Nov 15h · Check-out 21 Nov 12h · AVE 2h40 desde Madri
+          H10 Montcada · Check-in 18 Nov 15h · Check-out 21 Nov 12h · AVE 08:57 → 12:06 desde Madri
         </p>
         <p class="dest-desc">O grande finale e o palco da celebração. Capital da Catalunha, Barcelona mistura Gaudí, praias, gastronomia de vanguarda e o melhor clima da rota em novembro.</p>
         <div class="dest-detail">
@@ -616,19 +616,20 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
           </div>
           <div class="reserva-item">
             <div class="reserva-info">
-              <h4>MAD Atocha → Toledo (R/T)</h4>
-              <p>Renfe · 17 Nov · 33 min · ~€6,50/pessoa</p>
-              <p class="price price-pending">⏳ Pendente — comprar em renfe.com</p>
+              <h4>MAD Atocha ⇄ Toledo (ida e volta)</h4>
+              <p>17 Nov · Ida Avant 08102: Atocha 10:15 → Toledo 10:49 · Coche 3, lugares 121 e 122</p>
+              <p>Volta Avant 08183: Toledo 18:45 → Atocha 19:19 · Coche 2, lugares 139 e 140</p>
+              <p class="price price-ok">✓ Confirmado · Localizador: YG59WL · €11,10/pessoa por trecho</p>
             </div>
-            <button class="btn-reserva" onclick="window.open('https://www.renfe.com','_blank')">Comprar</button>
+            <span class="badge-ok">Confirmado</span>
           </div>
           <div class="reserva-item">
             <div class="reserva-info">
               <h4>MAD Atocha → Barcelona Sants</h4>
-              <p>AVE · 18 Nov · 2h40 · ~€25–45/pessoa</p>
-              <p class="price price-pending">⏳ Pendente — comprar com antecedência</p>
+              <p>18 Nov · AVE 03091 Standard: Atocha 08:57 → Sants 12:06 · Coche 6, lugares 8C e 8D</p>
+              <p class="price price-ok">✓ Confirmado · Localizador: F955FL · €48,50/pessoa</p>
             </div>
-            <button class="btn-reserva" onclick="window.open('https://www.renfe.com','_blank')">Comprar</button>
+            <span class="badge-ok">Confirmado</span>
           </div>
         </div>
       </div>
@@ -746,14 +747,14 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
           <table class="panel-table">
             <thead><tr><th>Trecho</th><th>Tipo</th><th>Data</th><th>Duração</th><th>Preço/pessoa</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td>MAD Atocha → Toledo</td><td>Renfe Regional</td><td>17 Nov</td><td>33 min</td><td>~€6,50</td><td class="td-pending">⏳ Pendente</td></tr>
-              <tr><td>Toledo → MAD Atocha</td><td>Renfe Regional</td><td>17 Nov</td><td>33 min</td><td>~€6,50</td><td class="td-pending">⏳ Pendente</td></tr>
-              <tr><td>MAD Atocha → Barcelona Sants</td><td>AVE alta velocidade</td><td>18 Nov</td><td>2h40</td><td>~€25–45</td><td class="td-pending">⏳ Pendente</td></tr>
+              <tr><td>MAD Atocha → Toledo</td><td>Avant 08102 · Coche 3 · lugares 121/122<br><small style="color:rgba(255,255,255,.4)">Localizador YG59WL</small></td><td>17 Nov · 10:15 → 10:49</td><td>34 min</td><td>€11,10</td><td class="td-ok">✓ Confirmado</td></tr>
+              <tr><td>Toledo → MAD Atocha</td><td>Avant 08183 · Coche 2 · lugares 139/140<br><small style="color:rgba(255,255,255,.4)">Localizador YG59WL</small></td><td>17 Nov · 18:45 → 19:19</td><td>34 min</td><td>€11,10</td><td class="td-ok">✓ Confirmado</td></tr>
+              <tr><td>MAD Atocha → Barcelona Sants</td><td>AVE 03091 Standard · Coche 6 · lugares 8C/8D<br><small style="color:rgba(255,255,255,.4)">Localizador F955FL</small></td><td>18 Nov · 08:57 → 12:06</td><td>3h09</td><td>€48,50</td><td class="td-ok">✓ Confirmado</td></tr>
             </tbody>
           </table>
           <div style="margin-top:1.2rem;background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.2);border-radius:8px;padding:.9rem 1rem">
-            <span style="font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.3rem">💡 Dica AVE</span>
-            <span style="font-size:.82rem;color:rgba(255,255,255,.65)">Comprar passagens AVE com 2–3 meses de antecedência garante preços menores. O trem das 9h30–10h30 saindo de Atocha permite check-out do Liabeny e chega em Barcelona antes das 13h — confortável para o check-in às 15h no H10 Montcada.</span>
+            <span style="font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.3rem">💡 Embarque</span>
+            <span style="font-size:.82rem;color:rgba(255,255,255,.65)">Todos os trechos saem de Madrid Puerta de Atocha (Almudena Grandes). O acesso ao trem fecha 2 minutos antes da partida e há controle de bagagem, então chegar 30 minutos antes. Em Atocha, o embarque para Toledo é pela planta baja (térreo). Levar os bilhetes no app Renfe ou impressos, sem cortar a folha, e o passaporte.</span>
           </div>
         </div>
 
@@ -762,13 +763,13 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
           <table class="panel-table">
             <thead><tr><th>Destino</th><th>Hotel</th><th>Check-in</th><th>Check-out</th><th>Noites</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td>Madri</td><td><strong style="color:#fff">Hotel Liabeny ★★★★</strong><br><small style="color:rgba(255,255,255,.4)">Calle Salud 3 · perto de Gran Vía e Puerta del Sol</small></td><td>15 Nov · 15h</td><td>18 Nov · 12h</td><td>3</td><td class="td-ok">✓ Confirmado</td></tr>
+              <tr><td>Madri</td><td><strong style="color:#fff">Hotel Liabeny ★★★★</strong><br><small style="color:rgba(255,255,255,.4)">Calle Salud 3 · perto de Gran Vía e Puerta del Sol</small></td><td>15 Nov · 15h</td><td>18 Nov · saída ~08h15</td><td>3</td><td class="td-ok">✓ Confirmado</td></tr>
               <tr><td>Barcelona</td><td><strong style="color:#fff">Boutique H10 Montcada ★★★★</strong><br><small style="color:rgba(255,255,255,.4)">Barcelona centro</small></td><td>18 Nov · 15h</td><td>21 Nov · 12h</td><td>3</td><td class="td-ok">✓ Confirmado</td></tr>
             </tbody>
           </table>
           <div style="margin-top:1.2rem;background:rgba(201,169,110,.07);border:1px solid rgba(201,169,110,.2);border-radius:8px;padding:.9rem 1rem">
             <span style="font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.3rem">📅 Logística 18 Nov</span>
-            <span style="font-size:.82rem;color:rgba(255,255,255,.65)">Check-out Liabeny 12h → deixar malas na consierge se necessário → AVE para Barcelona (chegada ~2h40 depois) → check-in H10 Montcada às 15h. Tarde livre em Barcelona.</span>
+            <span style="font-size:.82rem;color:rgba(255,255,255,.65)">Malas prontas na noite anterior → check-out do Liabeny até 08h15 → táxi até Atocha (~10 min) → AVE 08:57 → Barcelona Sants 12:06 → Metro ou táxi até o H10 Montcada → deixar malas na recepção (check-in às 15h) → almoço e tarde livre.</span>
           </div>
         </div>
 
@@ -805,7 +806,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
               <tr><td>🏨 Hotel Liabeny — Madri (3 noites)</td><td>ver reserva</td><td>—</td><td class="td-ok">✓ Confirmado</td></tr>
               <tr><td>🏨 H10 Montcada — Barcelona (3 noites)</td><td>ver reserva</td><td>—</td><td class="td-ok">✓ Confirmado</td></tr>
               <tr><td>🍽 Alimentação (~€20/dia × 7)</td><td>~€140</td><td>~€280</td><td class="td-open">Estimado</td></tr>
-              <tr><td>🚄 Trens (Toledo R/T + AVE BCN)</td><td>~€46</td><td>~€92</td><td class="td-pending">Pendente</td></tr>
+              <tr><td>🚄 Trens (Toledo ida e volta + AVE BCN)</td><td>€70,70</td><td>€141,40</td><td class="td-ok">✓ Comprado</td></tr>
               <tr><td>🎟 Passeios &amp; Ingressos</td><td>~€80</td><td>~€160</td><td class="td-open">Estimado</td></tr>
               <tr><td>🛡 Seguro Viagem</td><td>~€50</td><td>~€100</td><td class="td-pending">Pendente</td></tr>
               <tr><td>💶 Outros / Imprevistos</td><td>~€50</td><td>~€100</td><td class="td-open">Estimado</td></tr>
@@ -872,8 +873,8 @@ const DEFAULT={
       {id:'c2',label:'✅ Hotel Liabeny — Madri (15–18 Nov)',checked:true},
       {id:'c3',label:'✅ Boutique H10 Montcada — Barcelona (18–21 Nov)',checked:true},
       {id:'c4',label:'Contratar seguro viagem',checked:false},
-      {id:'c5',label:'Comprar bilhetes trem MAD → Toledo R/T (renfe.com)',checked:false},
-      {id:'c6',label:'Comprar bilhete AVE MAD → Barcelona (renfe.com)',checked:false},
+      {id:'c5',label:'✅ Trem MAD ⇄ Toledo 17 Nov (YG59WL)',checked:true},
+      {id:'c6',label:'✅ AVE MAD → Barcelona 18 Nov 08:57 (F955FL)',checked:true},
       {id:'c7',label:'Reservar Sagrada Família online — OBRIGATÓRIO (sagradafamilia.org)',checked:false},
       {id:'c8',label:'Reservar Park Güell online (parkguell.barcelona)',checked:false},
       {id:'c9',label:'Reservar restaurante para aniversário em Barcelona',checked:false},
@@ -948,6 +949,7 @@ function loadData(){
 }
 function saveData(d){try{localStorage.setItem(SK,JSON.stringify(d));}catch(e){}}
 let data=loadData();
+try{['c5','c6'].forEach(id=>{const d=DEFAULT.checklist.docs.find(x=>x.id===id);const i=data.checklist.docs.find(x=>x.id===id);if(d&&i){i.label=d.label;i.checked=true;}});saveData(data);}catch(e){}
 
 function renderChecklist(){
   ['docs','prep'].forEach(group=>{

@@ -81,10 +81,10 @@
         <b>Madrid Puerta de Atocha</b><br/>
         Principal estação ferroviária de Madri<br/>
         <br/>
-        17 Nov: Atocha → Toledo (Renfe, 33 min, ~€6,50)<br/>
-        18 Nov: Atocha → Barcelona Sants (AVE, 2h40, ~€25-45)<br/>
+        17 Nov: Atocha 10:15 → Toledo 10:49 (Avant 08102, localizador YG59WL)<br/>
+        18 Nov: Atocha 08:57 → Barcelona Sants 12:06 (AVE 03091, localizador F955FL)<br/>
         <br/>
-        Dica: Comprar bilhetes em renfe.com com antecedência
+        Chegar 30 min antes. Embarque para Toledo pela planta baja
       ]]></description>
       <styleUrl>#blue-pin</styleUrl>
       <Point><coordinates>-3.6909,40.4065,0</coordinates></Point>
@@ -96,7 +96,7 @@
         <b>Estação de Toledo</b><br/>
         Estação mudejar em frente à cidade histórica<br/>
         <br/>
-        17 Nov: Toledo → Madri Atocha (Renfe, 33 min, ~€6,50)
+        17 Nov: Toledo 18:45 → Madri Atocha 19:19 (Avant 08183, localizador YG59WL)
       ]]></description>
       <styleUrl>#blue-pin</styleUrl>
       <Point><coordinates>-4.0258,39.8543,0</coordinates></Point>
@@ -108,7 +108,7 @@
         <b>Estació de Barcelona-Sants</b><br/>
         Principal estação ferroviária de Barcelona<br/>
         <br/>
-        18 Nov: Chegada AVE de Madri (~2h40 de viagem)<br/>
+        18 Nov: Chegada 12:06 do AVE 03091 de Madri<br/>
         Metro L3 (verde) ou L5 (azul) → centro em 10 min
       ]]></description>
       <styleUrl>#blue-pin</styleUrl>
@@ -601,7 +601,7 @@
 
     <Placemark>
       <name>🌉 Puente de Alcántara e Muralhas</name>
-      <description><![CDATA>
+      <description><![CDATA[
         <b>Puente de Alcántara</b><br/>
         ⭐ Ponte romana (séc. I a.C.) com Torre de Homenagem<br/>
         Uma das entradas mais fotogênicas de Toledo<br/>
@@ -1117,7 +1117,7 @@
         <br/>
         🎂 Hotel do Aniversário da Momo!<br/>
         <br/>
-        Chegada de trem de Madri (AVE 2h40)<br/>
+        Chegada de trem de Madri (AVE 03091, Sants 12:06)<br/>
         Estação Barcelona Sants → Hotel: ~15 min de Metro
       ]]></description>
       <styleUrl>#green-pin</styleUrl>
