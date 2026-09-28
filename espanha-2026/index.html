@@ -488,7 +488,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
         <p class="dest-desc">O grande finale e o palco da celebração. Capital da Catalunha, Barcelona mistura Gaudí, praias, gastronomia de vanguarda e o melhor clima da rota em novembro.</p>
         <div class="dest-detail">
           <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><strong>Pontos imperdíveis</strong> <span>— Sagrada Família (reservar!), Park Güell (reservar!), Casa Batlló, Bairro Gótico, La Rambla, Boqueria</span></div>
+          <div><strong>Pontos imperdíveis</strong> <span>— Sagrada Família (✓ 19 Nov, guiada 12:15 + torre 13:45), Park Güell (reservar!), Casa Batlló, Bairro Gótico, La Rambla, Boqueria</span></div>
         </div>
         <div class="dest-detail">
           <svg class="dest-detail-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
@@ -663,13 +663,14 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
             </div>
             <button class="btn-reserva" onclick="window.open('https://maps.google.com/?q=La+Mar+Salada+Barcelona','_blank')">Ver</button>
           </div>
-          <div class="reserva-item">
+          <div class="reserva-item" style="border-color:rgba(45,106,79,.25);background:rgba(45,106,79,.03)">
             <div class="reserva-info">
-              <h4>Sagrada Família</h4>
-              <p>Reserva online obrigatória — sagradafamilia.org</p>
-              <p class="price price-open">~€26/pessoa · reservar com semanas de antecedência</p>
+              <h4>⛪ Sagrada Família · Visita guiada com torres</h4>
+              <p>19 Nov · Visita guiada 12:15 (espanhol) · Torre da fachada do Nascimento 13:45</p>
+              <p>Entrada pela Carrer de la Marina, 30 min antes (11:45) · Levar passaporte</p>
+              <p class="price price-ok">✓ Confirmado · Código: 108028813 · €40/pessoa</p>
             </div>
-            <button class="btn-reserva" onclick="window.open('https://sagradafamilia.org','_blank')">Reservar</button>
+            <span class="badge-ok">Confirmado</span>
           </div>
           <div class="reserva-item">
             <div class="reserva-info">
@@ -812,7 +813,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
               <tr><td>💶 Outros / Imprevistos</td><td>~€50</td><td>~€100</td><td class="td-open">Estimado</td></tr>
             </tbody>
           </table>
-          <p style="font-size:.72rem;color:rgba(255,255,255,.3);margin-top:1rem">* Ingressos estimados: Sagrada Família €26 · Park Güell €10 · Prado €15 · Reina Sofía €12</p>
+          <p style="font-size:.72rem;color:rgba(255,255,255,.3);margin-top:1rem">* Sagrada Família €40 (pago, guiada com torres) · Estimados: Park Güell €10 · Prado €15 · Reina Sofía €12</p>
         </div>
 
       </div>
@@ -875,7 +876,7 @@ const DEFAULT={
       {id:'c4',label:'Contratar seguro viagem',checked:false},
       {id:'c5',label:'✅ Trem MAD ⇄ Toledo 17 Nov (YG59WL)',checked:true},
       {id:'c6',label:'✅ AVE MAD → Barcelona 18 Nov 08:57 (F955FL)',checked:true},
-      {id:'c7',label:'Reservar Sagrada Família online — OBRIGATÓRIO (sagradafamilia.org)',checked:false},
+      {id:'c7',label:'✅ Sagrada Família 19 Nov, guiada 12:15 + torre 13:45 (108028813)',checked:true},
       {id:'c8',label:'Reservar Park Güell online (parkguell.barcelona)',checked:false},
       {id:'c9',label:'Reservar restaurante para aniversário em Barcelona',checked:false},
     ],
@@ -949,7 +950,7 @@ function loadData(){
 }
 function saveData(d){try{localStorage.setItem(SK,JSON.stringify(d));}catch(e){}}
 let data=loadData();
-try{['c5','c6'].forEach(id=>{const d=DEFAULT.checklist.docs.find(x=>x.id===id);const i=data.checklist.docs.find(x=>x.id===id);if(d&&i){i.label=d.label;i.checked=true;}});saveData(data);}catch(e){}
+try{['c5','c6','c7'].forEach(id=>{const d=DEFAULT.checklist.docs.find(x=>x.id===id);const i=data.checklist.docs.find(x=>x.id===id);if(d&&i){i.label=d.label;i.checked=true;}});saveData(data);}catch(e){}
 
 function renderChecklist(){
   ['docs','prep'].forEach(group=>{
