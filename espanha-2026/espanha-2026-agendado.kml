@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Espanha 2026 · Agendado</name>
+  <description>Madri · Toledo · Barcelona · Novembro 2026</description>
+  <Style id="agendado"><IconStyle><color>ff009900</color><scale>1.3</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/grn-stars.png</href></Icon></IconStyle><LabelStyle><scale>0.9</scale></LabelStyle></Style>
+  <Style id="red-pin"><IconStyle><color>ff1a1aaa</color><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon></IconStyle><LabelStyle><scale>0.8</scale></LabelStyle></Style>
+  <Style id="orange-pin"><IconStyle><color>ff0060ff</color><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/orange-circle.png</href></Icon></IconStyle><LabelStyle><scale>0.8</scale></LabelStyle></Style>
+  <Style id="yellow-pin"><IconStyle><color>ff00c8ff</color><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href></Icon></IconStyle><LabelStyle><scale>0.8</scale></LabelStyle></Style>
+  <Style id="purple-pin"><IconStyle><color>ffb0279c</color><scale>1.0</scale><Icon><href>https://maps.google.com/mapfiles/kml/paddle/purple-circle.png</href></Icon></IconStyle><LabelStyle><scale>0.8</scale></LabelStyle></Style>
+  <Folder>
+    <name>✅ Agendado</name>
+    <description>Voos, trens, hotéis, ingressos e reservas confirmados, em ordem de data</description>
+    <Placemark>
+      <name>📅 15/11 05:10 · ✈ Chegada Madri, Aeroporto MAD T1</name>
+      <description><![CDATA[<b>Voo UX58 GRU → MAD</b><br/>Sai 14/11 15:05 (GRU T2), chega 15/11 05:10 (MAD T1)<br/>Localizador Air Europa: UX/9VG5DB<br/><br/>Volta: UX57 MAD T1 → GRU, 21/11 23:55 (conexão vinda de BCN, chega T2 às 22:00)]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>-3.5668,40.4774,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 15/11 a 18/11 · 🏨 Hotel Liabeny</name>
+      <description><![CDATA[<b>Hotel Liabeny ★★★★</b><br/>Calle Salud 3 · perto de Gran Vía e Puerta del Sol<br/>Check-in 15/11 15h · 3 noites<br/>Saída 18/11 até 08h15 (AVE 08:57)]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>-3.7029,40.4194,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 16/11 10:00 · 🖼 Museo del Prado</name>
+      <description><![CDATA[<b>Museo Nacional del Prado</b><br/>✓ AGENDADO: 16/11 às 10h<br/><br/>Destaques: Velázquez (As Meninas), Goya, Bosch, Rubens, Tiziano<br/>Paseo del Prado · Metro Atocha ou Banco de España]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>-3.6919,40.4138,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 17/11 10:15 e 18/11 08:57 · 🚄 Estação Madrid Atocha</name>
+      <description><![CDATA[<b>Madrid Puerta de Atocha (Almudena Grandes)</b><br/>17/11 10:15 · Avant 08102 → Toledo (YG59WL) · Coche 3, lugares 121 e 122 · embarque pela planta baja<br/>17/11 19:19 · chegada da volta de Toledo<br/>18/11 08:57 · AVE 03091 → Barcelona Sants (F955FL) · Coche 6, lugares 8C e 8D<br/><br/>Chegar 30 min antes. O acesso fecha 2 min antes da partida.]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>-3.6909,40.4065,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 17/11 10:49 e 18:45 · 🚄 Estação Toledo</name>
+      <description><![CDATA[<b>Estação de Toledo</b><br/>Chegada 10:49 (Avant 08102)<br/>Volta 18:45 · Avant 08183 → Atocha 19:19 · Coche 2, lugares 139 e 140<br/>Localizador YG59WL]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>-4.0258,39.8543,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 18/11 12:06 · 🚄 Estação Barcelona Sants</name>
+      <description><![CDATA[<b>Estació de Barcelona Sants</b><br/>Chegada 12:06 do AVE 03091 (F955FL)<br/>Metro ou táxi até o H10 Montcada, deixar malas (check-in 15h)]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>2.1408,41.3793,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 18/11 a 21/11 · 🏨 Boutique H10 Montcada</name>
+      <description><![CDATA[<b>Boutique H10 Montcada ★★★★</b><br/>Check-in 18/11 15h · Check-out 21/11 12h · 3 noites<br/>🎂 Hotel do aniversário da Momo]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>2.1623,41.3885,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 19/11 12:15 · ⛪ Sagrada Família</name>
+      <description><![CDATA[<b>Basílica de la Sagrada Família</b><br/>✓ Visita guiada 12:15 (espanhol) + Torre da fachada do Nascimento 13:45<br/>Entrada pela Carrer de la Marina às 11:45 (30 min antes)<br/>Código 108028813 · levar passaporte]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>2.1744,41.4036,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 20/11 20:00 · 🎂 Jantar de aniversário, Restaurant Cheriff</name>
+      <description><![CDATA[<b>Restaurant Cheriff</b><br/>✓ Reservado: sexta 20/11 às 20h · mesa para 2<br/>Carrer de Ginebra, 15 · Barceloneta · 08003<br/>🎂 Jantar de aniversário da Momo]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>2.1893,41.3810,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>📅 21/11 20:30 · ✈ Aeroporto BCN T1, volta</name>
+      <description><![CDATA[<b>Voo UX7708 BCN T1 → MAD T2</b><br/>21/11 20:30 → 22:00<br/>Conexão: UX57 MAD T1 → GRU às 23:55 (chega 22/11 06:30)<br/>Check-out do hotel 12h · chegar ao aeroporto até 18:30]]></description>
+      <styleUrl>#agendado</styleUrl>
+      <Point><coordinates>2.0785,41.2971,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+</Document>
+</kml>
