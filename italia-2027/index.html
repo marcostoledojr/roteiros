@@ -218,6 +218,15 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
   .pstat{border-right:none;border-bottom:1px solid var(--border)}
   .pstat:last-child{border-bottom:none}
 }
+/* RESPONSIVO CELULAR */
+.dest-top{flex-wrap:wrap;gap:.5rem}
+.dest-grid{grid-template-columns:repeat(auto-fill,minmax(min(480px,100%),1fr))}
+.dest-grid>*{min-width:0}
+@media(max-width:640px){
+.ferry-pill{white-space:normal;text-align:center}
+.ferry-sep{gap:.6rem}
+.dest-card{padding:1.3rem}
+}
 </style>
 </head>
 <body>
