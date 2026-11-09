@@ -303,6 +303,12 @@ Calle Bailén, 19 · Em frente ao Palácio Real<br/>
       <Point><coordinates>-3.7041,40.4168,0</coordinates></Point>
     </Placemark>
     <Placemark>
+      <name>MAD · 💬 La Dolores (bar de tapas)</name>
+      <description><![CDATA[<b>La Dolores</b><br/>💬 Indicação · bar de tapas clássico desde 1908<br/>Plaza de Jesús, 4 · Barrio de las Letras<br/>5 min a pé do Prado · balcão concorrido, sem reserva]]></description>
+      <styleUrl>#purple-pin</styleUrl>
+      <Point><coordinates>-3.6956,40.4146,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
       <name>TOL · ⛪ Catedral de Toledo (Primada de España)</name>
       <description><![CDATA[<b>Catedral Primada de Toledo</b><br/>
 ⭐ Uma das maiores catedrais góticas do mundo (séc. XIII-XV)<br/>
