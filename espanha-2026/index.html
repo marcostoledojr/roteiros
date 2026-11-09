@@ -206,6 +206,47 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
 
 @media(max-width:900px){.dest-grid{grid-template-columns:1fr}.reservas-cols{grid-template-columns:1fr;gap:2rem}}
 @media(max-width:640px){.navbar{padding:0 1.2rem}.nav-links{display:none}.nav-toggle{display:flex}.percurso-stats{flex-direction:column}.pstat{border-right:none;border-bottom:1px solid var(--border)}.pstat:last-child{border-bottom:none}}
+/* DIA A DIA */
+.dd-tabs{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.6rem;margin-bottom:2rem;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.dd-tab{flex:0 0 auto;font-size:.74rem;font-weight:600;letter-spacing:.04em;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--muted);transition:all .2s}
+.dd-tab:hover{border-color:var(--navy);color:var(--navy)}
+.dd-tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.dd-tab.today::after{content:' · hoje';color:var(--accent)}
+.dd-day{display:none}.dd-day.active{display:block}
+.dd-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 1.5rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.dd-head h3{font-size:1.7rem;font-weight:600;color:var(--navy)}
+.dd-meta{font-size:.78rem;color:var(--muted)}.dd-meta strong{color:var(--navy);font-weight:600}
+.dd-legend{display:flex;flex-wrap:wrap;gap:1rem;font-size:.72rem;color:var(--muted);margin-bottom:1.2rem}
+.dd-legend span{display:inline-flex;align-items:center;gap:.35rem}
+.dd-dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.dd-A{background:#2d6a4f}.dd-S{background:var(--accent)}.dd-T{background:#7a8a9a}
+.dd-list{list-style:none;position:relative;margin-left:.3rem}
+.dd-list::before{content:'';position:absolute;left:4px;top:.5rem;bottom:.5rem;width:1px;background:var(--border)}
+.dd-item{position:relative;display:grid;grid-template-columns:62px 1fr;gap:1rem;padding:0 0 1.2rem 1.4rem}
+.dd-item>.dd-dot{position:absolute;left:0;top:.45rem}
+.dd-time{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);line-height:1.2}
+.dd-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem}
+.dd-card.k-A{border-color:rgba(45,106,79,.35);background:rgba(45,106,79,.04)}
+.dd-card.k-T{background:transparent;border-style:dashed}
+.dd-card h4{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:var(--navy);margin-bottom:.25rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem}
+.dd-badge{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .5rem;border-radius:4px}
+.dd-badge.b-A{background:#2d6a4f;color:#fff}.dd-badge.b-S{background:rgba(201,169,110,.2);color:#8a6a2e}.dd-badge.b-T{background:#eef0f2;color:#5a6a7a}
+.dd-row{font-size:.78rem;color:var(--muted);display:flex;gap:.45rem;align-items:flex-start;margin-top:.2rem}
+.dd-row svg{flex:0 0 auto;margin-top:.2rem}
+.dd-row a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(26,48,80,.25);text-underline-offset:2px}
+.dd-note{font-size:.78rem;color:var(--text);margin-top:.35rem}
+.dd-tips{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.dd-tips h4{font-size:1.3rem;font-weight:600;color:var(--navy);margin-bottom:.8rem}
+.dd-tip{display:block;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.7rem .9rem;margin-bottom:.55rem;transition:border-color .2s}
+.dd-tip:hover{border-color:var(--navy)}
+.dd-tip.ind{border-color:rgba(156,39,176,.3);background:rgba(156,39,176,.03)}
+.dd-tip strong{font-size:.86rem;color:var(--navy);display:block}
+.dd-tip span{font-size:.74rem;color:var(--muted)}
+.dd-sub{font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:1rem 0 .5rem}
+.dd-fab{position:fixed;right:18px;bottom:18px;z-index:850;background:var(--navy);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.75rem 1.1rem;border-radius:999px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:.45rem}
+.dd-fab:hover{background:var(--navy-dark)}
+@media(max-width:900px){.dd-tips{grid-template-columns:1fr}}
+@media(max-width:640px){.dd-item{grid-template-columns:1fr;gap:.3rem}.dd-head h3{font-size:1.4rem}}
 </style>
 </head>
 <body>
@@ -218,6 +259,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
   </a>
   <div class="nav-logo">Espanha<span>2026</span></div>
   <ul class="nav-links">
+    <li><a href="#dia-a-dia">Dia a Dia</a></li>
     <li><a href="#pilares">Pilares</a></li>
     <li><a href="#rota">Rota</a></li>
     <li><a href="#itinerario">Itinerário</a></li>
@@ -231,6 +273,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
 </nav>
 <div class="nav-mobile">
   <a href="../" onclick="this.closest('.nav-mobile').classList.remove('open')">← Roteiros</a>
+  <a href="#dia-a-dia" onclick="this.closest('.nav-mobile').classList.remove('open')">Dia a Dia</a>
   <a href="#pilares" onclick="this.closest('.nav-mobile').classList.remove('open')">Pilares</a>
   <a href="#rota" onclick="this.closest('.nav-mobile').classList.remove('open')">Rota</a>
   <a href="#itinerario" onclick="this.closest('.nav-mobile').classList.remove('open')">Itinerário</a>
@@ -254,12 +297,406 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
       <div class="cd-block"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seg</span></div>
     </div>
     <p class="hero-dates">Embarque: <strong>14 Nov 2026</strong> · Air Europa UX58 · GRU → MAD &nbsp;·&nbsp; Retorno: <strong>22 Nov 2026</strong></p>
-    <button class="btn-explore" onclick="document.getElementById('pilares').scrollIntoView({behavior:'smooth'})">
+    <button class="btn-explore" onclick="document.getElementById('dia-a-dia').scrollIntoView({behavior:'smooth'})">
       Explorar
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
   </div>
 </section>
+
+<!-- DIA A DIA -->
+<section class="section section-alt" id="dia-a-dia">
+  <div class="section-inner">
+    <p class="section-eyebrow">Cronograma · 14 a 22 de novembro</p>
+    <h2 class="section-title">Dia a <em>Dia</em></h2>
+    <div class="divider"></div>
+    <p class="section-lead">Horários sempre na hora local. Toque no endereço para abrir no Google Maps. Durante a viagem, a página abre direto no dia de hoje.</p>
+    <div class="dd-tabs" role="tablist">
+      <button class="dd-tab" data-day="d14" data-date="2026-11-14">Sáb 14</button>
+      <button class="dd-tab" data-day="d15" data-date="2026-11-15">Dom 15</button>
+      <button class="dd-tab" data-day="d16" data-date="2026-11-16">Seg 16</button>
+      <button class="dd-tab" data-day="d17" data-date="2026-11-17">Ter 17</button>
+      <button class="dd-tab" data-day="d18" data-date="2026-11-18">Qua 18</button>
+      <button class="dd-tab" data-day="d19" data-date="2026-11-19">Qui 19</button>
+      <button class="dd-tab" data-day="d20" data-date="2026-11-20">Sex 20 🎂</button>
+      <button class="dd-tab" data-day="d21" data-date="2026-11-21">Sáb 21</button>
+      <button class="dd-tab" data-day="d22" data-date="2026-11-22">Dom 22</button>
+      <button class="dd-tab" data-day="dind">💬 Indicações</button>
+    </div>
+    <div class="dd-legend"><span><i class="dd-dot dd-A"></i>Agendado</span><span><i class="dd-dot dd-S"></i>Sugestão</span><span><i class="dd-dot dd-T"></i>Deslocamento</span><span>💬 Indicação recebida</span></div>
+    <div class="dd-day" id="d14">
+      <div class="dd-head"><h3>Sábado, 14 de novembro</h3><p class="dd-meta"><strong>São Paulo → Madri</strong> · Pernoite: Noite no voo</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">12:00</div><div class="dd-card k-S">
+          <h4>Chegar ao aeroporto de Guarulhos <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeroporto%20de%20Guarulhos%20Terminal%202" target="_blank" rel="noopener">Aeroporto de Guarulhos Terminal 2</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Uber ou táxi até o Terminal 2</span></p>
+          <p class="dd-note">3h antes do voo internacional. Check-in online abre 48h antes em aireuropa.com. Confirmar a bagagem (bilhete indica tarifa NOBAG).</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">15:05</div><div class="dd-card k-A">
+          <h4>Voo UX58 Air Europa · GRU → MAD <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeroporto%20de%20Guarulhos%20Terminal%202" target="_blank" rel="noopener">Aeroporto de Guarulhos Terminal 2</a></p>
+          <p class="dd-note">Localizador UX/9VG5DB · Bilhetes 996 2427341233 (Marcos) e 996 2427341234 (Andreza). Chegada 15/11 às 05:10, hora de Madri.</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="d15">
+      <div class="dd-head"><h3>Domingo, 15 de novembro</h3><p class="dd-meta"><strong>Madri</strong> · Pernoite: Hotel Liabeny</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">05:10</div><div class="dd-card k-A">
+          <h4>Chegada em Madri · Terminal 1 <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeropuerto%20Adolfo%20Su%C3%A1rez%20Madrid-Barajas%20Terminal%201" target="_blank" rel="noopener">Aeropuerto Adolfo Suárez Madrid-Barajas Terminal 1</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi até o hotel, tarifa fixa aeroporto/centro (cerca de €33), uns 30 min</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">06:00</div><div class="dd-card k-A">
+          <h4>Hotel Liabeny: deixar as malas <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Liabeny%2C%20Calle%20de%20la%20Salud%203%2C%20Madrid" target="_blank" rel="noopener">Hotel Liabeny, Calle de la Salud 3, Madrid</a></p>
+          <p class="dd-note">Check-in oficial só às 15h. Deixar as malas na recepção e sair leve.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">08:00</div><div class="dd-card k-S">
+          <h4>Churros com chocolate na Chocolatería San Ginés <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Chocolater%C3%ADa%20San%20Gin%C3%A9s%2C%20Pasadizo%20de%20San%20Gin%C3%A9s%205%2C%20Madrid" target="_blank" rel="noopener">Chocolatería San Ginés, Pasadizo de San Ginés 5, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 5 min do hotel</span></p>
+          <p class="dd-note">Clássico desde 1894, abre cedo.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">10:00</div><div class="dd-card k-S">
+          <h4>Plaza Mayor e Mercado de San Miguel 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Mercado%20de%20San%20Miguel%2C%20Madrid" target="_blank" rel="noopener">Mercado de San Miguel, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 10 min</span></p>
+          <p class="dd-note">Indicação. Tapas e vinho para um almoço leve.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">15:00</div><div class="dd-card k-A">
+          <h4>Check-in no Hotel Liabeny e descanso <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Liabeny%2C%20Calle%20de%20la%20Salud%203%2C%20Madrid" target="_blank" rel="noopener">Hotel Liabeny, Calle de la Salud 3, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 10 min</span></p>
+          <p class="dd-note">3 noites, até 18/11.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">17:30</div><div class="dd-card k-S">
+          <h4>Pôr do sol no Templo de Debod <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Templo%20de%20Debod%2C%20Madrid" target="_blank" rel="noopener">Templo de Debod, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Metro até Plaza de España ou a pé uns 20 min pela Gran Vía</span></p>
+          <p class="dd-note">Sol se põe por volta das 17:55.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">20:30</div><div class="dd-card k-S">
+          <h4>Tapas na Cava Baja (La Latina) <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Calle%20de%20la%20Cava%20Baja%2C%20Madrid" target="_blank" rel="noopener">Calle de la Cava Baja, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi, uns 10 min, ou a pé 20 min</span></p>
+          <p class="dd-note">Rua com vários bares de tapas tradicionais.</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="d16">
+      <div class="dd-head"><h3>Segunda, 16 de novembro</h3><p class="dd-meta"><strong>Madri</strong> · Pernoite: Hotel Liabeny</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">09:00</div><div class="dd-card k-S">
+          <h4>Café na La Mallorquina 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=La%20Mallorquina%2C%20Calle%20Mayor%202%2C%20Madrid" target="_blank" rel="noopener">La Mallorquina, Calle Mayor 2, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 5 min do hotel</span></p>
+          <p class="dd-note">Indicação. Pedir a napolitana de crema.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">10:00</div><div class="dd-card k-A">
+          <h4>Museo del Prado <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Museo%20Nacional%20del%20Prado%2C%20Madrid" target="_blank" rel="noopener">Museo Nacional del Prado, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé uns 20 min pela Carrera de San Jerónimo, ou Metro L1 Sol → Estación del Arte</span></p>
+          <p class="dd-note">Destaques: As Meninas (Velázquez), Goya, O Jardim das Delícias (Bosch).</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">13:30</div><div class="dd-card k-S">
+          <h4>Parque del Retiro e Palacio de Cristal <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Palacio%20de%20Cristal%2C%20Parque%20del%20Retiro%2C%20Madrid" target="_blank" rel="noopener">Palacio de Cristal, Parque del Retiro, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 10 min do Prado</span></p>
+          <p class="dd-note">Almoço livre na região do Retiro ou do Barrio de las Letras.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">18:00</div><div class="dd-card k-S">
+          <h4>Gran Vía e rooftop do Círculo de Bellas Artes <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Azotea%20del%20C%C3%ADrculo%20de%20Bellas%20Artes%2C%20Madrid" target="_blank" rel="noopener">Azotea del Círculo de Bellas Artes, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 10 min do hotel</span></p>
+          <p class="dd-note">Vista de Madri ao entardecer.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">20:30</div><div class="dd-card k-S">
+          <h4>Jantar no Fratelli d&#x27;Italia 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Fratelli%20d%27Italia%2C%20Calle%20de%20Hortaleza%2028%2C%20Madrid" target="_blank" rel="noopener">Fratelli d&#x27;Italia, Calle de Hortaleza 28, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 10 min do hotel (Chueca)</span></p>
+          <p class="dd-note">Indicação. Restaurante italiano.</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="d17">
+      <div class="dd-head"><h3>Terça, 17 de novembro</h3><p class="dd-meta"><strong>Toledo (day trip)</strong> · Pernoite: Hotel Liabeny</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-T"></i><div class="dd-time">09:30</div><div class="dd-card k-T">
+          <h4>Sair do hotel para Atocha <span class="dd-badge b-T">Deslocamento</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Estaci%C3%B3n%20de%20Madrid%20Puerta%20de%20Atocha-Almudena%20Grandes" target="_blank" rel="noopener">Estación de Madrid Puerta de Atocha-Almudena Grandes</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi uns 10 min, ou Cercanías Sol → Atocha (1 estação)</span></p>
+          <p class="dd-note">Chegar 30 min antes. Embarque para Toledo pela planta baja (térreo).</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">10:15</div><div class="dd-card k-A">
+          <h4>Trem Avant 08102 · Atocha → Toledo <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Estaci%C3%B3n%20de%20Madrid%20Puerta%20de%20Atocha-Almudena%20Grandes" target="_blank" rel="noopener">Estación de Madrid Puerta de Atocha-Almudena Grandes</a></p>
+          <p class="dd-note">Localizador YG59WL · Coche 3, lugares 121 e 122 · chegada 10:49.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-T"></i><div class="dd-time">11:00</div><div class="dd-card k-T">
+          <h4>Estação de Toledo → centro histórico <span class="dd-badge b-T">Deslocamento</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Plaza%20de%20Zocodover%2C%20Toledo" target="_blank" rel="noopener">Plaza de Zocodover, Toledo</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Ônibus urbano L5 ou L61 até Zocodover, táxi, ou a pé uns 20 min (subida)</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">11:15</div><div class="dd-card k-S">
+          <h4>Catedral de Toledo <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Catedral%20Primada%20de%20Toledo" target="_blank" rel="noopener">Catedral Primada de Toledo</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">13:30</div><div class="dd-card k-S">
+          <h4>Almoço no Bar Ludeña (carcamusas) <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Bar%20Lude%C3%B1a%2C%20Toledo" target="_blank" rel="noopener">Bar Ludeña, Toledo</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">15:00</div><div class="dd-card k-S">
+          <h4>Santo Tomé (El Greco), Sinagoga del Tránsito e Mazapán Santo Tomé <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Iglesia%20de%20Santo%20Tom%C3%A9%2C%20Toledo" target="_blank" rel="noopener">Iglesia de Santo Tomé, Toledo</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, ficam próximos</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">17:30</div><div class="dd-card k-S">
+          <h4>Pôr do sol no Mirador del Valle <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Mirador%20del%20Valle%2C%20Toledo" target="_blank" rel="noopener">Mirador del Valle, Toledo</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi, uns 10 min</span></p>
+          <p class="dd-note">Sol se põe por volta das 18:00.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-T"></i><div class="dd-time">18:20</div><div class="dd-card k-T">
+          <h4>Táxi para a estação <span class="dd-badge b-T">Deslocamento</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Estaci%C3%B3n%20de%20Tren%20de%20Toledo" target="_blank" rel="noopener">Estación de Tren de Toledo</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi, uns 10 min</span></p>
+          <p class="dd-note">O acesso fecha 2 min antes da partida.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">18:45</div><div class="dd-card k-A">
+          <h4>Trem Avant 08183 · Toledo → Atocha <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Estaci%C3%B3n%20de%20Tren%20de%20Toledo" target="_blank" rel="noopener">Estación de Tren de Toledo</a></p>
+          <p class="dd-note">Localizador YG59WL · Coche 2, lugares 139 e 140 · chegada 19:19.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">20:30</div><div class="dd-card k-S">
+          <h4>Jantar na Taberna La Daniela <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Taberna%20La%20Daniela%2C%20Madrid" target="_blank" rel="noopener">Taberna La Daniela, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi a partir de Atocha</span></p>
+          <p class="dd-note">Cozinha madrilenha, famosa pelo cocido.</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="d18">
+      <div class="dd-head"><h3>Quarta, 18 de novembro</h3><p class="dd-meta"><strong>Madri → Barcelona</strong> · Pernoite: Boutique H10 Montcada</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">08:15</div><div class="dd-card k-A">
+          <h4>Check-out do Hotel Liabeny <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Liabeny%2C%20Calle%20de%20la%20Salud%203%2C%20Madrid" target="_blank" rel="noopener">Hotel Liabeny, Calle de la Salud 3, Madrid</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi até Atocha, uns 10 min</span></p>
+          <p class="dd-note">Malas prontas na noite anterior.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">08:57</div><div class="dd-card k-A">
+          <h4>AVE 03091 · Atocha → Barcelona Sants <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Estaci%C3%B3n%20de%20Madrid%20Puerta%20de%20Atocha-Almudena%20Grandes" target="_blank" rel="noopener">Estación de Madrid Puerta de Atocha-Almudena Grandes</a></p>
+          <p class="dd-note">Localizador F955FL · Coche 6, lugares 8C e 8D · chegada 12:06.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-T"></i><div class="dd-time">12:15</div><div class="dd-card k-T">
+          <h4>Sants → hotel <span class="dd-badge b-T">Deslocamento</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Boutique%20H10%20Montcada%2C%20Via%20Laietana%2011%2C%20Barcelona" target="_blank" rel="noopener">Hotel Boutique H10 Montcada, Via Laietana 11, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi uns 20 min (melhor com as malas), ou Metro L3 até Passeig de Gràcia + L4 até Jaume I</span></p>
+          <p class="dd-note">Deixar as malas na recepção.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">13:00</div><div class="dd-card k-S">
+          <h4>Almoço no Bar del Pla 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Bar%20del%20Pla%2C%20Carrer%20de%20Montcada%202%2C%20Barcelona" target="_blank" rel="noopener">Bar del Pla, Carrer de Montcada 2, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 5 min do hotel</span></p>
+          <p class="dd-note">Indicação. Tapas e vinhos.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">15:00</div><div class="dd-card k-A">
+          <h4>Check-in no H10 Montcada <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Boutique%20H10%20Montcada%2C%20Via%20Laietana%2011%2C%20Barcelona" target="_blank" rel="noopener">Hotel Boutique H10 Montcada, Via Laietana 11, Barcelona</a></p>
+          <p class="dd-note">3 noites, até 21/11.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">16:30</div><div class="dd-card k-S">
+          <h4>Bairro Gótico 💬 e churros na La Pallaresa 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=La%20Pallaresa%2C%20Carrer%20de%20Petritxol%2011%2C%20Barcelona" target="_blank" rel="noopener">La Pallaresa, Carrer de Petritxol 11, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 10 min</span></p>
+          <p class="dd-note">Indicações.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">19:30</div><div class="dd-card k-S">
+          <h4>Tapas e cava no El Xampanyet 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=El%20Xampanyet%2C%20Carrer%20de%20Montcada%2022%2C%20Barcelona" target="_blank" rel="noopener">El Xampanyet, Carrer de Montcada 22, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 5 min do hotel</span></p>
+          <p class="dd-note">Indicação. Abre às 19h e lota rápido.</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="d19">
+      <div class="dd-head"><h3>Quinta, 19 de novembro</h3><p class="dd-meta"><strong>Barcelona</strong> · Pernoite: Boutique H10 Montcada</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-T"></i><div class="dd-time">11:10</div><div class="dd-card k-T">
+          <h4>Sair do hotel para a Sagrada Família <span class="dd-badge b-T">Deslocamento</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Bas%C3%ADlica%20de%20la%20Sagrada%20Fam%C3%ADlia%2C%20Carrer%20de%20la%20Marina%2C%20Barcelona" target="_blank" rel="noopener">Basílica de la Sagrada Família, Carrer de la Marina, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi uns 15 min, ou Metro L4 Jaume I → Verdaguer + L5 até Sagrada Família (uns 25 min)</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">11:45</div><div class="dd-card k-A">
+          <h4>Sagrada Família · entrada pela Carrer de la Marina <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Bas%C3%ADlica%20de%20la%20Sagrada%20Fam%C3%ADlia%2C%20Carrer%20de%20la%20Marina%2C%20Barcelona" target="_blank" rel="noopener">Basílica de la Sagrada Família, Carrer de la Marina, Barcelona</a></p>
+          <p class="dd-note">Visita guiada 12:15 (espanhol) · Torre do Nascimento 13:45 · Código 108028813 · Levar passaporte.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">15:00</div><div class="dd-card k-S">
+          <h4>Almoço na La Flauta 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=La%20Flauta%2C%20Carrer%20de%20Balmes%20164%2C%20Barcelona" target="_blank" rel="noopener">La Flauta, Carrer de Balmes 164, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Metro L5 até Diagonal, ou táxi uns 10 min</span></p>
+          <p class="dd-note">Indicação para o almoço.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">16:30</div><div class="dd-card k-S">
+          <h4>Pôr do sol nos Bunkers del Carmel <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Bunkers%20del%20Carmel%2C%20Barcelona" target="_blank" rel="noopener">Bunkers del Carmel, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi uns 20 min (a subida final é a pé)</span></p>
+          <p class="dd-note">Sol se põe por volta das 17:25. Melhor vista 360° da cidade.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">20:00</div><div class="dd-card k-S">
+          <h4>Jantar no Quimet &amp; Quimet 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Quimet%20%26%20Quimet%2C%20Carrer%20del%20Poeta%20Cabanyes%2025%2C%20Barcelona" target="_blank" rel="noopener">Quimet &amp; Quimet, Carrer del Poeta Cabanyes 25, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi, ou Metro L3 até Paral·lel</span></p>
+          <p class="dd-note">Indicação. Montaditos e conservas, bar pequeno e cheio.</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="d20">
+      <div class="dd-head"><h3>Sexta, 20 de novembro · Aniversário da Momo 🎂</h3><p class="dd-meta"><strong>Barcelona</strong> · Pernoite: Boutique H10 Montcada</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">10:00</div><div class="dd-card k-S">
+          <h4>Park Güell <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Park%20G%C3%BCell%2C%20Barcelona" target="_blank" rel="noopener">Park Güell, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi uns 20 min</span></p>
+          <p class="dd-note">Ainda sem ingresso: comprar antes em parkguell.barcelona (horário marcado).</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">13:00</div><div class="dd-card k-S">
+          <h4>Boqueria e almoço na La Pineda 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=La%20Pineda%2C%20Carrer%20del%20Pi%2016%2C%20Barcelona" target="_blank" rel="noopener">La Pineda, Carrer del Pi 16, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi de volta ao centro, depois a pé</span></p>
+          <p class="dd-note">Indicação. Charcutaria e bar de embutidos.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">15:00</div><div class="dd-card k-S">
+          <h4>Descanso no hotel <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Boutique%20H10%20Montcada%2C%20Via%20Laietana%2011%2C%20Barcelona" target="_blank" rel="noopener">Hotel Boutique H10 Montcada, Via Laietana 11, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 10 min</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">18:30</div><div class="dd-card k-S">
+          <h4>Passeio na Barceloneta e aperitivo no El Vaso de Oro 💬 <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Cervecer%C3%ADa%20El%20Vaso%20de%20Oro%2C%20Carrer%20de%20Balboa%206%2C%20Barcelona" target="_blank" rel="noopener">Cervecería El Vaso de Oro, Carrer de Balboa 6, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé uns 20 min do hotel, ou táxi 7 min</span></p>
+          <p class="dd-note">Indicação. Fica a 3 min a pé do Cheriff.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">20:00</div><div class="dd-card k-A">
+          <h4>Jantar de aniversário · Restaurant Cheriff <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Cheriff%2C%20Carrer%20de%20Ginebra%2015%2C%20Barcelona" target="_blank" rel="noopener">Restaurant Cheriff, Carrer de Ginebra 15, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé, 3 min do El Vaso de Oro</span></p>
+          <p class="dd-note">Reserva para 2. Feliz aniversário, Momo!</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="d21">
+      <div class="dd-head"><h3>Sábado, 21 de novembro</h3><p class="dd-meta"><strong>Barcelona → Madri → São Paulo</strong> · Pernoite: Noite no voo</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">10:00</div><div class="dd-card k-S">
+          <h4>Casa Batlló e Passeig de Gràcia <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Casa%20Batll%C3%B3%2C%20Barcelona" target="_blank" rel="noopener">Casa Batlló, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Metro L4 Jaume I → Passeig de Gràcia, ou táxi 10 min</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">12:00</div><div class="dd-card k-A">
+          <h4>Check-out do H10 Montcada <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Boutique%20H10%20Montcada%2C%20Via%20Laietana%2011%2C%20Barcelona" target="_blank" rel="noopener">Hotel Boutique H10 Montcada, Via Laietana 11, Barcelona</a></p>
+          <p class="dd-note">Deixar as malas na recepção até a ida ao aeroporto.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-S"></i><div class="dd-time">13:00</div><div class="dd-card k-S">
+          <h4>Almoço na Cervecería Catalana <span class="dd-badge b-S">Sugestão</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Cervecer%C3%ADa%20Catalana%2C%20Carrer%20de%20Mallorca%20236%2C%20Barcelona" target="_blank" rel="noopener">Cervecería Catalana, Carrer de Mallorca 236, Barcelona</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Metro ou táxi</span></p>
+          <p class="dd-note">Tapas clássicas, costuma ter fila.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-T"></i><div class="dd-time">17:30</div><div class="dd-card k-T">
+          <h4>Pegar as malas e ir para o aeroporto <span class="dd-badge b-T">Deslocamento</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeropuerto%20Josep%20Tarradellas%20Barcelona-El%20Prat%20Terminal%201" target="_blank" rel="noopener">Aeropuerto Josep Tarradellas Barcelona-El Prat Terminal 1</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Táxi uns 30 min, ou Aerobús saindo da Plaça de Catalunya</span></p>
+          <p class="dd-note">Chegar ao T1 até 18:30.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">20:30</div><div class="dd-card k-A">
+          <h4>Voo UX7708 · BCN T1 → MAD T2 <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeropuerto%20Josep%20Tarradellas%20Barcelona-El%20Prat%20Terminal%201" target="_blank" rel="noopener">Aeropuerto Josep Tarradellas Barcelona-El Prat Terminal 1</a></p>
+          <p class="dd-note">Localizador UX/9VG5DB · chegada 22:00.</p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-T"></i><div class="dd-time">22:00</div><div class="dd-card k-T">
+          <h4>Conexão em Madri: T2 → T1 <span class="dd-badge b-T">Deslocamento</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeropuerto%20Adolfo%20Su%C3%A1rez%20Madrid-Barajas%20Terminal%201" target="_blank" rel="noopener">Aeropuerto Adolfo Suárez Madrid-Barajas Terminal 1</a></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Ônibus gratuito entre terminais, uns 15 min</span></p>
+        </div></li>
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">23:55</div><div class="dd-card k-A">
+          <h4>Voo UX57 · MAD T1 → GRU T2 <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeropuerto%20Adolfo%20Su%C3%A1rez%20Madrid-Barajas%20Terminal%201" target="_blank" rel="noopener">Aeropuerto Adolfo Suárez Madrid-Barajas Terminal 1</a></p>
+          <p class="dd-note">Chegada 22/11 às 06:30, hora de Brasília.</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="d22">
+      <div class="dd-head"><h3>Domingo, 22 de novembro</h3><p class="dd-meta"><strong>São Paulo</strong> · Pernoite: Casa</p></div>
+      <ol class="dd-list">
+        <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">06:30</div><div class="dd-card k-A">
+          <h4>Chegada em Guarulhos · Terminal 2 <span class="dd-badge b-A">Agendado</span></h4>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeroporto%20de%20Guarulhos%20Terminal%202" target="_blank" rel="noopener">Aeroporto de Guarulhos Terminal 2</a></p>
+          <p class="dd-note">Hora de Brasília. Bem-vindos de volta!</p>
+        </div></li>
+      </ol>
+    </div>
+    <div class="dd-day" id="dind">
+      <div class="dd-head"><h3>Indicações e sugestões</h3><p class="dd-meta">💬 = indicação recebida · toque para abrir no Maps</p></div>
+      <div class="dd-tips">
+        <div><h4>Madri</h4>
+          <p class="dd-sub">💬 Indicações recebidas</p>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=Fratelli%20d%27Italia%2C%20Calle%20de%20Hortaleza%2028%2C%20Madrid" target="_blank" rel="noopener"><strong>Fratelli d&#x27;Italia</strong><span>Restaurante italiano · Chueca</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=La%20Mallorquina%2C%20Calle%20Mayor%202%2C%20Madrid" target="_blank" rel="noopener"><strong>La Mallorquina</strong><span>Doces, confeitaria desde 1894 · Puerta del Sol</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=Mercado%20de%20San%20Miguel%2C%20Madrid" target="_blank" rel="noopener"><strong>Mercado de San Miguel</strong><span>Tapas e vinhos · ao lado da Plaza Mayor</span></a>
+          <p class="dd-sub">Outras sugestões do roteiro</p>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Bodega%20de%20la%20Ardosa%2C%20Madrid" target="_blank" rel="noopener"><strong>Bodega de la Ardosa</strong><span>Tortilla desde 1892 · Malasaña</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Calle%20de%20la%20Cava%20Baja%2C%20Madrid" target="_blank" rel="noopener"><strong>Bares da Cava Baja</strong><span>Tapas tradicionais · La Latina</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Sobrino%20de%20Bot%C3%ADn%2C%20Madrid" target="_blank" rel="noopener"><strong>Sobrino de Botín</strong><span>Restaurante mais antigo do mundo · cochinillo</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Casa%20Lucio%2C%20Madrid" target="_blank" rel="noopener"><strong>Casa Lucio</strong><span>Huevos rotos · La Latina</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Taberna%20La%20Daniela%2C%20Madrid" target="_blank" rel="noopener"><strong>Taberna La Daniela</strong><span>Cocido madrileño</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Azotea%20del%20C%C3%ADrculo%20de%20Bellas%20Artes%2C%20Madrid" target="_blank" rel="noopener"><strong>Azotea del Círculo de Bellas Artes</strong><span>Rooftop com vista</span></a>
+        </div>
+        <div><h4>Toledo</h4>
+          <p class="dd-sub">Outras sugestões do roteiro</p>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Bar%20Lude%C3%B1a%2C%20Toledo" target="_blank" rel="noopener"><strong>Bar Ludeña</strong><span>Carcamusas, prato típico</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Alfileritos%2024%2C%20Toledo" target="_blank" rel="noopener"><strong>Alfileritos 24</strong><span>Tapas criativas</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Santo%20Tom%C3%A9%20Obrador%20de%20Mazap%C3%A1n%2C%20Toledo" target="_blank" rel="noopener"><strong>Mazapán Santo Tomé</strong><span>Marzipã tradicional</span></a>
+        </div>
+        <div><h4>Barcelona</h4>
+          <p class="dd-sub">💬 Indicações recebidas</p>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=La%20Flauta%2C%20Carrer%20de%20Balmes%20164%2C%20Barcelona" target="_blank" rel="noopener"><strong>La Flauta</strong><span>Almoço · tapas e flautas · Eixample</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=Hasta%20Los%20Andares%2C%20Barcelona" target="_blank" rel="noopener"><strong>Hasta Los Andares</strong><span>Endereço a confirmar</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=Barri%20G%C3%B2tic%2C%20Barcelona" target="_blank" rel="noopener"><strong>Bairro Gótico</strong><span>Passeio pelo centro medieval</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=Cervecer%C3%ADa%20El%20Vaso%20de%20Oro%2C%20Carrer%20de%20Balboa%206%2C%20Barcelona" target="_blank" rel="noopener"><strong>Cervecería El Vaso de Oro</strong><span>Cervejaria de balcão · Barceloneta</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=Quimet%20%26%20Quimet%2C%20Carrer%20del%20Poeta%20Cabanyes%2025%2C%20Barcelona" target="_blank" rel="noopener"><strong>Quimet &amp; Quimet</strong><span>Montaditos e conservas · Poble Sec</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=La%20Pineda%2C%20Carrer%20del%20Pi%2016%2C%20Barcelona" target="_blank" rel="noopener"><strong>La Pineda</strong><span>Charcutaria e embutidos · Bairro Gótico</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=Bar%20del%20Pla%2C%20Carrer%20de%20Montcada%202%2C%20Barcelona" target="_blank" rel="noopener"><strong>Bar del Pla</strong><span>Tapas e vinhos · El Born</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=La%20Pallaresa%2C%20Carrer%20de%20Petritxol%2011%2C%20Barcelona" target="_blank" rel="noopener"><strong>La Pallaresa</strong><span>Churros com chocolate e doces</span></a>
+          <a class="dd-tip ind" href="https://www.google.com/maps/search/?api=1&query=El%20Xampanyet%2C%20Carrer%20de%20Montcada%2022%2C%20Barcelona" target="_blank" rel="noopener"><strong>El Xampanyet</strong><span>Bar de tapas e cava desde 1929 · El Born</span></a>
+          <p class="dd-sub">Outras sugestões do roteiro</p>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Cervecer%C3%ADa%20Catalana%2C%20Carrer%20de%20Mallorca%20236%2C%20Barcelona" target="_blank" rel="noopener"><strong>Cervecería Catalana</strong><span>Tapas clássicas · Eixample</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=La%20Cova%20Fumada%2C%20Barcelona" target="_blank" rel="noopener"><strong>La Cova Fumada</strong><span>Bombas e frutos do mar · Barceloneta</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Koska%20Taberna%2C%20Barcelona" target="_blank" rel="noopener"><strong>Koska Taberna</strong><span>Pintxos baratos · Carrer de Blai</span></a>
+          <a class="dd-tip" href="https://www.google.com/maps/search/?api=1&query=Bodega%20Mastai%2C%20Barcelona" target="_blank" rel="noopener"><strong>Bodega Mastai</strong><span>Vinho natural · El Born</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<a class="dd-fab" href="#dia-a-dia" aria-label="Ir para o dia a dia"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Dia a dia</a>
+<script>
+(function(){var tabs=[].slice.call(document.querySelectorAll(".dd-tab"));
+function show(id){tabs.forEach(function(b){b.classList.toggle("active",b.dataset.day===id);});[].slice.call(document.querySelectorAll(".dd-day")).forEach(function(d){d.classList.toggle("active",d.id===id);});try{localStorage.setItem("dd-tab",id);}catch(e){}}
+tabs.forEach(function(b){b.addEventListener("click",function(){show(b.dataset.day);b.scrollIntoView({block:"nearest",inline:"center",behavior:"smooth"});});});
+var today="";try{today=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Madrid"}).format(new Date());}catch(e){}
+var t=tabs.filter(function(b){return b.dataset.date===today;})[0];if(t)t.classList.add("today");
+var saved=null;try{saved=localStorage.getItem("dd-tab");}catch(e){}
+show(t?t.dataset.day:(saved&&document.getElementById(saved)?saved:tabs[0].dataset.day));})();
+</script>
+<!-- /DIA A DIA -->
 
 <!-- PILARES -->
 <section class="section" id="pilares">
