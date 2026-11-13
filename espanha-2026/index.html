@@ -263,6 +263,27 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
 .hero-dates{font-size:.72rem;letter-spacing:.03em;line-height:1.8;margin-bottom:1.8rem}
 .section{padding:4rem 1.2rem}
 }
+/* TRASLADOS */
+.tr-intro{font-size:.84rem;color:var(--text);background:rgba(201,169,110,.1);border-left:3px solid var(--accent);padding:.7rem 1rem;border-radius:0 8px 8px 0;margin-bottom:1.5rem}
+.tr-step{margin-bottom:1.6rem}
+.tr-step h4{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.tr-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:.8rem}
+.tr-opt{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem}
+.tr-opt.rec{border-color:rgba(45,106,79,.45);background:rgba(45,106,79,.04)}
+.tr-opt h5{font-size:.95rem;font-weight:600;color:var(--navy);display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:.45rem;font-family:'Inter',sans-serif}
+.tr-rec{font-size:.58rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#2d6a4f;color:#fff;padding:.15rem .45rem;border-radius:4px}
+.tr-kpis{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.5rem}
+.tr-kpi{font-size:.72rem;background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:.15rem .6rem;color:var(--navy)}
+.tr-line{font-size:.78rem;color:var(--muted);margin-top:.3rem}
+.tr-line b{color:var(--navy);font-weight:600}
+.tr-say{font-size:.8rem;color:var(--navy);background:rgba(26,48,80,.05);border-radius:6px;padding:.4rem .6rem;margin-top:.45rem}
+.tr-ident{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:.7rem}
+.tr-ident div{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.75rem .9rem;font-size:.78rem;color:var(--muted)}
+.tr-ident strong{display:block;color:var(--navy);font-size:.88rem;margin-bottom:.2rem}
+.tr-geral{list-style:none;margin-top:1.5rem}
+.tr-geral li{font-size:.8rem;color:var(--text);padding:.45rem 0;border-bottom:1px solid var(--border)}
+.tr-maps{display:inline-block;font-size:.72rem;font-weight:600;color:var(--navy);text-decoration:underline;margin-bottom:1.2rem}
+/* /TRASLADOS */
 </style>
 </head>
 <body>
@@ -276,6 +297,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
   <div class="nav-logo">Espanha<span>2026</span></div>
   <ul class="nav-links">
     <li><a href="#dia-a-dia">Dia a Dia</a></li>
+    <li><a href="#traslados">Traslados</a></li>
     <li><a href="#pilares">Pilares</a></li>
     <li><a href="#rota">Rota</a></li>
     <li><a href="#itinerario">Itinerário</a></li>
@@ -290,6 +312,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
 <div class="nav-mobile">
   <a href="../" onclick="this.closest('.nav-mobile').classList.remove('open')">← Roteiros</a>
   <a href="#dia-a-dia" onclick="this.closest('.nav-mobile').classList.remove('open')">Dia a Dia</a>
+  <a href="#traslados" onclick="this.closest('.nav-mobile').classList.remove('open')">Traslados</a>
   <a href="#pilares" onclick="this.closest('.nav-mobile').classList.remove('open')">Pilares</a>
   <a href="#rota" onclick="this.closest('.nav-mobile').classList.remove('open')">Rota</a>
   <a href="#itinerario" onclick="this.closest('.nav-mobile').classList.remove('open')">Itinerário</a>
@@ -645,7 +668,7 @@ footer{background:var(--navy-dark);padding:4rem 1.5rem;text-align:center;border-
         <li class="dd-item"><i class="dd-dot dd-T"></i><div class="dd-time">22:00</div><div class="dd-card k-T">
           <h4>Conexão em Madri: T2 → T1 <span class="dd-badge b-T">Deslocamento</span></h4>
           <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Aeropuerto%20Adolfo%20Su%C3%A1rez%20Madrid-Barajas%20Terminal%201" target="_blank" rel="noopener">Aeropuerto Adolfo Suárez Madrid-Barajas Terminal 1</a></p>
-          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>Ônibus gratuito entre terminais, uns 15 min</span></p>
+          <p class="dd-row"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M4 11h16M8 21l-2-4M16 21l2-4"/></svg><span>A pé por dentro do prédio, uns 10 a 15 min (placas Conexiones / T1). Ver aba Traslados.</span></p>
         </div></li>
         <li class="dd-item"><i class="dd-dot dd-A"></i><div class="dd-time">23:55</div><div class="dd-card k-A">
           <h4>Voo UX57 · MAD T1 → GRU T2 <span class="dd-badge b-A">Agendado</span></h4>
@@ -719,6 +742,101 @@ var saved=null;try{saved=localStorage.getItem("dd-tab");}catch(e){}
 show(t?t.dataset.day:(saved&&document.getElementById(saved)?saved:tabs[0].dataset.day));})();
 </script>
 <!-- /DIA A DIA -->
+
+<!-- TRASLADOS -->
+<section class="section" id="traslados">
+  <div class="section-inner">
+    <p class="section-eyebrow">Consulta rápida · aeroportos, estações e hotéis</p>
+    <h2 class="section-title"><em>Traslados</em></h2>
+    <div class="divider"></div>
+    <p class="section-lead">Opções de transporte em cada trecho, com tempo médio, preço, como identificar e o que dizer. O selo verde marca a opção recomendada.</p>
+    <div class="dd-tabs tr-tabs">
+      <button class="dd-tab" data-tr="trid">🔎 Como identificar</button>
+      <button class="dd-tab" data-tr="tr15">15/11 Chegada</button>
+      <button class="dd-tab" data-tr="tr17">17/11 Toledo</button>
+      <button class="dd-tab" data-tr="tr18">18/11 Barcelona</button>
+      <button class="dd-tab" data-tr="tr21">21/11 Volta</button>
+    </div>
+    <div class="dd-day tr-pane" id="trid"><div class="dd-head"><h3>Como reconhecer cada transporte</h3></div><div class="tr-ident">
+      <div><strong>🚕 Táxi em Madri</strong>Carro branco com faixa vermelha na porta da frente. Luz verde no teto = livre. Placa azul &quot;SP&quot;.</div>
+      <div><strong>🚕 Táxi em Barcelona</strong>Carro preto e amarelo. Luz verde no teto = livre.</div>
+      <div><strong>🚕 Táxi em Toledo</strong>Carro branco com letreiro &quot;TAXI&quot; no teto, luz verde quando livre.</div>
+      <div><strong>📱 Uber, Cabify, Bolt</strong>Carro comum com adesivo azul &quot;VTC&quot; no vidro. Confira a placa com a do app antes de entrar.</div>
+      <div><strong>🚆 Cercanías Madri</strong>Logo &quot;C&quot; vermelho dentro de um círculo. Trens brancos com detalhes vermelhos.</div>
+      <div><strong>🚆 Rodalies Barcelona</strong>Logo &quot;R&quot; laranja. Trens brancos com detalhes vermelhos ou laranja.</div>
+      <div><strong>🚇 Metro</strong>Placa com &quot;Metro&quot; ou &quot;M&quot; vermelho.</div>
+      <div><strong>🚄 AVE e Avant</strong>No painel &quot;Salidas&quot;, procure o número do trem: AVANT 08102, AVANT 08183 ou AVE 03091.</div>
+    </div><ul class="tr-geral"><li>Nos táxis e apps, contar uns 10 min a mais em horário de pico.</li><li>No check-in em Barcelona: &quot;¿Las maletas van directas hasta São Paulo?&quot;</li><li>Frases úteis: &quot;¿Cuánto cuesta hasta…?&quot; · &quot;¿Puedo pagar con tarjeta?&quot; · &quot;¿Este tren/autobús va a…?&quot;</li><li>Apps: Renfe, Cabify, Uber, Bolt, FreeNow (táxis oficiais) e Google Maps offline.</li></ul></div>
+    <div class="dd-day tr-pane" id="tr15"><div class="dd-head"><h3>Domingo 15/11 · Aeroporto MAD T1 → Hotel Liabeny</h3></div>
+      <p class="tr-intro">Chegada às 05:10. Depois de imigração e malas, saída do aeroporto por volta das 06:00.</p>
+      <a class="tr-maps" href="https://www.google.com/maps/dir/?api=1&destination=Hotel%20Liabeny%2C%20Calle%20de%20la%20Salud%203%2C%20Madrid" target="_blank" rel="noopener">Abrir rota no Google Maps →</a>
+      <div class="tr-step"><h4>Aeroporto → hotel</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Táxi <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 25 a 35 min</span><span class="tr-kpi">💶 €33 tarifa fixa</span></div><p class="tr-line"><b>Identificar:</b> Placa &quot;Taxi&quot; na saída do desembarque. Fila oficial, carros brancos com faixa vermelha.</p><p class="tr-say">&quot;Hotel Liabeny, Calle de la Salud 3. Tarifa fija, por favor.&quot;</p></div>
+        <div class="tr-opt"><h5>Uber, Cabify ou Bolt</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 25 a 35 min + 5 a 10 min de espera</span><span class="tr-kpi">💶 €25 a €40</span></div><p class="tr-line"><b>Identificar:</b> Placas &quot;VTC&quot; até o estacionamento. Confira a placa do carro.</p><p class="tr-say">Origem: Aeropuerto Madrid T1 · Destino: Hotel Liabeny</p></div>
+        <div class="tr-opt"><h5>Ônibus Exprés 203</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 35 a 40 min + 15 min a pé</span><span class="tr-kpi">💶 €5 por pessoa</span></div><p class="tr-line"><b>Identificar:</b> Placa &quot;Autobuses&quot;. Painel do ônibus: &quot;203 Exprés Aeropuerto&quot;.</p><p class="tr-say">Cartão por aproximação. Até 06:00 vai só até Cibeles: descer lá e seguir a pé pelo Maps.</p></div>
+      </div></div>
+    </div>
+    <div class="dd-day tr-pane" id="tr17"><div class="dd-head"><h3>Terça 17/11 · Toledo</h3></div>
+      <p class="tr-intro">Trem 10:15 em Atocha. Chegar às 09:45. Volta 18:45 de Toledo.</p>
+      <a class="tr-maps" href="https://www.google.com/maps/dir/?api=1&destination=Estaci%C3%B3n%20de%20Madrid%20Puerta%20de%20Atocha-Almudena%20Grandes" target="_blank" rel="noopener">Abrir rota no Google Maps →</a>
+      <div class="tr-step"><h4>Hotel → Atocha (sair 09:30)</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Cercanías Sol → Atocha <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 5 min a pé + 5 min de trem</span><span class="tr-kpi">💶 ~€2 por pessoa</span></div><p class="tr-line"><b>Identificar:</b> Estação &quot;Sol&quot;, entrada com o &quot;C&quot; vermelho (não a do Metro). Trem C3 ou C4.</p><p class="tr-say">Máquina: Billete sencillo → Madrid-Atocha Cercanías</p></div>
+        <div class="tr-opt"><h5>Táxi ou app</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 10 a 15 min</span><span class="tr-kpi">💶 €8 a €12</span></div><p class="tr-line"><b>Identificar:</b> Táxi branco com faixa vermelha.</p><p class="tr-say">&quot;Estación de Atocha, Puerta de Atocha.&quot;</p></div>
+      </div></div>
+      <div class="tr-step"><h4>Dentro de Atocha</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>A pé até o trem <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 5 a 10 min</span></div><p class="tr-line"><b>Identificar:</b> Placas &quot;Larga Distancia&quot;. Painel &quot;Salidas&quot;: AVANT 08102. Embarque na planta baja (térreo).</p><p class="tr-say">Coche 3 · lugares 121 e 122</p></div>
+      </div></div>
+      <div class="tr-step"><h4>Estação de Toledo → centro</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Ônibus urbano <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 10 min</span><span class="tr-kpi">💶 ~€1,50</span></div><p class="tr-line"><b>Identificar:</b> Ponto em frente à estação. Linha L5, L61 ou L62 com &quot;Zocodover&quot; no painel.</p><p class="tr-say">Pagar ao motorista · descer na Plaza de Zocodover (final)</p></div>
+        <div class="tr-opt"><h5>Táxi</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 7 min</span><span class="tr-kpi">💶 €6 a €8</span></div><p class="tr-line"><b>Identificar:</b> Ponto em frente à estação.</p><p class="tr-say">&quot;Plaza de Zocodover, por favor.&quot;</p></div>
+      </div></div>
+      <div class="tr-step"><h4>Volta: Mirador del Valle → estação (sair 18:15)</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Táxi <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 10 min</span><span class="tr-kpi">💶 €6 a €10</span></div><p class="tr-line"><b>Identificar:</b> Táxi com luz verde. Se não passar, peça em um bar: &quot;¿Me puede llamar un taxi?&quot;</p><p class="tr-say">&quot;A la estación de tren, por favor.&quot;</p></div>
+      </div></div>
+      <div class="tr-step"><h4>Atocha → hotel (chegada 19:19)</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Cercanías Atocha → Sol <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 10 a 15 min</span><span class="tr-kpi">💶 ~€2 por pessoa</span></div><p class="tr-line"><b>Identificar:</b> &quot;C&quot; vermelho dentro de Atocha. Trem C3 ou C4 com &quot;Sol&quot; na plataforma.</p><p class="tr-say">Máquina: Billete sencillo → Sol</p></div>
+        <div class="tr-opt"><h5>Táxi ou app</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 10 a 15 min</span><span class="tr-kpi">💶 €8 a €12</span></div><p class="tr-line"><b>Identificar:</b> Ponto de táxi na saída de Atocha.</p><p class="tr-say">&quot;Calle de la Salud 3, Hotel Liabeny.&quot;</p></div>
+      </div></div>
+    </div>
+    <div class="dd-day tr-pane" id="tr18"><div class="dd-head"><h3>Quarta 18/11 · AVE Madri → Barcelona</h3></div>
+      <p class="tr-intro">AVE 08:57. Estar no portão às 08:30, o acesso fecha às 08:55. O bilhete do AVE dá direito a Cercanías/Rodalies grátis (Combinado).</p>
+      <a class="tr-maps" href="https://www.google.com/maps/dir/?api=1&destination=Hotel%20Boutique%20H10%20Montcada%2C%20Via%20Laietana%2011%2C%20Barcelona" target="_blank" rel="noopener">Abrir rota no Google Maps →</a>
+      <div class="tr-step"><h4>Hotel → Atocha (sair 08:15)</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Cercanías grátis (Combinado) <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 15 min no total</span><span class="tr-kpi">💶 Grátis</span></div><p class="tr-line"><b>Identificar:</b> Estação &quot;Sol&quot;, &quot;C&quot; vermelho. Trem C3 ou C4.</p><p class="tr-say">Máquina: Combinado Cercanías · Marcos MTYWY · Andreza MPNU9 · destino Madrid-Atocha Cercanías. Se falhar, na Taquilla: &quot;Combinado Cercanías, por favor.&quot;</p></div>
+        <div class="tr-opt"><h5>Táxi ou app</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 10 min</span><span class="tr-kpi">💶 €8 a €12</span></div><p class="tr-line"><b>Identificar:</b> Táxi branco com faixa vermelha.</p><p class="tr-say">&quot;Estación de Atocha, Puerta de Atocha.&quot;</p></div>
+      </div></div>
+      <div class="tr-step"><h4>Dentro de Atocha</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Controle de bagagem e embarque <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 10 a 15 min</span></div><p class="tr-line"><b>Identificar:</b> Placas &quot;Larga Distancia&quot;. Painel &quot;Salidas&quot;: AVE 03091.</p><p class="tr-say">Coche 6 · lugares 8C e 8D · viagem de 3h09</p></div>
+      </div></div>
+      <div class="tr-step"><h4>Sants → H10 Montcada (chegada 12:06)</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Táxi <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 15 a 20 min</span><span class="tr-kpi">💶 €15 a €20</span></div><p class="tr-line"><b>Identificar:</b> Placa &quot;Taxi&quot; na saída principal. Carro preto e amarelo.</p><p class="tr-say">&quot;Hotel H10 Montcada, Via Laietana 11, por favor.&quot;</p></div>
+        <div class="tr-opt"><h5>Rodalies grátis (Combinado)</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 5 min de trem + 12 min a pé</span><span class="tr-kpi">💶 Grátis</span></div><p class="tr-line"><b>Identificar:</b> Placas com &quot;R&quot; laranja. Trem R3 ou R4 com &quot;Plaça de Catalunya&quot; na plataforma.</p><p class="tr-say">Máquina: Bitllet combinat / Combinado com os códigos · descer em Plaça de Catalunya</p></div>
+        <div class="tr-opt"><h5>Metro</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 25 min</span><span class="tr-kpi">💶 ~€2,90 por pessoa</span></div><p class="tr-line"><b>Identificar:</b> &quot;M&quot; vermelho, estação Sants Estació, linha L3 verde.</p><p class="tr-say">L3 até Passeig de Gràcia → L4 amarela até Jaume I · Bitllet senzill</p></div>
+      </div></div>
+    </div>
+    <div class="dd-day tr-pane" id="tr21"><div class="dd-head"><h3>Sábado 21/11 · Hotel → Aeroporto BCN → conexão em Madri</h3></div>
+      <p class="tr-intro">Voo UX7708 às 20:30 do Terminal 1. Chegar ao aeroporto até 18:30: sair do hotel às 17:30.</p>
+      <a class="tr-maps" href="https://www.google.com/maps/dir/?api=1&destination=Aeropuerto%20Josep%20Tarradellas%20Barcelona-El%20Prat%20Terminal%201" target="_blank" rel="noopener">Abrir rota no Google Maps →</a>
+      <div class="tr-step"><h4>Hotel → Aeroporto BCN T1</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>Táxi <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 30 a 40 min</span><span class="tr-kpi">💶 €35 a €45</span></div><p class="tr-line"><b>Identificar:</b> Peça na recepção ou pegue um táxi preto e amarelo com luz verde.</p><p class="tr-say">&quot;Aeropuerto, Terminal 1, por favor.&quot;</p></div>
+        <div class="tr-opt"><h5>Aerobús</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 12 min a pé + 35 min</span><span class="tr-kpi">💶 ~€7 a €8 por pessoa</span></div><p class="tr-line"><b>Identificar:</b> Ônibus azul &quot;Aerobús&quot; na Plaça de Catalunya, em frente ao El Corte Inglés.</p><p class="tr-say">A1 = Terminal 1 (o A2 vai para o T2) · cartão por aproximação</p></div>
+        <div class="tr-opt"><h5>Uber, Cabify ou Bolt</h5><div class="tr-kpis"><span class="tr-kpi">⏱ 30 a 40 min + espera</span><span class="tr-kpi">💶 €30 a €45</span></div><p class="tr-line"><b>Identificar:</b> Confira a placa do carro.</p><p class="tr-say">Destino: Aeropuerto de Barcelona Terminal 1</p></div>
+      </div></div>
+      <div class="tr-step"><h4>Conexão em Madri: T2 → T1 (chegada 22:00, voo 23:55)</h4><div class="tr-opts">
+        <div class="tr-opt rec"><h5>A pé, por dentro do prédio <span class="tr-rec">Recomendado</span></h5><div class="tr-kpis"><span class="tr-kpi">⏱ 10 a 15 min</span></div><p class="tr-line"><b>Identificar:</b> Placas &quot;Conexiones / Connections&quot; ou &quot;T1&quot;. T1 e T2 são ligados.</p><p class="tr-say">Controle de passaporte (10 a 30 min): mostrar o cartão de embarque do UX57</p></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){var tabs=[].slice.call(document.querySelectorAll(".tr-tabs .dd-tab"));function show(id){tabs.forEach(function(b){b.classList.toggle("active",b.dataset.tr===id);});[].slice.call(document.querySelectorAll(".tr-pane")).forEach(function(d){d.classList.toggle("active",d.id===id);});}
+tabs.forEach(function(b){b.addEventListener("click",function(){show(b.dataset.tr);b.scrollIntoView({block:"nearest",inline:"center",behavior:"smooth"});});});
+var map={"2026-11-15":"tr15","2026-11-17":"tr17","2026-11-18":"tr18","2026-11-21":"tr21"},today="";try{today=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Madrid"}).format(new Date());}catch(e){}
+show(map[today]||"trid");})();
+</script>
+<!-- /TRASLADOS -->
+<a class="dd-fab" href="#traslados" style="bottom:70px" aria-label="Ir para traslados">🚕 Traslados</a>
+
 
 <!-- PILARES -->
 <section class="section" id="pilares">
